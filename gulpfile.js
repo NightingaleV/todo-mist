@@ -11,23 +11,29 @@ gulp.task('message', function() {
 //Copy ALL HTML files
 gulp.task('copyHtml', function() {
   gulp.src('app/*.html')
-    .pipe(gulp.dest('dist/src'));
+    .pipe(gulp.dest('dist'));
 });
 
 //Compile SASS files
 gulp.task('sass', function(){
-  gulp.src('app/scss/**/*.scss')
+  gulp.src('app/scss/**/main.scss')
       .pipe(sass().on('error', sass.logError))
-      .pipe(concat('master.css'))
+      .pipe(concat('main.css'))
       .pipe(gulp.dest('app/css'));
+});
+
+//Copy CSS to dist
+gulp.task('copyCss', function() {
+  gulp.src('app/css/*.css')
+    .pipe(gulp.dest('dist/css'));
 });
 
 //Scripts
 gulp.task('minifyScripts',function(){
   gulp.src('app/js/*.js')
-    .pipe(concat('master.js'))
+    .pipe(concat('main.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js/'));
+    .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('default', ['message','copyHtml','sass', 'minifyScripts'])
+gulp.task('default', ['message','copyHtml','sass','copyCss','minifyScripts']);
