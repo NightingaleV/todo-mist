@@ -1,17 +1,8 @@
-@import "./variables.scss";
-@import "./components.scss";
+// Variables
+@import "./_base.scss";
 
-// Modules and Variables
-@import "partials/base";
+// Layout
+@import "./layout/_module";
 
-// Partials
-@import "partials/reset";
-@import "partials/typography";
-@import "partials/buttons";
-@import "partials/figures";
-@import "partials/grids";
-// ...
-
-// Third-party
-@import "vendor/colorpicker";
-@import "vendor/jquery.ui.core";
+// Components
+@import "./components/_module";
