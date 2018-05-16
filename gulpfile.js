@@ -8,10 +8,19 @@ gulp.task('message', function() {
   return console.log('Gulp is running...');
 });
 
-//Copy ALL HTML files
-gulp.task('copyHtml', function() {
-  gulp.src('app/*.html')
+//Copy ALL PHP html files
+gulp.task('copyPhp', function() {
+  gulp.src('app/*.php')
     .pipe(gulp.dest('dist'));
+	
+	gulp.src('app/templates/*.php')
+    .pipe(gulp.dest('dist/templates'));
+});
+
+//Copy ALL PHP files
+gulp.task('copyPhp', function() {
+  gulp.src('app/php/*.php')
+    .pipe(gulp.dest('dist/php'));
 });
 
 //Compile SASS files
@@ -36,4 +45,4 @@ gulp.task('minifyScripts',function(){
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('default', ['message','copyHtml','sass','copyCss','minifyScripts']);
+gulp.task('default', ['message','copyPhp','sass','copyCss','minifyScripts']);
