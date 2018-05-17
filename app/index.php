@@ -14,13 +14,13 @@
   <title>Todomist - keep self organized</title>
 
   <!--Bootstrap CSS-->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,400,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="home">
+<body class="home index-page">
   <?php include('templates/navbar-home.php') ?>
   <header id="top-section">
     <div class="overlay-background h-100 d-flex align-items-centerd-flex align-items-center">

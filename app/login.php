@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="login-page">
+<body class="home login-page">
   <?php include('templates/navbar-home.php') ?>
   <main id="top-section">
     <div class="overlay-background h-100 d-flex align-items-centerd-flex align-items-center">
