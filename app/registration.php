@@ -11,7 +11,7 @@
 
   <!--Custom Metas-->
   <meta name='HandheldFriendly' content='True'>
-  <title>Todomist - keep self organized</title>
+  <title>Todomist - log in to our application and stay organized</title>
 
   <!--Bootstrap CSS-->
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
@@ -20,17 +20,42 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="home">
+<body>
   <?php include('templates/navbar-page.php') ?>
   <header id="top-section">
     <div class="overlay-background h-100 d-flex align-items-centerd-flex align-items-center">
       <div class="container">
         <div class="row justify-content-center font-light">
-          <div class="col-12 col-md-10 col-lg-8 mt-5">
-            <h1 class="text-center">Make your damn<br>schedule</h1>
-            <div class="col-12 col-lg-10 offset-lg-1">
-              <p class="mt-3">Your time is now, so make it worth it! Use our app for organizing your daily task and be responsible. Prove yourself, a reward is nothing less than happiness.</p>
+          <div class="col-12 col-md-7">
+            <h1 class="text-center mt-5 mt-sm-0">Sign up now!</h1>
+            <div class="col-12 d-none d-md-block col-lg-10 offset-lg-1">
+              <p class="mt-3">It is free! What are you waiting for?</p>
             </div>
+          </div>
+          <div class="col-12 col-sm-8 col-lg-4">
+            <form class="sign-up-form" method="post">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+                <small id="emailHelp" class="form-text text-mute">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Confirm password</label>
+                <input name="password2" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              </div>
+              <div class="text-center">
+                <button name="submit" type="submit" class="btn btn-secondary btn-lg mt-3">Sign up!</button>
+              </div>
+
+            </form>
           </div>
         </div>
       </div>
@@ -39,7 +64,8 @@
   <main>
     <section id="section-icons" class="container bg-light">
       <div class="row">
-        <div class="col-12 col-md-4 d-inline-flex d-md-flex flex-md-column align-items-center px-3 py-4"><i class="pr-3 mx-auto md-dark material-icons md-front">work</i>
+        <div class="col-12 col-md-4 d-inline-flex d-md-flex flex-md-column align-items-center px-3 py-4">
+          <i class="pr-3 mx-auto md-dark material-icons md-front">work</i>
           <p>Create a project for your goals, work stuff or for every role of your. It is up to you!</p>
         </div>
         <div class="col-12 col-md-4 d-inline-flex d-md-flex flex-md-column align-items-center px-3 py-4"><i class="pr-3 mx-auto md-dark material-icons md-front">list</i>
