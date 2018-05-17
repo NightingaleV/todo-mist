@@ -1,0 +1,45 @@
+$header-bg-img:url("/img/background_002.jpg") no-repeat center center fixed;
+$header-bg-overlay:rgba(27, 27, 27, 0.9);
+$header-text-size: 1.3em;
+
+$thirds-bg-img: url("/img/background_001.jpg") no-repeat center center fixed;
+
+#top-section{
+  background: $header-bg-img;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  p{
+    font-size: $header-text-size;
+    text-align: justify;
+  }
+}
+
+.overlay-background {
+  background: $header-bg-overlay; 
+}
+
+#section-icons .row div:nth-child(2) {
+  background: white;
+  p{
+    text-align: justify;
+    margin: 0;
+  }
+}
+
+#third-section {
+  background: $thirds-bg-img;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 300px;
+  h2{
+    text-align: center;
+  }
+  p{
+    text-align: center;
+  }
+}

@@ -8,8 +8,8 @@ $nav-home-change-color: black;
 $nav-home-change-icons: rgba(0, 0, 0, 0.76);
 
 //Brand
-$brand-color:black;
-$brand-size:1.8em;;
+$brand-home-color:white;
+$brand-home-size:2.2em;;
 
 @mixin transition($animation) {
   -webkit-transition: $animation;
@@ -23,15 +23,15 @@ $brand-size:1.8em;;
   @include transition($navbar-home-animation);
   
   .navbar-brand{
-    color:$brand-color;
-    font-size:$brand-size;
+    color:$brand-home-color;
+    font-size:$brand-home-size;
     font-weight:$bold;
   }
 }
-.navbar-change{
+.home .navbar-change{
   background:$nav-home-change-bg;
   color: $nav-home-change-color;
   .navbar-brand, .hamburger-icon{
-    color:$nav-home-change-icons;
+    color: $nav-home-change-icons;
   }
 }

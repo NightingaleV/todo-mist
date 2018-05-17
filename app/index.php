@@ -50,7 +50,7 @@
         </div>
       </div>
     </section>
-    <section id="section-player" class="container-fluid">
+    <section id="third-section" class="container-fluid">
       <div class="row h-100 justify-content-center overlay-background">
         <div class="col-12 h-100 d-flex flex-column justify-content-center font-light">
           <h2 class="mx-auto">Have a control of your life!</h2>

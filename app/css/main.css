@@ -17,18 +17,63 @@ h2 {
   font-size: 2.4rem;
   font-weight: 700; }
 
+.font-light {
+  color: white; }
+
 /* Scss Document */
+#top-section {
+  background: url("/img/background_002.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh; }
+  #top-section p {
+    font-size: 1.3em;
+    text-align: justify; }
+
+.overlay-background {
+  background: rgba(27, 27, 27, 0.9); }
+
+#section-icons .row div:nth-child(2) {
+  background: white; }
+  #section-icons .row div:nth-child(2) p {
+    text-align: justify;
+    margin: 0; }
+
+#third-section {
+  background: url("/img/background_001.jpg") no-repeat center center fixed;
+  background-size: cover;
+  height: 300px; }
+  #third-section h2 {
+    text-align: center; }
+  #third-section p {
+    text-align: center; }
+
 .home .navbar {
   transition: background 0.3s linear; }
   .home .navbar .navbar-brand {
-    color: black;
-    font-size: 1.8em;
+    color: white;
+    font-size: 2.2em;
     font-weight: 700; }
 
-.navbar-change {
+.home .navbar-change {
   background: white;
   color: black; }
-  .navbar-change .navbar-brand, .navbar-change .hamburger-icon {
+  .home .navbar-change .navbar-brand, .home .navbar-change .hamburger-icon {
     color: rgba(0, 0, 0, 0.76); }
+
+.material-icons.md-front {
+  font-size: 3.5rem; }
+
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.76); }
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26); }
+
+.home .btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 1.2rem; }
+
+.home .navbar .btn {
+  margin: 1rem 0.6rem; }
 
 /*# sourceMappingURL=main.css.map */
