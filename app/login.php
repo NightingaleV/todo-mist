@@ -21,7 +21,7 @@
 </head>
 
 <body class="login-page">
-  <?php include('templates/navbar-page.php') ?>
+  <?php include('templates/navbar-home.php') ?>
   <main id="top-section">
     <div class="overlay-background h-100 d-flex align-items-centerd-flex align-items-center">
       <div class="container">

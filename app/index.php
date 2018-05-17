@@ -21,7 +21,7 @@
 </head>
 
 <body class="home">
-  <?php include('templates/navbar-page.php') ?>
+  <?php include('templates/navbar-home.php') ?>
   <header id="top-section">
     <div class="overlay-background h-100 d-flex align-items-centerd-flex align-items-center">
       <div class="container">

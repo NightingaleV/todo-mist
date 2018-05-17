@@ -8,7 +8,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="btn btn-secondary" href="/signup.php">Sign Up</a>
+					<a class="btn btn-secondary" href="/registration.php">Sign Up</a>
 				</li>
 				<li class="nav-item">
 					<a class="btn btn-success" href="/login.php">Log In</a>
