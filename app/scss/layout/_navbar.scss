@@ -1,0 +1,37 @@
+//Navbar on top
+$navbar-home-bg: transparent;
+$navbar-home-animation: background 0.3s linear;
+
+//Scrolling Nav
+$nav-home-change-bg: white;
+$nav-home-change-color: black;
+$nav-home-change-icons: rgba(0, 0, 0, 0.76);
+
+//Brand
+$brand-color:black;
+$brand-size:1.8em;;
+
+@mixin transition($animation) {
+  -webkit-transition: $animation;
+  -moz-transition: $animation;
+  -o-transition: $animation;
+  -ms-transition: $animation;
+  transition: $animation;
+}
+
+.home .navbar{
+  @include transition($navbar-home-animation);
+  
+  .navbar-brand{
+    color:$brand-color;
+    font-size:$brand-size;
+    font-weight:$bold;
+  }
+}
+.navbar-change{
+  background:$nav-home-change-bg;
+  color: $nav-home-change-color;
+  .navbar-brand, .hamburger-icon{
+    color:$nav-home-change-icons;
+  }
+}

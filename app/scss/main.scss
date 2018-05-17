@@ -1,8 +1,9 @@
-// Variables
-@import "./_base.scss";
+// Base styles
+@import "base/_base.scss";
+
+// Font styles
+@import "base/_typography.scss";
 
 // Layout
-@import "./layout/_module";
-
-// Components
-@import "./components/_module";
+@import "layout/_layout.scss";
+@import "layout/_navbar.scss";
