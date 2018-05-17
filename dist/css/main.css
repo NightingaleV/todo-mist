@@ -1,12 +1,2 @@
-/* SCSS base  */
-h1 {
-  font-weight: 600; }
-
-p {
-  font-size: 15px; }
-
-/* Modules File
-	For importing all child scss files
-*/
-/* Scss Document */
-/* Scss Document */
+h1{font-weight:600}h3{color:red;font-size:64px}p{font-size:15px}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXFCQSxHQUFHLFlBQUEsSUFHSCxHQUFHLE1BQUEsSUFDSCxVQUFBLEtBR0EsRUFDQyxVQUFBIiwiZmlsZSI6Im1haW4uY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogU0NTUyBiYXNlICAqL1xuaDEge1xuICBmb250LXdlaWdodDogNjAwOyB9XG5cbmgzIHtcbiAgY29sb3I6IHJlZDtcbiAgZm9udC1zaXplOiA2NHB4OyB9XG5cbnAge1xuICBmb250LXNpemU6IDE1cHg7IH1cblxuLyogTW9kdWxlcyBGaWxlXHJcblx0Rm9yIGltcG9ydGluZyBhbGwgY2hpbGQgc2NzcyBmaWxlc1xyXG4qL1xuLyogU2NzcyBEb2N1bWVudCAqL1xuLyogU2NzcyBEb2N1bWVudCAqL1xuXG4vKiMgc291cmNlTWFwcGluZ1VSTD1tYWluLmNzcy5tYXAgKi9cbiJdfQ== */
