@@ -10,6 +10,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const prettyHtml = require('gulp-pretty-html');
+const sassbeautify = require('gulp-sassbeautify');
 
 var Paths = {
 	HERE: './',
@@ -46,6 +47,12 @@ gulp.task('copyPhp', function () {
 		.pipe(gulp.dest(Paths.DIST_PHP_SOURCE));
 });
 
+//Beautify scss
+gulp.task('beautify-scss', function () {
+  gulp.src(Paths.SCSS)
+    .pipe(sassbeautify())
+    .pipe(gulp.dest(Paths.SCSS));
+});
 
 //Compile SASS files
 gulp.task('sass', function () {

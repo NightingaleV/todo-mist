@@ -22,6 +22,7 @@
     "run-sequence": "^2.2.1"
   },
   "dependencies": {
-    "del": "^3.0.0"
+    "del": "^3.0.0",
+    "gulp-sassbeautify": "^0.1.0"
   }
 }
