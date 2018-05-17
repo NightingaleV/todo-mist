@@ -1,0 +1,13 @@
+$home-icons-size: 3.5rem;
+$home-icons-color: rgba(0, 0, 0, 0.76);
+
+.material-icons.md-front {
+  font-size: $home-icons-size; 
+}
+.material-icons.md-dark {
+  color: $home-icons-color; 
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26); 
+}
