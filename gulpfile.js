@@ -24,7 +24,8 @@ var Paths = {
 	PHP_SOURCE: 'app/php/*.php',
 	SCSS: 'app/scss/**/*.scss',
 	CSS: 'app/css/*.css',
-	JS: 'app/js/*.js'
+	JS: 'app/js/',
+  JS_MODULES: 'app/js/modules/*.js'
 };
 
 gulp.task('messageStartBuilding', function () {
@@ -68,16 +69,6 @@ gulp.task('sass', function () {
 		}));
 });
 
-gulp.task('pages', function () {
-	return gulp.src('app/*.php')
-		.pipe(prettyHtml({
-			indent_size: 2,
-			indent_char: ' ',
-			unformatted: ['code', 'pre', 'em', 'strong', 'span', 'i', 'b', 'br']
-		}))
-		.pipe(gulp.dest(Paths.PHP));
-});
-
 //Copy CSS to dist
 gulp.task('copyCss', function () {
 	gulp.src(Paths.CSS)
@@ -88,9 +79,12 @@ gulp.task('copyCss', function () {
 });
 
 //Scripts
-gulp.task('copyScripts', function () {
-	gulp.src(Paths.JS)
+gulp.task('buildScripts', function () {
+	gulp.src(Paths.JS_MODULES)
 		.pipe(concat('main.js'))
+		.pipe(gulp.dest(Paths.JS));
+  
+  gulp.src(Paths.JS)
 		.pipe(uglify())
 		.pipe(gulp.dest(Paths.DIST_JS));
 });
@@ -104,13 +98,13 @@ gulp.task('browserSync', function () {
 });
 
 // Watchers for saving files
-gulp.task('watch', ['browserSync', 'sass'], function () {
+gulp.task('watch', ['browserSync', 'sass', 'buildScripts'], function () {
 	gulp.watch(Paths.SCSS, ['sass']);
 	// Other watchers
 	gulp.watch(Paths.PHP, browserSync.reload);
 	gulp.watch(Paths.PHP_SOURCE, browserSync.reload);
 	gulp.watch(Paths.PHP_TEMPLATES, browserSync.reload);
-	gulp.watch(Paths.JS, browserSync.reload);
+	gulp.watch(Paths.JS, ['buildScripts']);
 });
 
 gulp.task('runWatchers', function (callback) {
@@ -133,4 +127,14 @@ gulp.task('build', function (callback) {
 //Building app
 gulp.task('default', function (callback) {
 	runSequence('cleanDist', ['messageStartBuilding', 'copyPhp', 'sass', 'copyCss', 'copyScripts', 'messageEndBuilding'], callback);
+});
+
+gulp.task('pages', function () {
+	return gulp.src('app/*.php')
+		.pipe(prettyHtml({
+			indent_size: 2,
+			indent_char: ' ',
+			unformatted: ['code', 'pre', 'em', 'strong', 'span', 'i', 'b', 'br']
+		}))
+		.pipe(gulp.dest(Paths.PHP));
 });
