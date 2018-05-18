@@ -12,6 +12,12 @@ p {
 h1 {
   font-size: 2.7rem;
   font-weight: 700; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3.5rem; } }
+  @media (min-width: 992px) {
+    h1 {
+      font-size: 4.5rem; } }
 
 h2 {
   font-size: 2.4rem;
@@ -51,8 +57,11 @@ h2 {
   transition: background 0.3s linear; }
   .home .navbar .navbar-brand {
     color: white;
-    font-size: 2.2em;
+    font-size: 1.8em;
     font-weight: 700; }
+    @media (min-width: 576px) {
+      .home .navbar .navbar-brand {
+        font-size: 2.2em; } }
 
 .home .navbar-change {
   background: white;

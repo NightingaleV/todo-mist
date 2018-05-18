@@ -1,3 +1,5 @@
+
+
 // Global
 $font-family:'Raleway', sans-serif;
 $global-font-size:100%;
@@ -17,6 +19,7 @@ $text-light: white;
 
 // Headings
 $header-font-weight: $bold;
+//Media queries
 
 
 html {
@@ -36,7 +39,14 @@ p{
 
 h1 {
   font-size: 2.7rem;
-  font-weight: $header-font-weight; }
+  font-weight: $header-font-weight; 
+  @include mq(md){
+    font-size: 3.5rem;
+  }
+  @include mq(lg){
+    font-size: 4.5rem;
+  }
+}
 
 h2 {
   font-size: 2.4rem;

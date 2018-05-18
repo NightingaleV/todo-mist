@@ -9,7 +9,8 @@ $nav-home-change-icons: rgba(0, 0, 0, 0.76);
 
 //Brand
 $brand-home-color:white;
-$brand-home-size:2.2em;;
+$brand-home-xm-size:1.8em;;
+$brand-home-sm-size:2.2em;;
 
 @mixin transition($animation) {
   -webkit-transition: $animation;
@@ -24,8 +25,11 @@ $brand-home-size:2.2em;;
   
   .navbar-brand{
     color:$brand-home-color;
-    font-size:$brand-home-size;
+    font-size:$brand-home-xm-size;
     font-weight:$bold;
+    @include mq(sm){
+      font-size: $brand-home-sm-size;
+    }
   }
 }
 .home .navbar-change{

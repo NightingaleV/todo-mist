@@ -1,0 +1,20 @@
+@mixin mq($breakpoint) {
+  
+  $breakpoint-xl: "(min-width: 1200px)";
+  $breakpoint-lg: "(min-width: 992px)";
+  $breakpoint-md: "(min-width: 768px)";
+  $breakpoint-sm: "(min-width: 576px)";
+  
+  @if $breakpoint == xl {
+    @media #{$breakpoint-xl} { @content; }
+  }
+  @else if $breakpoint == lg {
+    @media #{$breakpoint-lg} { @content; }
+  }
+  @else if $breakpoint == md {
+    @media #{$breakpoint-md} { @content; }
+  }
+  @else if $breakpoint == sm {
+    @media #{$breakpoint-sm} { @content; }
+  }
+}
