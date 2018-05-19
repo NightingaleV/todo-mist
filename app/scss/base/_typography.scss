@@ -19,6 +19,10 @@ $text-light: white;
 
 // Headings
 $header-font-weight: $bold;
+
+$h1-xm-size: 2.7em;
+$h1-home-md-size: 3.5rem;
+$h1-home-lg-size: 4.5rem;
 //Media queries
 
 
@@ -34,17 +38,18 @@ p{
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
+  
 }
 
 
 h1 {
-  font-size: 2.7rem;
+  font-size: $h1-xm-size;
   font-weight: $header-font-weight; 
   @include mq(md){
-    font-size: 3.5rem;
+    font-size: $h1-home-md-size;
   }
   @include mq(lg){
-    font-size: 4.5rem;
+    font-size: $h1-home-lg-size;
   }
 }
 

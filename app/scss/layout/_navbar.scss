@@ -3,14 +3,15 @@ $navbar-home-bg: transparent;
 $navbar-home-animation: background 0.3s linear;
 
 //Scrolling Nav
-$nav-home-change-bg: white;
+$nav-home-change-bg: rgba(255,255,255,0.93);
 $nav-home-change-color: black;
 $nav-home-change-icons: rgba(0, 0, 0, 0.76);
 
 //Brand
 $brand-home-color:white;
-$brand-home-xm-size:1.8em;;
-$brand-home-sm-size:2.2em;;
+$brand-home-xm-size:1.8em;
+$brand-home-sm-size:2.2em;
+$brand-home-lg-size:2.5em;
 
 @mixin transition($animation) {
   -webkit-transition: $animation;
@@ -29,6 +30,10 @@ $brand-home-sm-size:2.2em;;
     font-weight:$bold;
     @include mq(sm){
       font-size: $brand-home-sm-size;
+    }
+    @include mq(lg){
+      font-size: $brand-home-lg-size;
+      margin-left: 0.5em;
     }
   }
 }

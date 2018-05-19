@@ -5,6 +5,9 @@
     font-size: 1.2rem;
   }
   .navbar .btn{
-    margin: 1rem 0.6rem;
+    margin: 0.4rem 0.6rem;
+    @include mq(md){
+      margin:1rem 0.6rem;
+    }
   }
 }

@@ -1,3 +1,6 @@
+p {
+  margin: 0; }
+
 html {
   font-size: 100%; }
 
@@ -10,7 +13,7 @@ p {
   line-height: 1.4; }
 
 h1 {
-  font-size: 2.7rem;
+  font-size: 2.7em;
   font-weight: 700; }
   @media (min-width: 768px) {
     h1 {
@@ -33,25 +36,73 @@ h2 {
   height: 100vh; }
   #top-section p {
     font-size: 1.3em;
-    text-align: justify; }
+    text-align: center; }
 
 .overlay-background {
   background: rgba(27, 27, 27, 0.9); }
 
-#section-icons .row div:nth-child(2) {
-  background: white; }
-  #section-icons .row div:nth-child(2) p {
-    text-align: justify;
-    margin: 0; }
+@media (max-width: 1199.98px) {
+  #section-icons {
+    max-width: 100%; } }
 
-#third-section {
+#section-icons .row {
+  height: 100%; }
+  @media (min-width: 768px) {
+    #section-icons .row {
+      height: 300px; } }
+  @media (min-width: 992px) {
+    #section-icons .row {
+      height: 33vh; } }
+
+#section-icons .section-item {
+  padding: 1em 1rem; }
+  @media (min-width: 992px) {
+    #section-icons .section-item {
+      padding: 0 3rem; } }
+  @media (min-width: 768px) {
+    #section-icons .section-item {
+      padding: 0 2rem; } }
+  @media (min-width: 576px) {
+    #section-icons .section-item {
+      padding: 2rem 2rem; } }
+  #section-icons .section-item p {
+    font-size: 1rem; }
+    @media (min-width: 576px) {
+      #section-icons .section-item p {
+        font-size: 1.2em; } }
+
+#section-icons .row div:nth-child(odd) {
+  background: white; }
+  #section-icons .row div:nth-child(odd) p {
+    text-align: justify; }
+
+#section-icons .row div:nth-child(even) {
+  background: #e74c3c;
+  color: white; }
+  #section-icons .row div:nth-child(even) .material-icons.md-dark {
+    color: white !important; }
+  #section-icons .row div:nth-child(even) p {
+    text-align: justify; }
+
+hr.row-gap {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  border: 0;
+  border-top: 0px solid rgba(0, 0, 0, 0.1); }
+
+.quote-section {
+  height: 38vh; }
+  .quote-section h2 {
+    text-align: center; }
+  .quote-section p {
+    text-align: center; }
+
+.quote-section:nth-child(even) {
+  height: 15vh; }
+
+.quote-overlay {
   background: url("/img/background_001.jpg") no-repeat center center fixed;
-  background-size: cover;
-  height: 300px; }
-  #third-section h2 {
-    text-align: center; }
-  #third-section p {
-    text-align: center; }
+  background-size: cover; }
 
 .home .navbar {
   transition: background 0.3s linear; }
@@ -62,15 +113,31 @@ h2 {
     @media (min-width: 576px) {
       .home .navbar .navbar-brand {
         font-size: 2.2em; } }
+    @media (min-width: 992px) {
+      .home .navbar .navbar-brand {
+        font-size: 2.5em;
+        margin-left: 0.5em; } }
 
 .home .navbar-change {
-  background: white;
+  background: rgba(255, 255, 255, 0.93);
   color: black; }
   .home .navbar-change .navbar-brand, .home .navbar-change .hamburger-icon {
     color: rgba(0, 0, 0, 0.76); }
 
-.material-icons.md-front {
-  font-size: 3.5rem; }
+.material-icons.mi-home {
+  font-size: 4rem;
+  padding: 1.2rem 1rem; }
+  @media (min-width: 576px) {
+    .material-icons.mi-home {
+      padding: 0rem 1rem 0 0;
+      font-size: 5rem; } }
+  @media (max-width: 575.98px) {
+    .material-icons.mi-home {
+      padding: 0rem 1rem 0 0; } }
+
+.mi-quote {
+  font-size: 3rem;
+  padding-right: 1rem; }
 
 .material-icons.md-dark {
   color: rgba(0, 0, 0, 0.76); }
@@ -83,6 +150,9 @@ h2 {
   font-size: 1.2rem; }
 
 .home .navbar .btn {
-  margin: 1rem 0.6rem; }
+  margin: 0.4rem 0.6rem; }
+  @media (min-width: 768px) {
+    .home .navbar .btn {
+      margin: 1rem 0.6rem; } }
 
 /*# sourceMappingURL=main.css.map */

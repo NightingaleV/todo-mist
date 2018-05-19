@@ -4,6 +4,8 @@ $header-text-size: 1.3em;
 
 $thirds-bg-img: url("/img/background_001.jpg") no-repeat center center fixed;
 
+$quote-height:38vh;
+
 #top-section{
   background: $header-bg-img;
   -webkit-background-size: cover;
@@ -13,7 +15,7 @@ $thirds-bg-img: url("/img/background_001.jpg") no-repeat center center fixed;
   height: 100vh;
   p{
     font-size: $header-text-size;
-    text-align: justify;
+    text-align: center;
   }
 }
 
@@ -21,21 +23,65 @@ $thirds-bg-img: url("/img/background_001.jpg") no-repeat center center fixed;
   background: $header-bg-overlay; 
 }
 
-#section-icons .row div:nth-child(2) {
+#section-icons{
+  @include mq(down-lg){
+    max-width: 100%;
+  }
+  .row{
+    height: 100%;
+    @include mq(md){
+      height: 300px;
+    }
+    @include mq(lg){
+      height: 33vh;
+    }
+  }
+  .section-item{
+    padding: 1em 1rem;
+    @include mq(lg){
+      padding: 0 3rem;
+    }
+    @include mq(md){
+      padding: 0 2rem;
+    }
+    @include mq(sm){
+      padding: 2rem 2rem;
+    }
+    p{
+      font-size: 1rem;
+      @include mq(sm){
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+#section-icons .row div:nth-child(odd)  {
   background: white;
   p{
     text-align: justify;
-    margin: 0;
+  }
+}
+#section-icons .row div:nth-child(even)  {
+  background: #e74c3c;
+  color:white;
+  
+  .material-icons.md-dark {
+    color:white !important; 
+  }
+  p{
+    text-align: justify;
   }
 }
 
-#third-section {
-  background: $thirds-bg-img;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 300px;
+hr.row-gap{
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+  border: 0;
+  border-top: 0px solid rgba(0,0,0,.1);
+}
+
+.quote-section {
+  height: $quote-height;
   h2{
     text-align: center;
   }
@@ -43,3 +89,15 @@ $thirds-bg-img: url("/img/background_001.jpg") no-repeat center center fixed;
     text-align: center;
   }
 }
+.quote-section:nth-child(even){
+  height:15vh;
+}
+.quote-overlay{
+  background: $thirds-bg-img;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
