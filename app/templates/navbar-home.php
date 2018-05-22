@@ -8,10 +8,10 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item">
-					<a class="btn btn-secondary" href="/registration.php">Sign Up</a>
+					<a class="btn btn-navbar btn-signup" href="/registration.php">Sign Up</a>
 				</li>
 				<li class="nav-item">
-					<a class="btn btn-success" href="/login.php">Log In</a>
+					<a class="btn btn-navbar btn-login" href="/login.php">Log In</a>
 				</li>
 			</ul>
 		</div>

@@ -1,10 +1,8 @@
 $header-bg-img:url("/img/background_002.jpg") no-repeat center center fixed;
 $header-bg-overlay:rgba(27, 27, 27, 0.9);
 $header-text-size: 1.3em;
-
 $thirds-bg-img: url("/img/background_001.jpg") no-repeat center center fixed;
 
-$quote-height:38vh;
 
 #top-section{
   background: $header-bg-img;
@@ -81,16 +79,52 @@ hr.row-gap{
 }
 
 .quote-section {
-  height: $quote-height;
   h2{
     text-align: center;
   }
   p{
     text-align: center;
   }
+  img.img-portrait{
+    max-height: 300px;
+    @include mq(down-sm){
+    max-height: 190px; 
+  }
+  }
 }
-.quote-section:nth-child(even){
-  height:15vh;
+.quote-section:nth-child(3){
+  height:100%;
+  div.row{
+    @include mq(sm){
+      min-height: 180px; 
+    }
+  }
+  @include mq(md){
+    height: 38vh;
+    min-height: 200px; 
+  }
+}
+.quote-section:nth-child(2){
+  background-color: #E74C3C;
+  height:12vh;
+  min-height: 110px;
+  @include mq(sm){
+    min-height: 110px; 
+  }
+  @include mq(md){
+    height: 15vh;
+    min-height: 130px; 
+  }
+}
+.quote-section:nth-child(1){
+  height:100%;
+  @include mq(sm){
+    min-height: 200px; 
+  }
+  @include mq(md){
+    height: 38vh;
+    min-height: 300px; 
+  }
 }
 .quote-overlay{
   background: $thirds-bg-img;

@@ -3,7 +3,7 @@ $navbar-home-bg: transparent;
 $navbar-home-animation: background 0.3s linear;
 
 //Scrolling Nav
-$nav-home-change-bg: rgba(255,255,255,0.93);
+$nav-home-change-bg: rgba(255,255,255,1);
 $nav-home-change-color: black;
 $nav-home-change-icons: rgba(0, 0, 0, 0.76);
 
@@ -40,7 +40,10 @@ $brand-home-lg-size:2.5em;
 .home .navbar-change{
   background:$nav-home-change-bg;
   color: $nav-home-change-color;
-  .navbar-brand, .hamburger-icon{
+  .navbar-brand{
+    color: $nav-home-change-color;
+  }
+  .hamburger-icon{
     color: $nav-home-change-icons;
   }
 }

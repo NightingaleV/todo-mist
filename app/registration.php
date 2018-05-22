@@ -22,7 +22,7 @@
 
 <body class="home registration-page">
   <?php include('templates/navbar-home.php') ?>
-  <header id="top-section">
+  <main id="top-section">
     <div class="overlay-background h-100 d-flex align-items-centerd-flex align-items-center">
       <div class="container">
         <div class="row justify-content-center font-light">
@@ -52,7 +52,7 @@
                 <input name="password2" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
               </div>
               <div class="text-center">
-                <button name="submit" type="submit" class="btn btn-secondary btn-lg mt-3">Sign up!</button>
+                <button name="submit" type="submit" class="btn btn-form btn-signup btn-lg mt-2">Sign up!</button>
               </div>
 
             </form>
@@ -60,30 +60,6 @@
         </div>
       </div>
     </div>
-  </header>
-  <main>
-    <section id="section-icons" class="container bg-light">
-      <div class="row">
-        <div class="col-12 col-md-4 d-inline-flex d-md-flex flex-md-column align-items-center px-3 py-4">
-          <i class="pr-3 mx-auto md-dark material-icons md-front">work</i>
-          <p>Create a project for your goals, work stuff or for every role of your. It is up to you!</p>
-        </div>
-        <div class="col-12 col-md-4 d-inline-flex d-md-flex flex-md-column align-items-center px-3 py-4"><i class="pr-3 mx-auto md-dark material-icons md-front">list</i>
-          <p>Make list of working tasks or just a checklist for your next party. What is written, can't be forgotten.</p>
-        </div>
-        <div class="col-12 col-md-4 d-inline-flex d-md-flex flex-md-column align-items-center px-3 py-4"><i class="pr-3 mx-auto md-dark material-icons md-front">label</i>
-          <p>Label the task with the context. Prioritize them with Eisenhower matrix. Know what matters.</p>
-        </div>
-      </div>
-    </section>
-    <section id="section-player" class="container-fluid">
-      <div class="row h-100 justify-content-center overlay-background">
-        <div class="col-12 h-100 d-flex flex-column justify-content-center font-light">
-          <h2 class="mx-auto">Have a control of your life!</h2>
-          <p class="mx-auto">Life is a game and world is a playground. Make sure you play it with right tools.</p>
-        </div>
-      </div>
-    </section>
   </main>
 </body>
 <!--Bootstrap JS-->

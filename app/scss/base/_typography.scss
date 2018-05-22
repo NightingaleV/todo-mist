@@ -20,7 +20,7 @@ $text-light: white;
 // Headings
 $header-font-weight: $bold;
 
-$h1-xm-size: 2.7em;
+$h1-mobile-size: 2.7em;
 $h1-home-md-size: 3.5rem;
 $h1-home-lg-size: 4.5rem;
 //Media queries
@@ -41,10 +41,10 @@ p{
   
 }
 
-
-h1 {
-  font-size: $h1-xm-size;
-  font-weight: $header-font-weight; 
+.home{
+  h1 {
+    font-size: $h1-mobile-size;
+    font-weight: $header-font-weight; 
   @include mq(md){
     font-size: $h1-home-md-size;
   }
@@ -52,11 +52,20 @@ h1 {
     font-size: $h1-home-lg-size;
   }
 }
+  h2 {
+    font-size: 2rem;
+    font-weight: $header-font-weight; 
+    @include mq(md){
+     font-size: 2.4rem; 
+    }
+  }
 
-h2 {
-  font-size: 2.4rem;
-  font-weight: $header-font-weight; }
-
-.font-light{
-  color:$text-light
+  .font-light{
+    color:$text-light
 }
+  
+}
+
+
+
+
