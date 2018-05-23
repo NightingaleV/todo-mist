@@ -243,4 +243,22 @@ hr.row-gap {
   .home .btn-login:not(:disabled):not(.disabled).active:focus, .home .btn-login:not(:disabled):not(.disabled):active:focus {
     box-shadow: 0 0 0 3px rgba(57, 131, 60, 0.5); }
 
+ul {
+  list-style-type: none; }
+
+.todo-list {
+  align-content: flex-end; }
+  .todo-list .todo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3rem; }
+  .todo-list .todo-left, .todo-list .todo-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    white-space: nowrap; }
+
 /*# sourceMappingURL=main.css.map */
