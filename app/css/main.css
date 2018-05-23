@@ -206,23 +206,23 @@ hr.row-gap {
   border-radius: 0.25rem; }
 
 .home .btn-signup {
-  background: #f44336;
+  background: #e74c3c;
   color: white;
-  border-color: #f44336; }
+  border-color: #e74c3c; }
   .home .btn-signup:hover {
     color: white;
-    background-color: #f22112;
-    border-color: #ea1c0d; }
+    background-color: #e12e1c;
+    border-color: #d62c1a; }
   .home .btn-signup:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #ea1c0d;
-    border-color: #de1b0c; }
+    background-color: #d62c1a;
+    border-color: #ca2a19; }
   .home .btn-signup:focus {
-    box-shadow: 0 0 0 3px rgba(234, 28, 13, 0.25);
-    background-color: #f22112;
-    border-color: #ea1c0d; }
+    box-shadow: 0 0 0 3px rgba(214, 44, 26, 0.25);
+    background-color: #e12e1c;
+    border-color: #d62c1a; }
   .home .btn-signup:not(:disabled):not(.disabled).active:focus, .home .btn-signup:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(222, 27, 12, 0.5); }
+    box-shadow: 0 0 0 3px rgba(202, 42, 25, 0.5); }
 
 .home .btn-login {
   background: #4CAF50;

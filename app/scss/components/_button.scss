@@ -62,7 +62,7 @@ $active-focus-border: darken($background, 15.5%);
     @include btn-size(0.8rem, 2.5rem, 1.2rem, 1.5, .25rem)
   }
   .btn-signup{
-    @include btn-var(#f44336,white);
+    @include btn-var(#e74c3c,white);
   }
   .btn-login{
     @include btn-var(#4CAF50,white);
