@@ -4,13 +4,16 @@
 $font-family:'Raleway', sans-serif;
 $global-font-size:100%;
 
+//App font
+$list-item-span-size:1.2rem;
+
 // Font weights
 $light: 200;
 $regular: 400;
 $semi-bold: 600;
 $bold:700;
 
-// Base Font
+// HOME Base Font
 $base-font-family: 'Raleway', sans-serif;;
 $base-font-weight: $regular;
 $base-font-size: 1em;
@@ -19,11 +22,10 @@ $text-light: white;
 
 // Headings
 $header-font-weight: $bold;
-
-$h1-mobile-size: 2.7em;
+$h1-home-mobile-size: 2.7em;
 $h1-home-md-size: 3.5rem;
 $h1-home-lg-size: 4.5rem;
-//Media queries
+
 
 
 html {
@@ -34,16 +36,14 @@ body {
   font-family: $font-family; 
 }
 
-p{
-  font-family: $base-font-family;
-  font-size: $base-font-size;
-  line-height: $base-line-height;
-  
+span,p{
+  font-size:$list-item-span-size;
 }
 
 .home{
+  font-family: $base-font-family;
   h1 {
-    font-size: $h1-mobile-size;
+    font-size: $h1-home-mobile-size;
     font-weight: $header-font-weight; 
   @include mq(md){
     font-size: $h1-home-md-size;
@@ -59,11 +59,13 @@ p{
      font-size: 2.4rem; 
     }
   }
-
+  p{
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+  }
   .font-light{
     color:$text-light
 }
-  
 }
 
 

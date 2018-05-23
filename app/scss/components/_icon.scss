@@ -1,6 +1,7 @@
 $home-icons-size: 4rem;
 $home-icons-color: rgba(0, 0, 0, 0.76);
 
+.home{
 .material-icons.mi-home {
   font-size: $home-icons-size; 
   padding: 1.2rem 1rem;
@@ -11,7 +12,6 @@ $home-icons-color: rgba(0, 0, 0, 0.76);
   @include mq(down-xs){
     padding: 0rem 1rem 0 0;
   }
-  
 }
 .mi-quote{
   font-size: 3rem;
@@ -20,7 +20,23 @@ $home-icons-color: rgba(0, 0, 0, 0.76);
 .material-icons.md-dark {
   color: $home-icons-color; 
 }
-
 .material-icons.md-dark.md-inactive {
   color: rgba(0, 0, 0, 0.26); 
+}  
+}
+
+
+$todo-left-controls-icon-size: 1.7rem;
+$todo-right-controls-icon-size: 1.5rem;
+
+.todo-list{
+  .drag-icon,.complete-icon{
+    font-size: $todo-left-controls-icon-size;
+  }
+  .priority-icon,.schedule-icon,.delete-icon{
+    font-size: $todo-right-controls-icon-size;
+  }
+  .drag-icon{
+    padding: 0.5rem 0rem;
+  }
 }

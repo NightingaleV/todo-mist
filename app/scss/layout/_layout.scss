@@ -1,2 +1,7 @@
 /* Scss Document */
-
+@mixin d-flex($direction, $horizontal, $vertical) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}

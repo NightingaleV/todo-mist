@@ -33,7 +33,7 @@
   </nav>
   <div class="container">
     <div class="row">
-      <aside class="sidebar d-none d-sm-block col-7 col-sm-4">
+      <aside class="sidebar d-none d-sm-block col-7 col-sm-3">
         <div class="top-filter">
           <ul class="top-filter-list">
             <li class="top-filter-item"><span class="top-filter-label">Inbox</span> </li>
@@ -67,218 +67,185 @@
             <li class="todo-item">
               <div class="todo-left">
                 <div class="draggable-action invisible-space"> <i class="drag-icon material-icons">drag_indicator</i> </div>
-                <div class="complete-action"> <i class="material-icons">panorama_fish_eye</i> </div>
-                <span class="todo-label">Return the book</span>
-              </div>
-              <div class="todo-right">
-                <div class="todo-controls">
-                  <div class="btn-group" role="group">
-                    <button class="btn btn-warning dropdown-toggle btn-priority" type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons">whatshot</i> </button>
-                    <div class="priority-dropdown dropdown-menu" aria-labelledby="btn-priority">
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 2</span>     
-                    </a>
-                    
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
-                      </a>
-                    
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 3</span>
-                      </a>
-                    
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 4</span>
-                      </a>
-                      </div>
-                  </div>
-                  <button class="btn btn-primary"> <i class="material-icons">schedule</i> </button>
-                  <button class="btn btn-danger"> <i class="material-icons">delete</i> </button>
+                <div class="complete-action">
+                  <button class="btn btn-complete"> 
+                    <i class="material-icons complete-icon">panorama_fish_eye</i> 
+                  </button>
                 </div>
-              </div>
-
-
-            </li>
-            <li class="todo-item">
-              <div class="todo-left">
-                <div class="draggable-action invisible-space"> <i class="drag-icon material-icons">drag_indicator</i> </div>
-                <div class="complete-action"> <i class="material-icons">panorama_fish_eye</i> </div>
-                <span class="todo-label">Return the book</span>
+                <span class="todo-label">Destroy the ring</span>
               </div>
               <div class="todo-right">
                 <div class="todo-controls">
                   <div class="btn-group" role="group">
-                    <button class="btn btn-warning dropdown-toggle btn-priority" type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons">whatshot</i> </button>
+                    <button class="btn btn-warning btn-priority dropdown-toggle " type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons priority-icon">whatshot</i> </button>
                     <div class="priority-dropdown dropdown-menu" aria-labelledby="btn-priority">
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
                       <span>priority 2</span>     
-                    </a>
-                    
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 3</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 4</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 3</span>
                       </a>
-                      </div>
+                      <a class="dropdown-item" href="#">
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 4</span>
+                      </a>
+                    </div>
                   </div>
-                  <button class="btn btn-primary"> <i class="material-icons">schedule</i> </button>
-                  <button class="btn btn-danger"> <i class="material-icons">delete</i> </button>
+                  <button class="btn btn-schedule"> <i class="material-icons schedule-icon">schedule</i> </button>
+                  <button class="btn btn-delete"> <i class="material-icons delete-icon">delete</i> </button>
                 </div>
               </div>
             </li>
             <li class="todo-item">
               <div class="todo-left">
                 <div class="draggable-action invisible-space"> <i class="drag-icon material-icons">drag_indicator</i> </div>
-                <div class="complete-action"> <i class="material-icons">panorama_fish_eye</i> </div>
-                <span class="todo-label">Return the book</span>
+                <div class="complete-action">
+                  <button class="btn btn-complete"> 
+                    <i class="material-icons complete-icon">panorama_fish_eye</i> 
+                  </button>
+                </div>
+                <span class="todo-label">Defeat a Sauron</span>
               </div>
               <div class="todo-right">
                 <div class="todo-controls">
                   <div class="btn-group" role="group">
-                    <button class="btn btn-warning dropdown-toggle btn-priority" type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons">whatshot</i> </button>
+                    <button class="btn btn-warning btn-priority dropdown-toggle " type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons priority-icon">whatshot</i> </button>
                     <div class="priority-dropdown dropdown-menu" aria-labelledby="btn-priority">
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
                       <span>priority 2</span>     
-                    </a>
-                    
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 3</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 4</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 3</span>
                       </a>
-                      </div>
+                      <a class="dropdown-item" href="#">
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 4</span>
+                      </a>
+                    </div>
                   </div>
-                  <button class="btn btn-primary"> <i class="material-icons">schedule</i> </button>
-                  <button class="btn btn-danger"> <i class="material-icons">delete</i> </button>
+                  <button class="btn btn-schedule"> <i class="material-icons schedule-icon">schedule</i> </button>
+                  <button class="btn btn-delete"> <i class="material-icons delete-icon">delete</i> </button>
                 </div>
               </div>
             </li>
             <li class="todo-item">
               <div class="todo-left">
                 <div class="draggable-action invisible-space"> <i class="drag-icon material-icons">drag_indicator</i> </div>
-                <div class="complete-action"> <i class="material-icons">panorama_fish_eye</i> </div>
-                <span class="todo-label">Return the book</span>
+                <div class="complete-action">
+                  <button class="btn btn-complete"> 
+                    <i class="material-icons complete-icon">panorama_fish_eye</i> 
+                  </button>
+                </div>
+                <span class="todo-label">Write a book</span>
               </div>
               <div class="todo-right">
                 <div class="todo-controls">
                   <div class="btn-group" role="group">
-                    <button class="btn btn-warning dropdown-toggle btn-priority" type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons">whatshot</i> </button>
+                    <button class="btn btn-warning btn-priority dropdown-toggle " type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons priority-icon">whatshot</i> </button>
                     <div class="priority-dropdown dropdown-menu" aria-labelledby="btn-priority">
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
                       <span>priority 2</span>     
-                    </a>
-                    
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 3</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 4</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 3</span>
                       </a>
-                      </div>
+                      <a class="dropdown-item" href="#">
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 4</span>
+                      </a>
+                    </div>
                   </div>
-                  <button class="btn btn-primary"> <i class="material-icons">schedule</i> </button>
-                  <button class="btn btn-danger"> <i class="material-icons">delete</i> </button>
+                  <button class="btn btn-schedule"> <i class="material-icons schedule-icon">schedule</i> </button>
+                  <button class="btn btn-delete"> <i class="material-icons delete-icon">delete</i> </button>
                 </div>
               </div>
             </li>
             <li class="todo-item">
               <div class="todo-left">
                 <div class="draggable-action invisible-space"> <i class="drag-icon material-icons">drag_indicator</i> </div>
-                <div class="complete-action"> <i class="material-icons">panorama_fish_eye</i> </div>
-                <span class="todo-label">Return the book</span>
+                <div class="complete-action">
+                  <button class="btn btn-complete"> 
+                    <i class="material-icons complete-icon">panorama_fish_eye</i> 
+                  </button>
+                </div>
+                <span class="todo-label">Learn some magic tricks with spiky hat </span>
               </div>
               <div class="todo-right">
                 <div class="todo-controls">
                   <div class="btn-group" role="group">
-                    <button class="btn btn-warning dropdown-toggle btn-priority" type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons">whatshot</i> </button>
+                    <button class="btn btn-warning btn-priority dropdown-toggle " type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons priority-icon">whatshot</i> </button>
                     <div class="priority-dropdown dropdown-menu" aria-labelledby="btn-priority">
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
                       <span>priority 2</span>     
-                    </a>
-                    
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 3</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 4</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 3</span>
                       </a>
-                      </div>
+                      <a class="dropdown-item" href="#">
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 4</span>
+                      </a>
+                    </div>
                   </div>
-                  <button class="btn btn-primary"> <i class="material-icons">schedule</i> </button>
-                  <button class="btn btn-danger"> <i class="material-icons">delete</i> </button>
+                  <button class="btn btn-schedule"> <i class="material-icons schedule-icon">schedule</i> </button>
+                  <button class="btn btn-delete"> <i class="material-icons delete-icon">delete</i> </button>
                 </div>
               </div>
             </li>
             <li class="todo-item">
               <div class="todo-left">
                 <div class="draggable-action invisible-space"> <i class="drag-icon material-icons">drag_indicator</i> </div>
-                <div class="complete-action"> <i class="material-icons">panorama_fish_eye</i> </div>
-                <span class="todo-label">Return the book</span>
+                <div class="complete-action">
+                  <button class="btn btn-complete"> 
+                    <i class="material-icons complete-icon">panorama_fish_eye</i> 
+                  </button>
+                </div>
+                <p class="todo-label">Buy some Halflings' Leaf from local deal..ehm farmer</p>
               </div>
               <div class="todo-right">
                 <div class="todo-controls">
                   <div class="btn-group" role="group">
-                    <button class="btn btn-warning dropdown-toggle btn-priority" type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons">whatshot</i> </button>
+                    <button class="btn btn-warning btn-priority dropdown-toggle " type="button" data-toggle="dropdown" aria-expanded="false"> <i class="material-icons priority-icon">whatshot</i> </button>
                     <div class="priority-dropdown dropdown-menu" aria-labelledby="btn-priority">
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
                       <span>priority 2</span>     
-                    </a>
-                    
-                      <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 3</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i><span>priority 1</span>
                       </a>
-                    
                       <a class="dropdown-item" href="#">
-                      <i class="priority-dropdown-icon material-icons">whatshot</i>
-                      <span>priority 4</span>
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 3</span>
                       </a>
-                      </div>
+                      <a class="dropdown-item" href="#">
+                        <i class="priority-dropdown-icon material-icons">whatshot</i>
+                        <span>priority 4</span>
+                      </a>
+                    </div>
                   </div>
-                  <button class="btn btn-primary"> <i class="material-icons">schedule</i> </button>
-                  <button class="btn btn-danger"> <i class="material-icons">delete</i> </button>
+                  <button class="btn btn-schedule"> <i class="material-icons schedule-icon">schedule</i> </button>
+                  <button class="btn btn-delete"> <i class="material-icons delete-icon">delete</i> </button>
                 </div>
               </div>
             </li>

@@ -1,13 +1,18 @@
+//Todo Left controls
+$complete-color:black;
+$btn-complete-background:transparent;
+$complete-hover-color:white;
+$btn-complete-hover-background:#4CAF50;
 
-$background:#e74c3c;
-$hover-background: darken($background, 7.5%);
-$hover-border: darken($background, 10%);
-$active-background: darken($background, 10%);
-$active-border: darken($background, 12.5%);
-$active-focus-border: darken($background, 15.5%);
+//Todo Right controls
+$todo-right-controls-color:white;
+$btn-priority-background:#e67e22;
+$btn-schedule-background:#f1c40f;
+$btn-delete-background:#e74c3c;
 
 
-@mixin btn-var(
+
+@mixin btn-color(
   $background,$color, 
   $hover-background: darken($background, 7.5%), 
   $hover-border: darken($background, 10%), 
@@ -62,9 +67,51 @@ $active-focus-border: darken($background, 15.5%);
     @include btn-size(0.8rem, 2.5rem, 1.2rem, 1.5, .25rem)
   }
   .btn-signup{
-    @include btn-var(#e74c3c,white);
+    @include btn-color(#e74c3c,white);
   }
   .btn-login{
-    @include btn-var(#4CAF50,white);
+    @include btn-color(#4CAF50,white);
   }
 }
+
+//Todo Left controls
+.todo-left{
+  .btn{
+    @include d-flex(row,center,center);
+  }
+  .btn-complete{
+    @include btn-size(0rem,0rem,1rem,1.5,1rem);
+    @include btn-color($btn-complete-background, $complete-color);    
+    &:hover{
+      @include btn-color($btn-complete-hover-background, $complete-hover-color);
+    }
+  }
+}
+
+//Todo Right controls
+  .todo-controls {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    
+    .btn{
+      @include d-flex(row,center,center);
+      @include btn-size(0.2rem,0.2rem,1rem,1.5,.25rem);
+      margin: 0 0.3rem;
+    }
+    
+    .btn-priority{
+      @include btn-color($btn-priority-background, $todo-right-controls-color);
+      
+      &:after{
+        display: none;
+      }
+    }
+    .btn-schedule{
+      @include btn-color($btn-schedule-background, $todo-right-controls-color)
+    }
+    .btn-delete{
+      @include btn-color($btn-delete-background, $todo-right-controls-color)
+    }
+    
+  }

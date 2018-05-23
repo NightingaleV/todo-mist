@@ -7,18 +7,14 @@
 // Font styles
 @import "base/_typography.scss";
 
-//Media queries
-@import "base/_media_queries.scss";
-
 // Layout
 @import "layout/_layout.scss";
 @import "layout/_home_layout.scss";
 @import "layout/_navbar.scss";
+@import "layout/_todo.scss";
 
 // Components
 @import "components/_icon.scss";
 @import "components/_button.scss";
-@import "components/_list.scss";
-
 //Media queries
 @import "base/_media_queries.scss";

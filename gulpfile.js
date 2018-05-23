@@ -107,7 +107,7 @@ gulp.task('watch', ['browserSync', 'sass', 'buildScripts'], function () {
 	gulp.watch(Paths.JS, ['buildScripts']);
 });
 
-gulp.task('runWatchers', function (callback) {
+gulp.task('runWatcher', function (callback) {
 	runSequence(['sass', 'browserSync', 'watch'],
 		callback
 	);
