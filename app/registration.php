@@ -1,3 +1,4 @@
+<?php include('php/user/user-register.php') ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -30,6 +31,14 @@
             <h1 class="text-center mt-5 mt-sm-0">Sign up now!</h1>
             <div class="col-12 d-none d-md-block col-lg-10 offset-lg-1">
               <p class="mt-3">It is free! What are you waiting for?</p>
+              <?php 
+                if ( $error != '' ) {
+								echo $errorMessage;
+							 }
+							 if ( $success != '' ) {
+								echo $successMessage;
+							 }
+              ?>
             </div>
           </div>
           <div class="col-12 col-sm-8 col-lg-4">
@@ -52,7 +61,7 @@
                 <input name="password2" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
               </div>
               <div class="text-center">
-                <button name="submit" type="submit" class="btn btn-form btn-signup btn-lg mt-2">Sign up!</button>
+                <button name="registration" type="submit" class="btn btn-form btn-signup btn-lg mt-2">Sign up!</button>
               </div>
 
             </form>
