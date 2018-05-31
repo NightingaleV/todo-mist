@@ -20,7 +20,7 @@ var Paths = {
 	DIST_CSS: 'dist/css',
 	DIST_JS: 'dist/js',
 	PHP: 'app/*.php',
-	PHP_TEMPLATES: 'app/templates/*.php',
+	PHP_TEMPLATES: 'app/templates/**/*.php',
 	PHP_SOURCE: 'app/php/*.php',
 	SCSS: 'app/scss/**/*.scss',
 	CSS: 'app/css/*.css',
