@@ -190,24 +190,30 @@ hr.row-gap {
     min-height: 3rem; }
     .todo-list .todo-item:last-child {
       border-bottom: #e0e0e0 solid 0.05rem; }
-  .todo-list .todo-left, .todo-list .todo-right {
+  .todo-list .todo-left-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 470px;
+    position: relative;
+    white-space: normal; }
+  .todo-list .todo-left, .todo-list .todo-task, .todo-list .todo-right {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     height: 100%; }
 
-.todo-left {
-  flex-wrap: nowrap;
-  max-width: 470px;
-  position: relative;
-  white-space: normal; }
-  .todo-left .draggable-action {
-    padding: 0 0rem 0 0; }
-  .todo-left .complete-action {
-    padding: 0 0.25rem 0 0.5rem; }
-  .todo-left .todo-label {
-    line-height: 1.5; }
+.todo-left .draggable-action {
+  padding: 0 0rem 0 0; }
+
+.todo-left .complete-action {
+  padding: 0 0.25rem 0 0.5rem; }
+
+.todo-left .todo-label {
+  line-height: 1.5; }
 
 .home .material-icons.mi-home {
   font-size: 4rem;

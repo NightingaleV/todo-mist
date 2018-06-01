@@ -15,16 +15,19 @@
       border-bottom: rgba(224,224,224,1.00) solid .05rem;
     }
   }
-  .todo-left,.todo-right{
+  .todo-left-wrapper{
+    @include d-flex(row,flex-start,center);
+    flex-wrap: nowrap;
+    max-width: 470px;
+    position: relative;
+    white-space: normal;
+  }
+  .todo-left,.todo-task,.todo-right{
     @include d-flex(row,flex-start,center);
     height: 100%;
   }
 }
 .todo-left{
-    flex-wrap: nowrap;
-    max-width: 470px;
-    position: relative;
-    white-space: normal;
     .draggable-action{
       padding: 0 0rem 0 0;
     }
