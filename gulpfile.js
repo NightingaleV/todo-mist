@@ -104,7 +104,7 @@ gulp.task('watch', ['browserSync', 'sass', 'buildScripts'], function () {
 	gulp.watch(Paths.PHP, browserSync.reload);
 	gulp.watch(Paths.PHP_SOURCE, browserSync.reload);
 	gulp.watch(Paths.PHP_TEMPLATES, browserSync.reload);
-	gulp.watch(Paths.JS, ['buildScripts']);
+	gulp.watch(Paths.JS_MODULES, ['buildScripts']);
 });
 
 gulp.task('runWatcher', function (callback) {
