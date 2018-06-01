@@ -1,3 +1,5 @@
+<?php session_start();?>
+<?php include('php/db-connection.php') ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,19 +25,11 @@
       <?php include('templates/app-sidebar.php') ?>
       <main class="content col-12 col-sm-8">
         <div class="current-project">
-          <h2 class="current-project-label">Inbox</h2>
-          <div class="top-right-controls">
-            <div class="project-edit">
-              <button class="btn project-edit-btn" type="button"><i class="project-edit-icon material-icons">edit</i></button>
-            </div>
-            <div class="todo-sort">
-              <button class="btn todo-sort-button" type="button"><i class="todo-sort-icon material-icons">sort</i></button>
-            </div>
-          </div>
+          <?php include('templates/app-current-project.php') ?>
         </div>
         <div class="todo">
           <ul class="todo-list list-group list-group-flush">
-            <?php include('templates/todo-list/todo-task.php') ?>
+            <?php include('php/todo/render-tasks.php') ?>
           </ul>
           <div class="add-bar"> <a href="" class="action-add-item">Add Task</a> </div>
         </div>
@@ -43,9 +37,5 @@
     </div>
   </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
+<?php include('templates/app-js-scripts.php') ?>
 </html>

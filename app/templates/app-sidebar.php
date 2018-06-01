@@ -8,8 +8,9 @@
   </div>
   <div class="projects">
     <ul class="projects-list">
-      <li class="project-item"><a href=""><span class="project-label">Programming</span></a> </li>
-      <li class="project-item"><a href=""><span class="project-label">School</span></a> </li>
+      <li class="project-item"><span class="project-label">Inbox</span> </li>
+      <li class="project-item"><span class="project-label">Save the Middle Earth</span> </li>
+      <li class="project-item"><a class="project-button" href=""><span class="project-label">School</span></a> </li>
       <li class="project-item"><a href=""><span class="project-label">Work</span></a> </li>
       <li class="project-item"><a href=""><span class="project-label">Relaxing</span></a> </li>
       <li class="project-item"><a href=""><span class="project-label">Education</span></a> </li>

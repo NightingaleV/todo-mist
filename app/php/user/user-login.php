@@ -5,6 +5,7 @@ $error = '';
 //User already logged in
 if(array_key_exists('id', $_COOKIE) && $_COOKIE['id'] != ''){
 	$_SESSION['id'] = $_COOKIE['id'];
+  $_SESSION['username'] = $_COOKIE['username'];
 	header( 'Location: app.php' );
 }
 
