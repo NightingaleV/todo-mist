@@ -1,5 +1,6 @@
-<?php session_start();?>
-<?php include('php/db-connection.php') ?>
+<?php session_start();
+require("php/db-connection.php");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,12 +25,10 @@
     <div class="row">
       <?php include('templates/app-sidebar.php') ?>
       <main class="content col-12 col-sm-8">
-        <div class="current-project">
-          <?php include('templates/app-current-project.php') ?>
-        </div>
-        <div class="todo">
+        <?php include('templates/app-project-title.php') ?>
+        <div class="todo-wrapper">
           <ul class="todo-list list-group list-group-flush">
-            <?php include('php/todo/render-tasks.php') ?>
+            <?php include('php/app-modules/render-tasks.php') ?>
           </ul>
           <div class="add-bar"> <a href="" class="action-add-item">Add Task</a> </div>
         </div>

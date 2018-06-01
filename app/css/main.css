@@ -169,12 +169,12 @@ hr.row-gap {
   .home .navbar-change .hamburger-icon {
     color: rgba(0, 0, 0, 0.76); }
 
-.current-project {
+.project-title-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  .current-project .top-right-controls {
+  .project-title-wrapper .top-right-controls {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
