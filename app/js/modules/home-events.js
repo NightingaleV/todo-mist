@@ -1,3 +1,4 @@
+$(document).ready(function(){
 //Changing class on navbar while scrolling down
 $(window).scroll(function() {     
     var scroll = $(window).scrollTop(); 
@@ -9,4 +10,5 @@ $(window).scroll(function() {
         //console.log('a'); 
         $(".navbar").removeClass("navbar-change"); 
     } 
+});
 });
