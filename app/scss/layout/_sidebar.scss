@@ -1,8 +1,16 @@
-/* Scss Document */
 
-.project-list{
+
+ul.project-list{
   
-  .project-item{
+  li.project-item{
+    padding: 1.25rem 0.25rem;
+  }
+}
+
+//Tag styles
+ul.tag-list{
+  
+  li.tag-item{
     padding: 0.5rem 0.25rem;
   }
 }

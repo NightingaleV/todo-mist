@@ -25,14 +25,13 @@ require("php/db-connection.php");
     <div class="row">
       <?php include('templates/app-sidebar.php') ?>
       <main class="content col-12 col-sm-9">
-        <?php include('templates/app-modules/todo-title.php') ?>
+        <?php include('templates/app-todo-title.php') ?>
         <div class="todo-wrapper">
           <ul class="todo-list list-group list-group-flush">
-            <?php include('php/render-modules/render-tasks.php') ?>
+            <?php include('php/app-modules/render-tasks.php') ?>
           </ul>
-          <?php include('templates/app-modules/todo-add-task.php') ?>
+          <?php include('templates/app-todo-add-task.php') ?>
         </div>
-        <?php include('templates/app-modules/modal-create-task.php') ?>
       </main>
     </div>
   </div>

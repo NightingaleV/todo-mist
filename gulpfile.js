@@ -21,7 +21,7 @@ var Paths = {
 	DIST_JS: 'dist/js',
 	PHP: 'app/*.php',
 	PHP_TEMPLATES: 'app/templates/**/*.php',
-	PHP_SOURCE: 'app/php/*.php',
+	PHP_SOURCE: 'app/php/**/*.php',
 	SCSS: 'app/scss/**/*.scss',
 	CSS: 'app/css/*.css',
 	JS: 'app/js/',
@@ -121,13 +121,13 @@ gulp.task('cleanDist', function () {
 
 //Building app
 gulp.task('build', function (callback) {
-	runSequence('cleanDist', ['messageStartBuilding', 'copyPhp', 'sass', 'copyCss', 'copyScripts', 'messageEndBuilding'], callback);
+	runSequence('cleanDist', ['messageStartBuilding', 'copyPhp', 'sass', 'copyCss', 'buildScripts', 'messageEndBuilding'], callback);
 });
 
 
 //Building app
 gulp.task('default', function (callback) {
-	runSequence('cleanDist', ['messageStartBuilding', 'copyPhp', 'sass', 'copyCss', 'copyScripts', 'messageEndBuilding'], callback);
+	runSequence('cleanDist', ['messageStartBuilding', 'copyPhp', 'sass', 'copyCss', 'buildScripts', 'messageEndBuilding'], callback);
 });
 
 gulp.task('pages', function () {

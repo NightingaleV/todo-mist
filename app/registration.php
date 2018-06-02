@@ -1,4 +1,4 @@
-<?php include('php/user/user-register.php') ?>
+<?php include('php/user-modules/user-register.php') ?>
 <!doctype html>
 <html lang="en">
 <head>

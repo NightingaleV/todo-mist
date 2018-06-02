@@ -13,7 +13,7 @@
 <div class="collapse multi-collapse" id="addTaskInline">
   <div class="card card-body">
     <form class="addTaskInline-form">
-      <div class="addTaskInline input-group row">
+      <div class="addTaskInline-container input-group row">
         <div class="addTaskInline-btn-box col-1 input-group-prepend">
           <button class="addTaskInline-btn  btn btn-danger" type="button">
             <i class="material-icons">add</i>
@@ -72,17 +72,7 @@
               <div class="addTask-tag form-group">
                 <div class="addTask-tag form-group">
                   <label class="addTask-tag-label" for="tagSelect">Example multiple select</label>
-                  <select multiple class="addTask-tag-select form-control h-100" id="tagSelect">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                  <select multiple class="addTask-tag-select form-control" id="tagSelect">
                   </select>
                 </div>
               </div>

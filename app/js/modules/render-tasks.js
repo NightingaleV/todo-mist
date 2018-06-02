@@ -3,7 +3,7 @@ $(document).ready(function () {
   //Get data from server
   function renderTasks(project) {
     $.ajax({
-      url: 'php/app-modules/render-tasks.php',
+      url: 'php/render-modules/render-tasks.php',
       type: 'GET',
       dataType:'html',
       data: {

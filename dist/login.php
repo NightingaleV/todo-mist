@@ -1,3 +1,4 @@
+<?php include('php/user/user-login.php') ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,8 +21,8 @@
   <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body class="login-page">
-  <?php include('templates/navbar-page.php') ?>
+<body class="home login-page">
+  <?php include('templates/home-navbar.php') ?>
   <main id="top-section">
     <div class="overlay-background h-100 d-flex align-items-centerd-flex align-items-center">
       <div class="container">
@@ -37,8 +38,17 @@
                 <label for="exampleInputPassword1">Password</label>
                 <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
               </div>
+              <div class="form-check">
+                <input name="stayloggedin" type="checkbox" class="form-check-input" id="cookie-checkbox" value="1">
+                <label class="form-check-label" for="cookie-checkbox">Keep me logged in!</label>
+              </div>
+              <?php 
+                if ( $error != '' ) {
+								echo $errorMessage;
+							 }
+              ?>
               <div class="text-center">
-                <button name="submit" type="submit" class="btn btn-success btn-lg mt-3">Log in</button>
+                <button name="login" type="submit" class="btn btn-form btn-login btn-lg mt-3">Log in</button>
               </div>
             </form>
           </div>

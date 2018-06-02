@@ -9,12 +9,12 @@
   </div>
   <div class="projects">
     <ul class="project-list list-group list-group-flush">
-      <?php include(dirname(__FILE__)."/../php/render-modules/render-projects.php") ?>
+      <?php include(dirname(__FILE__)."/../php/app-modules/render-projects.php") ?>
     </ul>
   </div>
   <div class="tags">
     <ul class="tags-list list-grouph">
-      <?php include(dirname(__FILE__)."/../php/render-modules/render-tags.php") ?>
+      <?php include(dirname(__FILE__)."/../php/app-modules/render-tags.php") ?>
     </ul>
   </div>
 </aside>
