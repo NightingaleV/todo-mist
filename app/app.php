@@ -24,13 +24,13 @@ require("php/db-connection.php");
   <div class="container">
     <div class="row">
       <?php include('templates/app-sidebar.php') ?>
-      <main class="content col-12 col-sm-8">
-        <?php include('templates/app-project-title.php') ?>
+      <main class="content col-12 col-sm-9">
+        <?php include('templates/app-todo-title.php') ?>
         <div class="todo-wrapper">
           <ul class="todo-list list-group list-group-flush">
             <?php include('php/app-modules/render-tasks.php') ?>
           </ul>
-          <div class="add-bar"> <a href="" class="action-add-item">Add Task</a> </div>
+          <?php include('templates/app-todo-add-task.php') ?>
         </div>
       </main>
     </div>
