@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "del": "^3.0.0",
-    "gulp-sassbeautify": "^0.1.0"
+    "gulp-sassbeautify": "^0.1.0",
+    "npm": "^6.1.0"
   }
 }
