@@ -169,6 +169,10 @@ hr.row-gap {
   .home .navbar-change .hamburger-icon {
     color: rgba(0, 0, 0, 0.76); }
 
+/* Scss Document */
+.project-list .project-item {
+  padding: 0.5rem 0.25rem; }
+
 .project-title-wrapper {
   display: flex;
   flex-direction: row;
