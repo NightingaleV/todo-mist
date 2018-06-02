@@ -1,7 +1,8 @@
 <?php 
 if(!isset($_SESSION)){session_start();} 
-
-require(dirname(__FILE__)."/../db-connection.php");
+if(!isset($db)){
+  require(dirname(__FILE__)."/../db-connection.php");
+}
 
 
 if(isset($_GET['project'])){
@@ -9,8 +10,11 @@ if(isset($_GET['project'])){
   $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/task-controls/todo-left-controls.php",TRUE);
   $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/task-controls/todo-right-controls.php",TRUE);
   
-  $result = $db->query("SELECT projects.project, tasks.task, tasks.task_position, tasks.priority FROM projects INNER JOIN tasks ON tasks.project_id=projects.id WHERE projects.user_id = '".$_SESSION['id']."' AND projects.project LIKE '".$_GET['project']."'");
-  
+  $stmt = $db->prepare("SELECT projects.project, tasks.task, tasks.task_position, tasks.priority FROM projects INNER JOIN tasks ON tasks.project_id=projects.id WHERE projects.user_id = ? AND projects.project LIKE ?");
+  $stmt->bind_param("is", $_SESSION['id'], $_GET['project']);
+  $stmt->execute();
+  $result = $stmt->get_result();
+    
   while($rows = $result->fetch_assoc()){
     
     $response .= '<li class="todo-item" data-task-position="'.$rows['task_position'].'" data-task-priority="'.$rows['priority'].'">';
@@ -23,6 +27,9 @@ if(isset($_GET['project'])){
     $response .=    $right_controls;
     $response .=  '</li>';  
   }
+
+  $stmt->close();
+  
   echo $response;
 }
 
