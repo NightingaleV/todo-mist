@@ -1,5 +1,4 @@
 
-
   //Get data from server
   function renderTasks(project) {
     $.ajax({
