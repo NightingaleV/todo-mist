@@ -6,26 +6,26 @@ $('#addTag').on('shown.bs.collapse', function (e) {
 });
 //Inline form - click add button
 $(document).on('click', '.addTag-btn', function (e) {
-  createProject();
+  createTags();
 });
 //Inline form - on enter
 $('.addTag-form').on('submit', function (e) {
-  createProject();
+  createTags();
 });
 
-function createProject(){
+function createTags(){
   event.preventDefault();
   
   if($('.addTag-input').val()){
       //Grab the form data
-      var formProjectData = $('.addTag-form').serialize();
-      console.log(formProjectData);
+      var formTagData = $('.addTag-form').serialize();
+      console.log(formTagData);
       console.log('Inline executed');
       
       //Post the inline form
       $.post({
         url: 'php/create-modules/create-tag.php',
-        data: formProjectData,
+        data: formTagData,
         datatype: FormData,
         success: function (response) {
           console.log('Success to contact the server');
@@ -34,6 +34,7 @@ function createProject(){
             //succesfull add
             //rerender the projects
             $('#addTag').removeClass('show');
+            renderTags();
           }
           if (response === 'duplicated_tag') {
             console.log('it isnot');

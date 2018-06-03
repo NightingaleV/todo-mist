@@ -6,7 +6,7 @@
       <div class="addTag-container input-group">
         <input name="tag" type="text" class="addTag-input form-control" placeholder="New project" aria-label="New task" aria-describedby="basic-addon2">
         <div class="addTag-btn-box input-group-append">
-          <button class="addTag-btn  btn btn-secondary" type="button">
+          <button class="addTag-btn  btn btn-secondary" type="submit">
             <i class="addTag-icon material-icons">add</i>
           </button>
         </div>

@@ -22,7 +22,7 @@ if($_POST['tag']){
     echo 'duplicated_tag';
   }
   else{
-    echo 'project_tag';
+    echo 'tag_added';
   }
 }
 

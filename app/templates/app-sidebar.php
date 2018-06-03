@@ -9,7 +9,7 @@
   </div>
   <div class="projects">
     <div class="project-title-box">
-      <h3 class="projects-title">Projects</h3>
+      <h3 class="project-title">Projects</h3>
       <?php include('templates/app-modules/sidebar-add-project.php') ?>
     </div>
     <ul class="project-list list-group list-group-flush">
@@ -17,11 +17,11 @@
     </ul>
   </div>
   <div class="tags">
-    <div class="tags-title-box">
-      <h3 class="tags-title">Tags</h3>
+    <div class="tag-title-box">
+      <h3 class="tag-title">Tags</h3>
       <?php include('templates/app-modules/sidebar-add-tag.php') ?>
     </div>
-    <ul class="tags-list list-grouph">
+    <ul class="tag-list list-grouph">
       <?php include(dirname(__FILE__)."/../php/render-modules/render-tags.php") ?>
     </ul>
   </div>
