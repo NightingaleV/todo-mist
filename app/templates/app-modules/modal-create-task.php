@@ -10,11 +10,14 @@
       </div>
       <div class="modal-body">
         <div class="container-fluid">
-          <form method="post" class="row addTask-form">
+          <form method="post" class="row addTask-form" autocomplete="off">
             <div class="col-8">
               <div class="addTask-task form-group">
                 <label class="addTask-task-label" for="taskName">Task:</label>
-                <input type="text" name="task" class="form-control" id="taskName" placeholder="...">
+                <div class="invalid-tooltip">
+                  I'm displeased you have nothing to working on!
+                </div>
+                <input type="text" name="task" class="form-control" id="taskName" placeholder="..." data-toggle="popover" data-placement="top" data-content="You already have that task in the project" required>
               </div>
               <div class="form-row">
                 <div class="addTask-project form-group col-8 ">

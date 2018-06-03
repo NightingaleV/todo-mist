@@ -12,14 +12,13 @@
             <i class="material-icons">add</i>
           </button>
         </div>
-        <input type="text" class="addTaskInline-input form-control col-8" placeholder="..." aria-label="New task" aria-describedby="basic-addon2">
+        <input type="text" class="addTaskInline-input form-control col-8" placeholder="My new task is ..." aria-label="New task" aria-describedby="basic-addon2">
         <select class="addTaskInline-priority form-control input-group-append col-3" data-show-content="true" id="prioritySelect">
           <option value="1">Priority 1</option>
           <option value="2">Priority 2</option>
           <option value="3">Priority 3</option>
           <option value="4" selected>Priority 4</option>
         </select>
-        <input type="hidden" class="addTaskInline-priority" name="priority" value="4">
         <input type="hidden" class="addTaskInline-project" name="currentproject" value="<?php echo $_GET['project'] ?>">
       </div>
     </form>

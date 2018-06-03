@@ -8,11 +8,19 @@
     </ul>
   </div>
   <div class="projects">
+    <div class="project-title-box">
+      <h3 class="projects-title">Projects</h3>
+      <?php include('templates/app-modules/sidebar-add-project.php') ?>
+    </div>
     <ul class="project-list list-group list-group-flush">
       <?php include(dirname(__FILE__)."/../php/render-modules/render-projects.php") ?>
     </ul>
   </div>
   <div class="tags">
+    <div class="tags-title-box">
+      <h3 class="tags-title">Tags</h3>
+      <?php include('templates/app-modules/sidebar-add-tag.php') ?>
+    </div>
     <ul class="tags-list list-grouph">
       <?php include(dirname(__FILE__)."/../php/render-modules/render-tags.php") ?>
     </ul>
