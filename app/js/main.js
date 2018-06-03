@@ -47,42 +47,42 @@ function createProject(){
 }
 //CREATE PROJECT THROUGHT INLINE TAB
 //auto focus input for project
-$('#addProject').on('shown.bs.collapse', function (e) {
-  $('.addProject-input').val('');
-  $('.addProject-input').focus();
+$('#addTag').on('shown.bs.collapse', function (e) {
+  $('.addTag-input').val('');
+  $('.addTag-input').focus();
 });
 //Inline form - click add button
-$(document).on('click', '.addProject-btn', function (e) {
+$(document).on('click', '.addTag-btn', function (e) {
   createProject();
 });
 //Inline form - on enter
-$('.addProject-form').on('submit', function (e) {
+$('.addTag-form').on('submit', function (e) {
   createProject();
 });
 
 function createProject(){
   event.preventDefault();
   
-  if($('.addProject-input').val()){
+  if($('.addTag-input').val()){
       //Grab the form data
-      var formProjectData = $('.addProject-form').serialize();
+      var formProjectData = $('.addTag-form').serialize();
       console.log(formProjectData);
       console.log('Inline executed');
       
       //Post the inline form
       $.post({
-        url: 'php/create-modules/create-project.php',
+        url: 'php/create-modules/create-tag.php',
         data: formProjectData,
         datatype: FormData,
         success: function (response) {
           console.log('Success to contact the server');
           console.log(response);
-          if (response === 'project_added') {
+          if (response === 'tag_added') {
             //succesfull add
             //rerender the projects
-            $('#addProject').removeClass('show');
+            $('#addTag').removeClass('show');
           }
-          if (response === 'duplicated_project') {
+          if (response === 'duplicated_tag') {
             console.log('it isnot');
           }
         },
