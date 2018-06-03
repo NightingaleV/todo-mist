@@ -1,4 +1,4 @@
-$(document).ready(function () {
+
 
   //Get data from server
   function renderTasks(project) {
@@ -10,6 +10,7 @@ $(document).ready(function () {
         project: project
       },
       success: function (response) {
+        $('.todo-list').empty();
         $('.todo-list').append(response);
         renderProjectTitle(project);
         addHiddenInput(project);
@@ -34,6 +35,3 @@ $(document).ready(function () {
     history.replaceState(null, null, 'app.php?'.concat($.param({project:projectName})));
   });
 
-
-
-});
