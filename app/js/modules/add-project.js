@@ -34,6 +34,7 @@ function createProject(){
             //succesfull add
             //rerender the projects
             $('#addProject').removeClass('show');
+            renderProjects();
           }
           if (response === 'duplicated_project') {
             console.log('it isnot');

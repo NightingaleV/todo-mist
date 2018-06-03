@@ -8,8 +8,8 @@ if(isset($_SESSION['id'])){
   $response = '';
   
   //Import for future buttons
-  $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/task-controls/todo-left-controls.php",TRUE);
-  $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/task-controls/todo-right-controls.php",TRUE);
+  $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-left-controls.php",TRUE);
+  $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-right-controls.php",TRUE);
   
   $stmt = $db->prepare("SELECT projects.project, projects.project_position FROM projects WHERE projects.user_id = ? AND NOT project = 'Inbox'");
   $stmt->bind_param("i", $_SESSION['id']);
