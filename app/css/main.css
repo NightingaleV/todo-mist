@@ -173,14 +173,14 @@ ul.project-list li.project-item {
   padding: 1.25rem 0.25rem; }
 
 ul.tag-list li.tag-item {
-  padding: 0.5rem 0.25rem; }
+  padding: 0.5rem; }
 
-.project-title-wrapper {
+.todo-title-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center; }
-  .project-title-wrapper .top-right-controls {
+  .todo-title-wrapper .top-right-controls {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
