@@ -48,7 +48,7 @@ $btn-delete-background:#e74c3c;
   line-height: $line-height;
   border-radius: $border-radius;
 }
-
+//Home page
 .home{
   .navbar .btn{
     margin: 0.4rem 0.6rem;
@@ -100,17 +100,17 @@ $btn-delete-background:#e74c3c;
       margin: 0 0.3rem;
     }
     
-    .btn-priority{
+    .btn-task-priority{
       @include btn-color($btn-priority-background, $todo-right-controls-color);
       
       &:after{
         display: none;
       }
     }
-    .btn-schedule{
+    .btn-task-schedule {
       @include btn-color($btn-schedule-background, $todo-right-controls-color)
     }
-    .btn-delete{
+    .btn-task-delete {
       @include btn-color($btn-delete-background, $todo-right-controls-color)
     }
     

@@ -371,61 +371,61 @@ ul.tag-list li.tag-item {
     line-height: 1.5;
     border-radius: 0.25rem;
     margin: 0 0.3rem; }
-  .todo-controls .btn-priority {
+  .todo-controls .btn-task-priority {
     background: #e67e22;
     color: white;
     border-color: #e67e22; }
-    .todo-controls .btn-priority:hover {
+    .todo-controls .btn-task-priority:hover {
       color: white;
       background-color: #cb6b17;
       border-color: #bf6516; }
-    .todo-controls .btn-priority:not(:disabled):not(.disabled):active {
+    .todo-controls .btn-task-priority:not(:disabled):not(.disabled):active {
       color: white;
       background-color: #bf6516;
       border-color: #b45f14; }
-    .todo-controls .btn-priority:focus {
+    .todo-controls .btn-task-priority:focus {
       box-shadow: 0 0 0 3px rgba(191, 101, 22, 0.25);
       background-color: #cb6b17;
       border-color: #bf6516; }
-    .todo-controls .btn-priority:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-priority:not(:disabled):not(.disabled):active:focus {
+    .todo-controls .btn-task-priority:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-task-priority:not(:disabled):not(.disabled):active:focus {
       box-shadow: 0 0 0 3px rgba(180, 95, 20, 0.5); }
-    .todo-controls .btn-priority:after {
+    .todo-controls .btn-task-priority:after {
       display: none; }
-  .todo-controls .btn-schedule {
+  .todo-controls .btn-task-schedule {
     background: #f1c40f;
     color: white;
     border-color: #f1c40f; }
-    .todo-controls .btn-schedule:hover {
+    .todo-controls .btn-task-schedule:hover {
       color: white;
       background-color: #cea70c;
       border-color: #c29d0b; }
-    .todo-controls .btn-schedule:not(:disabled):not(.disabled):active {
+    .todo-controls .btn-task-schedule:not(:disabled):not(.disabled):active {
       color: white;
       background-color: #c29d0b;
       border-color: #b6940b; }
-    .todo-controls .btn-schedule:focus {
+    .todo-controls .btn-task-schedule:focus {
       box-shadow: 0 0 0 3px rgba(194, 157, 11, 0.25);
       background-color: #cea70c;
       border-color: #c29d0b; }
-    .todo-controls .btn-schedule:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-schedule:not(:disabled):not(.disabled):active:focus {
+    .todo-controls .btn-task-schedule:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-task-schedule:not(:disabled):not(.disabled):active:focus {
       box-shadow: 0 0 0 3px rgba(182, 148, 11, 0.5); }
-  .todo-controls .btn-delete {
+  .todo-controls .btn-task-delete {
     background: #e74c3c;
     color: white;
     border-color: #e74c3c; }
-    .todo-controls .btn-delete:hover {
+    .todo-controls .btn-task-delete:hover {
       color: white;
       background-color: #e12e1c;
       border-color: #d62c1a; }
-    .todo-controls .btn-delete:not(:disabled):not(.disabled):active {
+    .todo-controls .btn-task-delete:not(:disabled):not(.disabled):active {
       color: white;
       background-color: #d62c1a;
       border-color: #ca2a19; }
-    .todo-controls .btn-delete:focus {
+    .todo-controls .btn-task-delete:focus {
       box-shadow: 0 0 0 3px rgba(214, 44, 26, 0.25);
       background-color: #e12e1c;
       border-color: #d62c1a; }
-    .todo-controls .btn-delete:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-delete:not(:disabled):not(.disabled):active:focus {
+    .todo-controls .btn-task-delete:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-task-delete:not(:disabled):not(.disabled):active:focus {
       box-shadow: 0 0 0 3px rgba(202, 42, 25, 0.5); }
 
 /*# sourceMappingURL=main.css.map */
