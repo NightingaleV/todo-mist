@@ -34,6 +34,7 @@ function createProject(){
             //succesfull add
             //rerender the projects
             $('#addProject').removeClass('show');
+            renderProjects();
           }
           if (response === 'duplicated_project') {
             console.log('it isnot');
@@ -53,26 +54,26 @@ $('#addTag').on('shown.bs.collapse', function (e) {
 });
 //Inline form - click add button
 $(document).on('click', '.addTag-btn', function (e) {
-  createProject();
+  createTags();
 });
 //Inline form - on enter
 $('.addTag-form').on('submit', function (e) {
-  createProject();
+  createTags();
 });
 
-function createProject(){
+function createTags(){
   event.preventDefault();
   
   if($('.addTag-input').val()){
       //Grab the form data
-      var formProjectData = $('.addTag-form').serialize();
-      console.log(formProjectData);
+      var formTagData = $('.addTag-form').serialize();
+      console.log(formTagData);
       console.log('Inline executed');
       
       //Post the inline form
       $.post({
         url: 'php/create-modules/create-tag.php',
-        data: formProjectData,
+        data: formTagData,
         datatype: FormData,
         success: function (response) {
           console.log('Success to contact the server');
@@ -81,6 +82,7 @@ function createProject(){
             //succesfull add
             //rerender the projects
             $('#addTag').removeClass('show');
+            renderTags();
           }
           if (response === 'duplicated_tag') {
             console.log('it isnot');
@@ -164,13 +166,12 @@ function createTask(sourceOfAction) {
   
   //Request is coming from modal or inline input
   if (sourceOfAction === 'modal') {
+    //Grab the current project to rerender
+    var currentProject = $('.addTask-form').find('#projectSelect option:selected').text();
+    
     if ($('#taskName').val()) {
       var formData = $('.addTask-form').serialize();
       console.log(formData);
-      
-      //Grab the current project to rerender
-      var currentProject = $('.addTask-form').find('#projectSelect option:selected').text();
-
       $.post({
         url: 'php/create-modules/create-task.php',
         data: formData,
@@ -209,9 +210,6 @@ function createTask(sourceOfAction) {
       var formInlineData = $('.addTaskInline-form').serialize();
       console.log(formInlineData);
       console.log('Inline executed');
-      
-      //Grab the current project to rerender
-      var currentProject = $('.project-title').text();
       
       //Post the inline form
       $.post({
@@ -277,6 +275,28 @@ $(window).scroll(function() {
     } 
 });
 });
+function renderProjects() {
+  $.ajax({
+    url: 'php/render-modules/render-projects.php',
+    type: 'POST',
+    dataType: 'html',
+    success: function (response) {
+      $('.project-list').empty();
+      $('.project-list').append(response);
+    }
+  });
+}
+function renderTags() {
+  $.ajax({
+    url: 'php/render-modules/render-tags.php',
+    type: 'POST',
+    dataType: 'html',
+    success: function (response) {
+      $('.tag-list').empty();
+      $('.tag-list').append(response);
+    }
+  });
+}
 
   //Get data from server
   function renderTasks(project) {

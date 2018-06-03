@@ -70,13 +70,12 @@ function createTask(sourceOfAction) {
   
   //Request is coming from modal or inline input
   if (sourceOfAction === 'modal') {
+    //Grab the current project to rerender
+    var currentProject = $('.addTask-form').find('#projectSelect option:selected').text();
+    
     if ($('#taskName').val()) {
       var formData = $('.addTask-form').serialize();
       console.log(formData);
-      
-      //Grab the current project to rerender
-      var currentProject = $('.addTask-form').find('#projectSelect option:selected').text();
-
       $.post({
         url: 'php/create-modules/create-task.php',
         data: formData,
@@ -115,9 +114,6 @@ function createTask(sourceOfAction) {
       var formInlineData = $('.addTaskInline-form').serialize();
       console.log(formInlineData);
       console.log('Inline executed');
-      
-      //Grab the current project to rerender
-      var currentProject = $('.project-title').text();
       
       //Post the inline form
       $.post({

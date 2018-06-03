@@ -7,8 +7,8 @@ if(!isset($db)){
 
 if(isset($_GET['project'])){
   $response = '';
-  $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/task-controls/todo-left-controls.php",TRUE);
-  $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/task-controls/todo-right-controls.php",TRUE);
+  $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-left-controls.php",TRUE);
+  $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-right-controls.php",TRUE);
   
   $stmt = $db->prepare("SELECT projects.project, tasks.task, tasks.task_position, tasks.priority FROM projects INNER JOIN tasks ON tasks.project_id=projects.id WHERE projects.user_id = ? AND projects.project LIKE ?;");
   $stmt->bind_param("is", $_SESSION['id'], $_GET['project']);
