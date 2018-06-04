@@ -41,5 +41,4 @@ if ($_POST[ 'project' ] ) {
   echo 'ROWs in tasks Deleted';
 }
 
-
 ?>
