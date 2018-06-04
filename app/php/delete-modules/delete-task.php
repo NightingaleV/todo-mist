@@ -10,7 +10,7 @@ if ( !isset( $db ) ) {
 if ( $_POST[ 'task' ] && $_POST[ 'project' ] ) {
 
   $user_id = $_SESSION[ 'id' ];
-  $project_active = $_POST[ 'project' ];
+  $current_project = $_POST[ 'project' ];
   $task_name = $_POST[ 'task' ];
   
   //Delete tasks+tags from bridge table
@@ -18,7 +18,7 @@ if ( $_POST[ 'task' ] && $_POST[ 'project' ] ) {
   projects.user_id = ? AND 
   projects.project LIKE ? AND 
   tasks.task LIKE ?)' );
-  $stmt->bind_param( "iss", $user_id, $project_active , $task_name);
+  $stmt->bind_param( "iss", $user_id, $current_project , $task_name);
   $stmt->execute();
   $result = $stmt->get_result();
   $stmt->close();
@@ -30,7 +30,7 @@ AND project_id = (SELECT id FROM projects
 WHERE projects.user_id = ? AND 
       projects.project LIKE ?);
 ' );
-  $stmt->bind_param( "sis", $task_name, $user_id, $project_active);
+  $stmt->bind_param( "sis", $task_name, $user_id, $current_project);
   $stmt->execute();
   $result = $stmt->get_result();
   $stmt->close();

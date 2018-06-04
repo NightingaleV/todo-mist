@@ -27,7 +27,7 @@
   }
 
   //Render tasks when CLICK on projects aside
-  $("li.project-item, li.inbox-item").on('click', function () {
+  $(document).on('click','li.project-item, li.inbox-item', function () {
     var projectName = $(this).children('span').text();
     console.log(projectName);
     renderTasks(projectName);

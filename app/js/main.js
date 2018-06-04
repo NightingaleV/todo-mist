@@ -244,9 +244,7 @@ $(document).on('click', '.btn-project-delete',function(e){
   event.preventDefault();
   
   var projectToDelete = $(this).parents('.project-item').find('.project-label').text();
-  console.log(taskToDelete);
-  var currentProject = $('.project-title').text();
-  console.log(currentProject);
+  console.log(projectToDelete);
   
   $.post({
     url: 'php/delete-modules/delete-project.php',
@@ -255,7 +253,14 @@ $(document).on('click', '.btn-project-delete',function(e){
     success: function(response){
       console.log('Success to contact the server');
       console.log(response);
-      renderProjects(currentProject);
+      renderProjects();
+      
+      //If we are deleting the rendered project
+      var currentProject = $('.todo-title').text();
+      if(projectToDelete === currentProject){
+        renderTasks('Inbox');
+        history.replaceState(null, null, 'app.php?project=Inbox');
+      }
     },
     error: function(){
       console.log('Failure');
@@ -354,7 +359,7 @@ function renderTags() {
   }
 
   //Render tasks when CLICK on projects aside
-  $("li.project-item, li.inbox-item").on('click', function () {
+  $(document).on('click','li.project-item, li.inbox-item', function () {
     var projectName = $(this).children('span').text();
     console.log(projectName);
     renderTasks(projectName);

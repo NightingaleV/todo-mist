@@ -8,8 +8,7 @@ if(isset($_SESSION['id'])){
   $response = '';
   
   //Import for future buttons
-  $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-left-controls.php",TRUE);
-  $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-right-controls.php",TRUE);
+  $project_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/project-controls.php",TRUE);
   
   $stmt = $db->prepare("SELECT projects.project, projects.project_position FROM projects WHERE projects.user_id = ? AND NOT project = 'Inbox'");
   $stmt->bind_param("i", $_SESSION['id']);
@@ -19,6 +18,7 @@ if(isset($_SESSION['id'])){
   while($rows = $result->fetch_assoc()){ 
     $response .= '<li class="project-item list-group-item" data-project-position="'.$rows['project_position'].'">';
     $response .=  '<span class="project-label">'.$rows['project'].'</span>';
+    $response .= $project_controls;
     $response .=    '</li>';
   }
   $stmt->close();
