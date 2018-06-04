@@ -71,7 +71,8 @@ function createTask(sourceOfAction) {
   //Request is coming from modal or inline input
   if (sourceOfAction === 'modal') {
     //Grab the current project to rerender
-    var currentProject = $('.addTask-form').find('#projectSelect option:selected').text();
+    
+    
     
     if ($('#taskName').val()) {
       var formData = $('.addTask-form').serialize();
@@ -85,7 +86,8 @@ function createTask(sourceOfAction) {
           console.log(response);
           if (response === 'task_added') {
             //succesfull add
-            renderTasks(currentProject);
+            var modalSelectedProject = $('.addTask-form').find('#projectSelect option:selected').text();
+            renderTasks(modalSelectedProject);
           }
           if (response === 'duplicated_tasks') {
             console.log('it isnot');
@@ -125,6 +127,7 @@ function createTask(sourceOfAction) {
           console.log(response);
           if (response === 'task_added') {
             //succesfull add
+            var currentProject = $('.todo-title').text();
             renderTasks(currentProject);
             $('#addTaskInline').removeClass('show');
           }

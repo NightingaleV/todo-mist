@@ -19,7 +19,7 @@
   
   //Render Name of current project
   function renderProjectTitle(project){
-    $('.project-title').text(project);
+    $('.todo-title').text(project);
   }
   //Create hidden input for add task inline box
   function addHiddenInput(project){

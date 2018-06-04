@@ -4,7 +4,7 @@ $(document).on('click', '.btn-task-delete',function(e){
   
   var taskToDelete = $(this).parents('.todo-item').find('.todo-label').text();
   console.log(taskToDelete);
-  var currentProject = $('.project-title').text();
+  var currentProject = $('.todo-title').text();
   console.log(currentProject);
   
   $.post({

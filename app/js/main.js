@@ -167,7 +167,8 @@ function createTask(sourceOfAction) {
   //Request is coming from modal or inline input
   if (sourceOfAction === 'modal') {
     //Grab the current project to rerender
-    var currentProject = $('.addTask-form').find('#projectSelect option:selected').text();
+    
+    
     
     if ($('#taskName').val()) {
       var formData = $('.addTask-form').serialize();
@@ -181,7 +182,8 @@ function createTask(sourceOfAction) {
           console.log(response);
           if (response === 'task_added') {
             //succesfull add
-            renderTasks(currentProject);
+            var modalSelectedProject = $('.addTask-form').find('#projectSelect option:selected').text();
+            renderTasks(modalSelectedProject);
           }
           if (response === 'duplicated_tasks') {
             console.log('it isnot');
@@ -221,6 +223,7 @@ function createTask(sourceOfAction) {
           console.log(response);
           if (response === 'task_added') {
             //succesfull add
+            var currentProject = $('.todo-title').text();
             renderTasks(currentProject);
             $('#addTaskInline').removeClass('show');
           }
@@ -237,12 +240,37 @@ function createTask(sourceOfAction) {
 }
 
 //Modal - click on button will request the inserting the task
+$(document).on('click', '.btn-project-delete',function(e){
+  event.preventDefault();
+  
+  var projectToDelete = $(this).parents('.project-item').find('.project-label').text();
+  console.log(taskToDelete);
+  var currentProject = $('.project-title').text();
+  console.log(currentProject);
+  
+  $.post({
+    url: 'php/delete-modules/delete-project.php',
+    data: {project:projectToDelete},
+    datatype: FormData,
+    success: function(response){
+      console.log('Success to contact the server');
+      console.log(response);
+      renderProjects(currentProject);
+    },
+    error: function(){
+      console.log('Failure');
+    }
+  });
+  
+});
+
+//Modal - click on button will request the inserting the task
 $(document).on('click', '.btn-task-delete',function(e){
   event.preventDefault();
   
   var taskToDelete = $(this).parents('.todo-item').find('.todo-label').text();
   console.log(taskToDelete);
-  var currentProject = $('.project-title').text();
+  var currentProject = $('.todo-title').text();
   console.log(currentProject);
   
   $.post({
@@ -318,7 +346,7 @@ function renderTags() {
   
   //Render Name of current project
   function renderProjectTitle(project){
-    $('.project-title').text(project);
+    $('.todo-title').text(project);
   }
   //Create hidden input for add task inline box
   function addHiddenInput(project){
