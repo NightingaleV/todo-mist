@@ -1,3 +1,7 @@
+.content{
+  margin-top: 1rem;
+}
+
 .todo-title-wrapper{
   @include d-flex(row,space-between,center);
   .top-right-controls{

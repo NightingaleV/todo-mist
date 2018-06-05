@@ -1,8 +1,12 @@
-<aside class="sidebar d-none d-sm-block col-7 col-sm-3">
+<aside class="sidebar d-none d-sm-block col-7 col-sm-4">
   <div class="top-filter">
     <ul class="top-filter-list list-group list-group-flush">
-      <li class="list-group-item top-filter-item inbox-item"><span class="project-label">Inbox</span></li>
-      <li class="list-group-item top-filter-item"><span class="top-filter-label">Important</span></li>
+      <li class="list-group-item top-filter-item inbox-item">
+        <i class="inbox-icon add-bar-icon material-icons">inbox</i><span class="project-label">Inbox</span>
+      </li>
+      <li class="list-group-item top-filter-item">
+        <i class="inbox-icon add-bar-icon material-icons">bookmark</i>
+        <span class="top-filter-label">Important</span></li>
       <li class="list-group-item top-filter-item"><span class="top-filter-label">Today</span></li>
       <li class="list-group-item top-filter-item"><span class="top-filter-label">Completed</span></li>
     </ul>

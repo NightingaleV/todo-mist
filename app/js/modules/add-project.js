@@ -1,8 +1,14 @@
 //CREATE PROJECT THROUGHT INLINE TAB
 //auto focus input for project
-$('#addProject').on('shown.bs.collapse', function (e) {
+$('#addProject').on('shown.bs.collapse', function () {
   $('.addProject-input').val('');
   $('.addProject-input').focus();
+  $('.add-project-icon.arrow').removeClass('d-none');
+  $('.add-project-icon.plus').addClass('d-none');
+});
+$('#addProject').on('hidden.bs.collapse', function () {
+  $('.add-project-icon.plus').removeClass('d-none');
+  $('.add-project-icon.arrow').addClass('d-none');
 });
 //Inline form - click add button
 $(document).on('click', '.addProject-btn', function (e) {
@@ -45,4 +51,4 @@ function createProject(){
         }
       });
     }
-}
+};

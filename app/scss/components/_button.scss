@@ -1,14 +1,20 @@
 //Shared controls
 $btn-delete-color:white;
-$btn-delete-background:#e74c3c;
+$btn-delete-background:#F44336;
 $btn-delete-icon-size: 1.5rem;
 $btn-delete-padding-x:0.25rem;
 $btn-delete-padding-y:0.25rem;
 $btn-delete-border-radius:.25rem;
 
+//NAVBAR
+$btn-nav-add-background: #34495e;
+$btn-nav-add-color: white;
+$btn-nav-logout-background: #636e72;
+$btn-nav-logout-color: white;
+
 //PROJECT controls
 $btn-project-add-color:white;
-$btn-project-add-background:green;
+$btn-project-add-background: #27ae60;
 $btn-project-add-padding-x:0.5rem;
 $btn-project-add-padding-y:0.5rem;
 $btn-project-add-border-radius:2rem;
@@ -16,14 +22,14 @@ $btn-project-add-icon-size:1.5rem;
 
 //TAG controls
 $btn-tag-add-color:white;
-$btn-tag-add-background:blue;
+$btn-tag-add-background:#3F51B5;
 $btn-tag-add-padding-x:$btn-project-add-padding-x;
 $btn-tag-add-padding-y:$btn-project-add-padding-y;
 $btn-tag-add-border-radius:$btn-project-add-border-radius;
 $btn-tag-add-icon-size:$btn-project-add-icon-size;
 
 //MODAL Controls
-$btn-modal-add-background:green;
+$btn-modal-add-background:#4CAF50;
 $btn-modal-close-background:grey;
 $btn-modal-color:white;
 $btn-modal-fsize:1rem;
@@ -43,7 +49,7 @@ $btn-todo-top-edit-background:orange;
 $btn-todo-top-edit-icon-size: 1.5rem;
 //Sort button
 $btn-todo-top-sort-color:$btn-todo-top-edit-color;
-$btn-todo-top-sort-background:yellow;
+$btn-todo-top-sort-background:#3F51B5;
 $btn-todo-top-sort-icon-size: $btn-todo-top-edit-icon-size;
 
 //TODO Left controls
@@ -56,9 +62,13 @@ $btn-task-complete-hover-background:#4CAF50;
 //TODO Right controls
 $todo-right-controls-icon-size: 1.5rem;
 $todo-right-controls-color:white;
-$btn-task-priority-background:#e67e22;
-$btn-task-schedule-background:#f1c40f;
-$btn-delete-background:#e74c3c;
+$btn-task-priority-background:#FF9800;
+$btn-priority-1:#e67e22;
+$btn-priority-2:adjust-hue($btn-priority-1, 20%);
+$btn-priority-3:adjust-hue($btn-priority-1, 40%);
+$btn-priority-4:adjust-hue($btn-priority-1, 55%);
+
+$btn-task-schedule-background:#FFEB3B;
 
 
 
@@ -130,6 +140,15 @@ $btn-delete-background:#e74c3c;
   @include d-flex(row,center,center);
 }
 
+//NAVBAR
+.app-navbar{
+  .btn-add-task{
+    @include btn-color($btn-nav-add-background, $btn-nav-add-color);
+  }
+  .btn-logout{
+    @include btn-color($btn-nav-logout-background, $btn-nav-logout-color);
+  }
+}
 //MODAL
 .addTask-btn-box{
   .btn-addTask{
@@ -190,13 +209,31 @@ $btn-delete-background:#e74c3c;
   }
   .priority-icon,.schedule-icon,.delete-icon{
     font-size: $todo-right-controls-icon-size;
+    color: $todo-right-controls-color;
   }
   .btn-task-priority{
     @include btn-color($btn-task-priority-background, $todo-right-controls-color);
-
+    
     &:after{
       display: none;
     }
+  }
+  .priority-dropdown{
+    
+    a.priority-dropdown-item{
+      @include d-flex(row,center,center);
+      color: white;
+      font-size: 1rem;
+      .priority-dropdown-icon{
+        font-size: 1.2rem;
+      }
+      
+    }
+    .btn-priority-1{background: $btn-priority-1}
+    .btn-priority-2{background: $btn-priority-2}
+    .btn-priority-3{background: $btn-priority-3}
+    .btn-priority-4{background: $btn-priority-4}
+    
   }
   .btn-task-schedule {
     @include btn-color($btn-task-schedule-background, $todo-right-controls-color);

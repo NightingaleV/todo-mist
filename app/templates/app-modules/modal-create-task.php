@@ -20,12 +20,10 @@
               </div>
               <div class="form-row">
                 <div class="addTask-project form-group col-6 ">
-                  
                   <select name="project" name="task" class="form-control" id="projectSelect">
               </select>
                 </div>
                 <div class="addTask-priority form-group col-6 ">
-                  
                   <select name="priority" class="form-control" data-show-content="true" id="prioritySelect">
                     <option value="1">Priority 1</option>
                     <option value="2">Priority 2</option>
@@ -45,7 +43,7 @@
           </form>
           </div>
         </div>
-        <div class="addTask-btn-box modal-footer d-flex justify-content-center">
+        <div class="addTask-btn-box modal-footer">
           <button type="submit" class="btn btn-addTask">Add Task</button>
           <button type="button" class="btn btn-addTask-close" data-dismiss="modal">Close</button>
         </div>

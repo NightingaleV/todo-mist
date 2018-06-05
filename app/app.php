@@ -21,10 +21,10 @@ require("php/db-connection.php");
 
 <body class="app">
   <?php include('templates/app-navbar.php') ?>
-  <div class="container">
+  <div class="app-content container">
     <div class="row">
       <?php include('templates/app-sidebar.php') ?>
-      <main class="content col-12 col-sm-9">
+      <main class="content col-12 col-sm-8">
         <?php include('templates/app-modules/todo-title.php') ?>
         <div class="todo-wrapper">
           <ul class="todo-list list-group list-group-flush">

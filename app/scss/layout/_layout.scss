@@ -7,11 +7,28 @@
 }
 
 
+body{
+  background: #ecf0f1;
+}
+
+.app-content{
+  min-height: 100vh;
+  background: white;
+}
+
+$modal-invalid-tooltip-background:red;
 //MODAL
 .modal-add-task{
   max-width:550px;
   
+  .invalid-tooltip{
+    background-color:$modal-invalid-tooltip-background;
+    top:30%;
+    padding: 0.33rem;
+    border-radius: 0 0 .5rem .5rem
+  }
   .modal-footer{
-    padding:.25rem;
+    @include d-flex(row,space-between,center);
+    padding: 0.5rem 1rem 0;
   }
 }

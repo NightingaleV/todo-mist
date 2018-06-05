@@ -13,9 +13,16 @@ ul.project-list{
   
   li.project-item{
     @include d-flex(row,space-between,center);
-    padding: 1.25rem 0.25rem;
+    padding: .75rem 0.25rem;
     .project-left-wrapper{
       @include d-flex(row,flex-start,center);
+    }
+    .draggable-action{
+      padding: 0 0rem 0 0;
+      .drag-icon{
+        font-size:1.5rem;
+        padding: 0.5rem 0rem;
+      }
     }
   }
 }

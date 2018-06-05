@@ -39,10 +39,26 @@ span, p {
     color: white; }
 
 /* Scss Document */
+body {
+  background: #ecf0f1; }
+
+.app-content {
+  min-height: 100vh;
+  background: white; }
+
 .modal-add-task {
   max-width: 550px; }
+  .modal-add-task .invalid-tooltip {
+    background-color: red;
+    top: 30%;
+    padding: 0.33rem;
+    border-radius: 0 0 .5rem .5rem; }
   .modal-add-task .modal-footer {
-    padding: .25rem; }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem 0; }
 
 #top-section {
   background: url("/img/background_002.jpg") no-repeat center center fixed;
@@ -156,15 +172,15 @@ hr.row-gap {
   transition: background 0.3s linear; }
   .home .navbar .navbar-brand {
     color: white;
-    font-size: 1.8em;
+    font-size: 1.8rem;
     font-weight: 700; }
     @media (min-width: 576px) {
       .home .navbar .navbar-brand {
-        font-size: 2.2em; } }
+        font-size: 2.2rem; } }
     @media (min-width: 992px) {
       .home .navbar .navbar-brand {
-        font-size: 2.5em;
-        margin-left: 0.5em; } }
+        font-size: 2.5rem;
+        margin-left: 0.5rem; } }
 
 .home .navbar-change {
   background: white;
@@ -173,6 +189,18 @@ hr.row-gap {
     color: black; }
   .home .navbar-change .hamburger-icon {
     color: rgba(0, 0, 0, 0.76); }
+
+.app-navbar {
+  background: #e74c3c; }
+  .app-navbar .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+  .app-navbar .navbar-brand {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700; }
 
 .projects .project-title-box {
   display: flex;
@@ -191,12 +219,17 @@ ul.project-list li.project-item {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 0.25rem; }
+  padding: .75rem 0.25rem; }
   ul.project-list li.project-item .project-left-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center; }
+  ul.project-list li.project-item .draggable-action {
+    padding: 0 0rem 0 0; }
+    ul.project-list li.project-item .draggable-action .drag-icon {
+      font-size: 1.5rem;
+      padding: 0.5rem 0rem; }
 
 ul.tag-list li.tag-item {
   display: flex;
@@ -204,6 +237,9 @@ ul.tag-list li.tag-item {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem; }
+
+.content {
+  margin-top: 1rem; }
 
 .todo-title-wrapper {
   display: flex;
@@ -337,28 +373,66 @@ ul.tag-list li.tag-item {
   justify-content: center;
   align-items: center; }
 
+.app-navbar .btn-add-task {
+  background: #34495e;
+  color: white;
+  border-color: #34495e; }
+  .app-navbar .btn-add-task:hover {
+    color: white;
+    background-color: #263645;
+    border-color: #22303d; }
+  .app-navbar .btn-add-task:not(:disabled):not(.disabled):active {
+    color: white;
+    background-color: #22303d;
+    border-color: #1d2935; }
+  .app-navbar .btn-add-task:focus {
+    box-shadow: 0 0 0 3px rgba(34, 48, 61, 0.25);
+    background-color: #263645;
+    border-color: #22303d; }
+  .app-navbar .btn-add-task:not(:disabled):not(.disabled).active:focus, .app-navbar .btn-add-task:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 3px rgba(29, 41, 53, 0.5); }
+
+.app-navbar .btn-logout {
+  background: #636e72;
+  color: white;
+  border-color: #636e72; }
+  .app-navbar .btn-logout:hover {
+    color: white;
+    background-color: #515a5e;
+    border-color: #4b5457; }
+  .app-navbar .btn-logout:not(:disabled):not(.disabled):active {
+    color: white;
+    background-color: #4b5457;
+    border-color: #454d50; }
+  .app-navbar .btn-logout:focus {
+    box-shadow: 0 0 0 3px rgba(75, 84, 87, 0.25);
+    background-color: #515a5e;
+    border-color: #4b5457; }
+  .app-navbar .btn-logout:not(:disabled):not(.disabled).active:focus, .app-navbar .btn-logout:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 3px rgba(69, 77, 80, 0.5); }
+
 .addTask-btn-box .btn-addTask {
   padding: 0.25rem 0.5rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  background: green;
+  background: #4CAF50;
   color: white;
-  border-color: green; }
+  border-color: #4CAF50; }
   .addTask-btn-box .btn-addTask:hover {
     color: white;
-    background-color: #005a00;
-    border-color: #004d00; }
+    background-color: #409444;
+    border-color: #3d8b40; }
   .addTask-btn-box .btn-addTask:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #004d00;
-    border-color: #004000; }
+    background-color: #3d8b40;
+    border-color: #39833c; }
   .addTask-btn-box .btn-addTask:focus {
-    box-shadow: 0 0 0 3px rgba(0, 77, 0, 0.25);
-    background-color: #005a00;
-    border-color: #004d00; }
+    box-shadow: 0 0 0 3px rgba(61, 139, 64, 0.25);
+    background-color: #409444;
+    border-color: #3d8b40; }
   .addTask-btn-box .btn-addTask:not(:disabled):not(.disabled).active:focus, .addTask-btn-box .btn-addTask:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(0, 64, 0, 0.5); }
+    box-shadow: 0 0 0 3px rgba(57, 131, 60, 0.5); }
 
 .addTask-btn-box .btn-addTask-close {
   padding: 0.25rem 0.5rem;
@@ -414,24 +488,24 @@ ul.tag-list li.tag-item {
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
-  background: yellow;
+  background: #3F51B5;
   color: white;
-  border-color: yellow;
+  border-color: #3F51B5;
   margin-left: 1rem; }
   .top-right-controls .btn-todo-sort:hover {
     color: white;
-    background-color: #d9d900;
-    border-color: #cccc00; }
+    background-color: #354499;
+    border-color: #32408f; }
   .top-right-controls .btn-todo-sort:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #cccc00;
-    border-color: #bfbf00; }
+    background-color: #32408f;
+    border-color: #2f3c86; }
   .top-right-controls .btn-todo-sort:focus {
-    box-shadow: 0 0 0 3px rgba(204, 204, 0, 0.25);
-    background-color: #d9d900;
-    border-color: #cccc00; }
+    box-shadow: 0 0 0 3px rgba(50, 64, 143, 0.25);
+    background-color: #354499;
+    border-color: #32408f; }
   .top-right-controls .btn-todo-sort:not(:disabled):not(.disabled).active:focus, .top-right-controls .btn-todo-sort:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(191, 191, 0, 0.5); }
+    box-shadow: 0 0 0 3px rgba(47, 60, 134, 0.5); }
   .top-right-controls .btn-todo-sort .sort-icon {
     font-size: 1.5rem; }
 
@@ -493,200 +567,218 @@ ul.tag-list li.tag-item {
     border-radius: 0.25rem;
     margin: 0 0.3rem; }
   .todo-controls .priority-icon, .todo-controls .schedule-icon, .todo-controls .delete-icon {
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    color: white; }
   .todo-controls .btn-task-priority {
-    background: #e67e22;
+    background: #FF9800;
     color: white;
-    border-color: #e67e22; }
+    border-color: #FF9800; }
     .todo-controls .btn-task-priority:hover {
       color: white;
-      background-color: #cb6b17;
-      border-color: #bf6516; }
+      background-color: #d98100;
+      border-color: #cc7a00; }
     .todo-controls .btn-task-priority:not(:disabled):not(.disabled):active {
       color: white;
-      background-color: #bf6516;
-      border-color: #b45f14; }
+      background-color: #cc7a00;
+      border-color: #bf7200; }
     .todo-controls .btn-task-priority:focus {
-      box-shadow: 0 0 0 3px rgba(191, 101, 22, 0.25);
-      background-color: #cb6b17;
-      border-color: #bf6516; }
+      box-shadow: 0 0 0 3px rgba(204, 122, 0, 0.25);
+      background-color: #d98100;
+      border-color: #cc7a00; }
     .todo-controls .btn-task-priority:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-task-priority:not(:disabled):not(.disabled):active:focus {
-      box-shadow: 0 0 0 3px rgba(180, 95, 20, 0.5); }
+      box-shadow: 0 0 0 3px rgba(191, 114, 0, 0.5); }
     .todo-controls .btn-task-priority:after {
       display: none; }
-  .todo-controls .btn-task-schedule {
-    background: #f1c40f;
+  .todo-controls .priority-dropdown a.priority-dropdown-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: white;
-    border-color: #f1c40f; }
+    font-size: 1rem; }
+    .todo-controls .priority-dropdown a.priority-dropdown-item .priority-dropdown-icon {
+      font-size: 1.2rem; }
+  .todo-controls .priority-dropdown .btn-priority-1 {
+    background: #e67e22; }
+  .todo-controls .priority-dropdown .btn-priority-2 {
+    background: #e6bf22; }
+  .todo-controls .priority-dropdown .btn-priority-3 {
+    background: #cbe622; }
+  .todo-controls .priority-dropdown .btn-priority-4 {
+    background: #9ae622; }
+  .todo-controls .btn-task-schedule {
+    background: #FFEB3B;
+    color: white;
+    border-color: #FFEB3B; }
     .todo-controls .btn-task-schedule:hover {
       color: white;
-      background-color: #cea70c;
-      border-color: #c29d0b; }
+      background-color: #ffe715;
+      border-color: #ffe608; }
     .todo-controls .btn-task-schedule:not(:disabled):not(.disabled):active {
       color: white;
-      background-color: #c29d0b;
-      border-color: #b6940b; }
+      background-color: #ffe608;
+      border-color: #fae100; }
     .todo-controls .btn-task-schedule:focus {
-      box-shadow: 0 0 0 3px rgba(194, 157, 11, 0.25);
-      background-color: #cea70c;
-      border-color: #c29d0b; }
+      box-shadow: 0 0 0 3px rgba(255, 230, 8, 0.25);
+      background-color: #ffe715;
+      border-color: #ffe608; }
     .todo-controls .btn-task-schedule:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-task-schedule:not(:disabled):not(.disabled):active:focus {
-      box-shadow: 0 0 0 3px rgba(182, 148, 11, 0.5); }
+      box-shadow: 0 0 0 3px rgba(250, 225, 0, 0.5); }
   .todo-controls .btn-task-delete {
-    background: #e74c3c;
+    background: #F44336;
     color: white;
-    border-color: #e74c3c; }
+    border-color: #F44336; }
     .todo-controls .btn-task-delete:hover {
       color: white;
-      background-color: #e12e1c;
-      border-color: #d62c1a; }
+      background-color: #f22112;
+      border-color: #ea1c0d; }
     .todo-controls .btn-task-delete:not(:disabled):not(.disabled):active {
       color: white;
-      background-color: #d62c1a;
-      border-color: #ca2a19; }
+      background-color: #ea1c0d;
+      border-color: #de1b0c; }
     .todo-controls .btn-task-delete:focus {
-      box-shadow: 0 0 0 3px rgba(214, 44, 26, 0.25);
-      background-color: #e12e1c;
-      border-color: #d62c1a; }
+      box-shadow: 0 0 0 3px rgba(234, 28, 13, 0.25);
+      background-color: #f22112;
+      border-color: #ea1c0d; }
     .todo-controls .btn-task-delete:not(:disabled):not(.disabled).active:focus, .todo-controls .btn-task-delete:not(:disabled):not(.disabled):active:focus {
-      box-shadow: 0 0 0 3px rgba(202, 42, 25, 0.5); }
+      box-shadow: 0 0 0 3px rgba(222, 27, 12, 0.5); }
 
 .projects .btn-project-add {
-  background: green;
+  background: #27ae60;
   color: white;
-  border-color: green;
+  border-color: #27ae60;
   padding: 0.5rem 0.5rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 2rem; }
   .projects .btn-project-add:hover {
     color: white;
-    background-color: #005a00;
-    border-color: #004d00; }
+    background-color: #208f4f;
+    border-color: #1e8449; }
   .projects .btn-project-add:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #004d00;
-    border-color: #004000; }
+    background-color: #1e8449;
+    border-color: #1b7a43; }
   .projects .btn-project-add:focus {
-    box-shadow: 0 0 0 3px rgba(0, 77, 0, 0.25);
-    background-color: #005a00;
-    border-color: #004d00; }
+    box-shadow: 0 0 0 3px rgba(30, 132, 73, 0.25);
+    background-color: #208f4f;
+    border-color: #1e8449; }
   .projects .btn-project-add:not(:disabled):not(.disabled).active:focus, .projects .btn-project-add:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(0, 64, 0, 0.5); }
+    box-shadow: 0 0 0 3px rgba(27, 122, 67, 0.5); }
   .projects .btn-project-add .add-project-icon {
     font-size: 1.5rem; }
 
 .projects .btn-project-delete {
-  background: #e74c3c;
+  background: #F44336;
   color: white;
-  border-color: #e74c3c;
+  border-color: #F44336;
   padding: 0.25rem 0.25rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem; }
   .projects .btn-project-delete:hover {
     color: white;
-    background-color: #e12e1c;
-    border-color: #d62c1a; }
+    background-color: #f22112;
+    border-color: #ea1c0d; }
   .projects .btn-project-delete:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #d62c1a;
-    border-color: #ca2a19; }
+    background-color: #ea1c0d;
+    border-color: #de1b0c; }
   .projects .btn-project-delete:focus {
-    box-shadow: 0 0 0 3px rgba(214, 44, 26, 0.25);
-    background-color: #e12e1c;
-    border-color: #d62c1a; }
+    box-shadow: 0 0 0 3px rgba(234, 28, 13, 0.25);
+    background-color: #f22112;
+    border-color: #ea1c0d; }
   .projects .btn-project-delete:not(:disabled):not(.disabled).active:focus, .projects .btn-project-delete:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(202, 42, 25, 0.5); }
+    box-shadow: 0 0 0 3px rgba(222, 27, 12, 0.5); }
   .projects .btn-project-delete .delete-icon {
     font-size: 1.5rem; }
 
 .projects .addProject-btn {
-  background: green;
+  background: #27ae60;
   color: white;
-  border-color: green; }
+  border-color: #27ae60; }
   .projects .addProject-btn:hover {
     color: white;
-    background-color: #005a00;
-    border-color: #004d00; }
+    background-color: #208f4f;
+    border-color: #1e8449; }
   .projects .addProject-btn:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #004d00;
-    border-color: #004000; }
+    background-color: #1e8449;
+    border-color: #1b7a43; }
   .projects .addProject-btn:focus {
-    box-shadow: 0 0 0 3px rgba(0, 77, 0, 0.25);
-    background-color: #005a00;
-    border-color: #004d00; }
+    box-shadow: 0 0 0 3px rgba(30, 132, 73, 0.25);
+    background-color: #208f4f;
+    border-color: #1e8449; }
   .projects .addProject-btn:not(:disabled):not(.disabled).active:focus, .projects .addProject-btn:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(0, 64, 0, 0.5); }
+    box-shadow: 0 0 0 3px rgba(27, 122, 67, 0.5); }
 
 .tags .btn-tag-add {
-  background: blue;
+  background: #3F51B5;
   color: white;
-  border-color: blue;
+  border-color: #3F51B5;
   padding: 0.5rem 0.5rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 2rem; }
   .tags .btn-tag-add:hover {
     color: white;
-    background-color: #0000d9;
-    border-color: #0000cc; }
+    background-color: #354499;
+    border-color: #32408f; }
   .tags .btn-tag-add:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #0000cc;
-    border-color: #0000bf; }
+    background-color: #32408f;
+    border-color: #2f3c86; }
   .tags .btn-tag-add:focus {
-    box-shadow: 0 0 0 3px rgba(0, 0, 204, 0.25);
-    background-color: #0000d9;
-    border-color: #0000cc; }
+    box-shadow: 0 0 0 3px rgba(50, 64, 143, 0.25);
+    background-color: #354499;
+    border-color: #32408f; }
   .tags .btn-tag-add:not(:disabled):not(.disabled).active:focus, .tags .btn-tag-add:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(0, 0, 191, 0.5); }
+    box-shadow: 0 0 0 3px rgba(47, 60, 134, 0.5); }
   .tags .btn-tag-add .add-tag-icon {
     font-size: 1.5rem; }
 
 .tags .btn-tag-delete {
-  background: #e74c3c;
+  background: #F44336;
   color: white;
-  border-color: #e74c3c;
+  border-color: #F44336;
   padding: 0.25rem 0.25rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem; }
   .tags .btn-tag-delete:hover {
     color: white;
-    background-color: #e12e1c;
-    border-color: #d62c1a; }
+    background-color: #f22112;
+    border-color: #ea1c0d; }
   .tags .btn-tag-delete:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #d62c1a;
-    border-color: #ca2a19; }
+    background-color: #ea1c0d;
+    border-color: #de1b0c; }
   .tags .btn-tag-delete:focus {
-    box-shadow: 0 0 0 3px rgba(214, 44, 26, 0.25);
-    background-color: #e12e1c;
-    border-color: #d62c1a; }
+    box-shadow: 0 0 0 3px rgba(234, 28, 13, 0.25);
+    background-color: #f22112;
+    border-color: #ea1c0d; }
   .tags .btn-tag-delete:not(:disabled):not(.disabled).active:focus, .tags .btn-tag-delete:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(202, 42, 25, 0.5); }
+    box-shadow: 0 0 0 3px rgba(222, 27, 12, 0.5); }
   .tags .btn-tag-delete .delete-icon {
     font-size: 1.5rem; }
 
 .tags .addTag-btn {
-  background: blue;
+  background: #3F51B5;
   color: white;
-  border-color: blue; }
+  border-color: #3F51B5; }
   .tags .addTag-btn:hover {
     color: white;
-    background-color: #0000d9;
-    border-color: #0000cc; }
+    background-color: #354499;
+    border-color: #32408f; }
   .tags .addTag-btn:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #0000cc;
-    border-color: #0000bf; }
+    background-color: #32408f;
+    border-color: #2f3c86; }
   .tags .addTag-btn:focus {
-    box-shadow: 0 0 0 3px rgba(0, 0, 204, 0.25);
-    background-color: #0000d9;
-    border-color: #0000cc; }
+    box-shadow: 0 0 0 3px rgba(50, 64, 143, 0.25);
+    background-color: #354499;
+    border-color: #32408f; }
   .tags .addTag-btn:not(:disabled):not(.disabled).active:focus, .tags .addTag-btn:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(0, 0, 191, 0.5); }
+    box-shadow: 0 0 0 3px rgba(47, 60, 134, 0.5); }
 
 /*# sourceMappingURL=main.css.map */

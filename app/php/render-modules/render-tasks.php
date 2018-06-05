@@ -17,7 +17,7 @@ if(isset($_GET['project'])){
     
   while($rows = $result->fetch_assoc()){
     
-    $response .= '<li class="todo-item" data-task-position="'.$rows['task_position'].'" data-task-priority="'.$rows['priority'].'">';
+    $response .= '<li class="todo-item priority-'.$rows['priority'].'" data-task-position="'.$rows['task_position'].'" data-task-priority="'.$rows['priority'].'">';
     $response .=  '<div class="todo-left-wrapper">';
     $response .=    $left_controls;
     $response .=    '<div class="todo-task">';
