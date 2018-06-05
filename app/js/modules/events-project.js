@@ -21,20 +21,21 @@ function projectsDroppable() {
     tolerance: 'pointer',
     scope: 'tasks',
     drop: function (event, ui) {
-      console.log('Dropped');
       
+      console.log('Dropped');
       var currentProject = $('.todo-title').text();
       var droppedTask = $(ui.draggable).find('.todo-label').text();
       var toProject = $(this).find('.project-label').text();
-      
       console.log('Current project:'+currentProject);
       console.log('Dropped task:'+droppedTask);
+      console.log('To project:'+toProject);
       
+      if(currentProject !== toProject){
       $.post({
         url: 'php/update-modules/update-task-project.php',
         data: { currentProject:currentProject,
                 task:droppedTask,
-              project:toProject},
+                project:toProject},
         success: function (response) {
           console.log('Success to contact the server');
           console.log(response);
@@ -43,10 +44,13 @@ function projectsDroppable() {
           console.log('Fail to connect the server');
         }
       });  
+        $(ui.draggable).remove();
+      }else{
+        console.log('They are same:');
+        ui.draggable.animate({top:0,left:0},0);
+      }
       
-      $(ui.draggable).remove();
-      //Project name
-      console.log($(this).find('.project-label').text());
+
     }
   });
 }
