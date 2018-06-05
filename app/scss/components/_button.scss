@@ -22,6 +22,16 @@ $btn-tag-add-padding-y:$btn-project-add-padding-y;
 $btn-tag-add-border-radius:$btn-project-add-border-radius;
 $btn-tag-add-icon-size:$btn-project-add-icon-size;
 
+//MODAL Controls
+$btn-modal-add-background:green;
+$btn-modal-close-background:grey;
+$btn-modal-color:white;
+$btn-modal-fsize:1rem;
+$btn-modal-padding-x:.5rem;
+$btn-modal-padding-y:.25rem;
+$btn-modal-border-radius:.25rem;
+
+
 //TODO Top controls
 $btn-todo-top-padding-x:0.25rem;
 $btn-todo-top-padding-y:0.25rem;
@@ -120,6 +130,17 @@ $btn-delete-background:#e74c3c;
   @include d-flex(row,center,center);
 }
 
+//MODAL
+.addTask-btn-box{
+  .btn-addTask{
+    @include btn-size($btn-modal-padding-y,$btn-modal-padding-x,$btn-modal-fsize,1.5,$btn-modal-border-radius);
+    @include btn-color($btn-modal-add-background, $btn-modal-color);
+  }  
+  .btn-addTask-close{
+    @include btn-size($btn-modal-padding-y,$btn-modal-padding-x,$btn-modal-fsize,1.5,$btn-modal-border-radius);
+    @include btn-color($btn-modal-close-background, $btn-modal-color);
+  }
+}
 //TODO TOP Right controls
 .top-right-controls{
   .btn-todo-edit{

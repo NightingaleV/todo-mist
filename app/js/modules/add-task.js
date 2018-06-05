@@ -24,7 +24,7 @@ $('#addTask').on('show.bs.modal', function (e) {
   //add projects into select box
   $('#projectSelect').empty().append('<option value="Inbox" selected>Inbox</option>');
   $('.project-item')
-    .children(".project-label")
+    .find(".project-label")
     .each(function () {
       $('#projectSelect').append('<option value="' + $(this).text() + '">' + $(this).text() + '</option>');
     });
@@ -32,7 +32,7 @@ $('#addTask').on('show.bs.modal', function (e) {
   //add tags into select box
   $("#tagSelect").empty();
   $(".tag-item")
-    .children(".tag-label")
+    .find(".tag-label")
     .each(function () {
       $('#tagSelect').append('<option value="' + $(this).text() + '">#' + $(this).text() + '</option>');
     });

@@ -5,3 +5,13 @@
   justify-content: $horizontal;
   align-items: $vertical;
 }
+
+
+//MODAL
+.modal-add-task{
+  max-width:550px;
+  
+  .modal-footer{
+    padding:.25rem;
+  }
+}

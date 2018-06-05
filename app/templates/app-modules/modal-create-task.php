@@ -1,6 +1,6 @@
 <!-- Add task Modal -->
 <div class="modal fade bd-example-modal-lg" id="addTask" tabindex="-1" role="dialog" aria-labelledby="addTask" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal-add-task modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title addTask-title">Add Task</h5>
@@ -13,20 +13,19 @@
           <form method="post" class="row addTask-form" autocomplete="off">
             <div class="col-8">
               <div class="addTask-task form-group">
-                <label class="addTask-task-label" for="taskName">Task:</label>
                 <div class="invalid-tooltip">
                   I'm displeased you have nothing to working on!
                 </div>
-                <input type="text" name="task" class="form-control" id="taskName" placeholder="..." data-toggle="popover" data-placement="top" data-content="You already have that task in the project" required>
+                <input type="text" name="task" class="form-control" id="taskName" placeholder="New task" data-toggle="popover" data-placement="top" data-content="You already have that task in the project" required>
               </div>
               <div class="form-row">
-                <div class="addTask-project form-group col-8 ">
-                  <label class="addTask-project-label" for="projectSelect">Project:</label>
+                <div class="addTask-project form-group col-6 ">
+                  
                   <select name="project" name="task" class="form-control" id="projectSelect">
               </select>
                 </div>
-                <div class="addTask-priority form-group col-4 ">
-                  <label class="addTask-priority-label" for="prioritySelect">Priority:</label>
+                <div class="addTask-priority form-group col-6 ">
+                  
                   <select name="priority" class="form-control" data-show-content="true" id="prioritySelect">
                     <option value="1">Priority 1</option>
                     <option value="2">Priority 2</option>
@@ -39,7 +38,6 @@
             <div class="col-4">
               <div class="addTask-tag form-group">
                 <div class="addTask-tag form-group">
-                  <label class="addTask-tag-label" for="tagSelect">Example multiple select</label>
                   <select multiple name="tags[]" class="addTask-tag-select form-control" id="tagSelect">
                   </select>
                 </div>
