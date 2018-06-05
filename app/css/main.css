@@ -169,10 +169,35 @@ hr.row-gap {
   .home .navbar-change .hamburger-icon {
     color: rgba(0, 0, 0, 0.76); }
 
+.projects .project-title-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.tags .tag-title-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
 ul.project-list li.project-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 1.25rem 0.25rem; }
+  ul.project-list li.project-item .project-left-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
 
 ul.tag-list li.tag-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem; }
 
 .todo-title-wrapper {
@@ -479,10 +504,10 @@ ul.tag-list li.tag-item {
   background: green;
   color: white;
   border-color: green;
-  padding: 0.25rem 0.25rem;
+  padding: 0.5rem 0.5rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.25rem; }
+  border-radius: 2rem; }
   .projects .btn-project-add:hover {
     color: white;
     background-color: #005a00;
@@ -497,6 +522,8 @@ ul.tag-list li.tag-item {
     border-color: #004d00; }
   .projects .btn-project-add:not(:disabled):not(.disabled).active:focus, .projects .btn-project-add:not(:disabled):not(.disabled):active:focus {
     box-shadow: 0 0 0 3px rgba(0, 64, 0, 0.5); }
+  .projects .btn-project-add .add-project-icon {
+    font-size: 1.5rem; }
 
 .projects .btn-project-delete {
   background: #e74c3c;
@@ -523,14 +550,33 @@ ul.tag-list li.tag-item {
   .projects .btn-project-delete .delete-icon {
     font-size: 1.5rem; }
 
+.projects .addProject-btn {
+  background: green;
+  color: white;
+  border-color: green; }
+  .projects .addProject-btn:hover {
+    color: white;
+    background-color: #005a00;
+    border-color: #004d00; }
+  .projects .addProject-btn:not(:disabled):not(.disabled):active {
+    color: white;
+    background-color: #004d00;
+    border-color: #004000; }
+  .projects .addProject-btn:focus {
+    box-shadow: 0 0 0 3px rgba(0, 77, 0, 0.25);
+    background-color: #005a00;
+    border-color: #004d00; }
+  .projects .addProject-btn:not(:disabled):not(.disabled).active:focus, .projects .addProject-btn:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 3px rgba(0, 64, 0, 0.5); }
+
 .tags .btn-tag-add {
   background: blue;
   color: white;
   border-color: blue;
-  padding: 0.25rem 0.25rem;
+  padding: 0.5rem 0.5rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 0.25rem; }
+  border-radius: 2rem; }
   .tags .btn-tag-add:hover {
     color: white;
     background-color: #0000d9;
@@ -545,6 +591,8 @@ ul.tag-list li.tag-item {
     border-color: #0000cc; }
   .tags .btn-tag-add:not(:disabled):not(.disabled).active:focus, .tags .btn-tag-add:not(:disabled):not(.disabled):active:focus {
     box-shadow: 0 0 0 3px rgba(0, 0, 191, 0.5); }
+  .tags .btn-tag-add .add-tag-icon {
+    font-size: 1.5rem; }
 
 .tags .btn-tag-delete {
   background: #e74c3c;
@@ -570,5 +618,24 @@ ul.tag-list li.tag-item {
     box-shadow: 0 0 0 3px rgba(202, 42, 25, 0.5); }
   .tags .btn-tag-delete .delete-icon {
     font-size: 1.5rem; }
+
+.tags .addTag-btn {
+  background: blue;
+  color: white;
+  border-color: blue; }
+  .tags .addTag-btn:hover {
+    color: white;
+    background-color: #0000d9;
+    border-color: #0000cc; }
+  .tags .addTag-btn:not(:disabled):not(.disabled):active {
+    color: white;
+    background-color: #0000cc;
+    border-color: #0000bf; }
+  .tags .addTag-btn:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 204, 0.25);
+    background-color: #0000d9;
+    border-color: #0000cc; }
+  .tags .addTag-btn:not(:disabled):not(.disabled).active:focus, .tags .addTag-btn:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 191, 0.5); }
 
 /*# sourceMappingURL=main.css.map */

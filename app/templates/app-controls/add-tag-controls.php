@@ -1,0 +1,1 @@
+<button class="btn btn-tag-add" type="button" data-toggle="collapse" data-target="#addTag" aria-expanded="false" aria-controls="addTag"><i class="add-tag-icon material-icons">add</i></button>

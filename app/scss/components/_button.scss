@@ -6,13 +6,13 @@ $btn-delete-padding-x:0.25rem;
 $btn-delete-padding-y:0.25rem;
 $btn-delete-border-radius:.25rem;
 
-
 //PROJECT controls
 $btn-project-add-color:white;
 $btn-project-add-background:green;
-$btn-project-add-padding-x:0.25rem;
-$btn-project-add-padding-y:0.25rem;
-$btn-project-add-border-radius:.25rem;
+$btn-project-add-padding-x:0.5rem;
+$btn-project-add-padding-y:0.5rem;
+$btn-project-add-border-radius:2rem;
+$btn-project-add-icon-size:1.5rem;
 
 //TAG controls
 $btn-tag-add-color:white;
@@ -20,6 +20,7 @@ $btn-tag-add-background:blue;
 $btn-tag-add-padding-x:$btn-project-add-padding-x;
 $btn-tag-add-padding-y:$btn-project-add-padding-y;
 $btn-tag-add-border-radius:$btn-project-add-border-radius;
+$btn-tag-add-icon-size:$btn-project-add-icon-size;
 
 //TODO Top controls
 $btn-todo-top-padding-x:0.25rem;
@@ -34,8 +35,6 @@ $btn-todo-top-edit-icon-size: 1.5rem;
 $btn-todo-top-sort-color:$btn-todo-top-edit-color;
 $btn-todo-top-sort-background:yellow;
 $btn-todo-top-sort-icon-size: $btn-todo-top-edit-icon-size;
-
-
 
 //TODO Left controls
 $todo-left-controls-icon-size: 1.5rem;
@@ -191,6 +190,9 @@ $btn-delete-background:#e74c3c;
   .btn-project-add{
     @include btn-color($btn-project-add-background, $btn-project-add-color);
     @include btn-size($btn-project-add-padding-x,$btn-project-add-padding-y,1rem,1.5,$btn-project-add-border-radius);
+    .add-project-icon{
+      font-size: $btn-project-add-icon-size;
+    }
   }
   .btn-project-delete{
     @include btn-color($btn-delete-background, $btn-delete-color);
@@ -199,6 +201,9 @@ $btn-delete-background:#e74c3c;
       font-size: $btn-delete-icon-size;
     }
   }
+  .addProject-btn{
+    @include btn-color($btn-project-add-background, $btn-project-add-color);
+  }
 }
 
 //TAG controls
@@ -206,6 +211,9 @@ $btn-delete-background:#e74c3c;
   .btn-tag-add{
     @include btn-color($btn-tag-add-background, $btn-tag-add-color);
     @include btn-size($btn-tag-add-padding-x,$btn-tag-add-padding-y,1rem,1.5,$btn-tag-add-border-radius);
+    .add-tag-icon{
+      font-size: $btn-tag-add-icon-size;
+    }
   }
   .btn-tag-delete{
     @include btn-color($btn-delete-background, $btn-delete-color);
@@ -213,5 +221,8 @@ $btn-delete-background:#e74c3c;
     .delete-icon{
       font-size: $btn-delete-icon-size;
     }
+  }
+  .addTag-btn{
+    @include btn-color($btn-tag-add-background, $btn-tag-add-color);
   }
 }

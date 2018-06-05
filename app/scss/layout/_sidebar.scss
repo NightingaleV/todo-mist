@@ -1,9 +1,22 @@
-
+.projects{
+  .project-title-box{
+    @include d-flex(row,space-between,center);
+  }
+}
+.tags{
+  .tag-title-box{
+    @include d-flex(row,space-between,center);
+  }
+}
 
 ul.project-list{
   
   li.project-item{
+    @include d-flex(row,space-between,center);
     padding: 1.25rem 0.25rem;
+    .project-left-wrapper{
+      @include d-flex(row,flex-start,center);
+    }
   }
 }
 
@@ -11,6 +24,7 @@ ul.project-list{
 ul.tag-list{
   
   li.tag-item{
+    @include d-flex(row,space-between,center);
     padding: 0.5rem ;
   }
 }
