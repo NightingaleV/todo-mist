@@ -7,7 +7,6 @@ if ( !isset( $db ) ) {
 }
 
 $positions = json_decode($_POST['positions'], true );
-print_r($positions);
 $user_id = $_SESSION['id'];
 
 foreach ($positions as $key => $value) { 
@@ -18,7 +17,7 @@ foreach ($positions as $key => $value) {
   $error = $db->error;
   $result = $stmt->get_result();
   $stmt->close();
-  echo 'row added';
+  echo 'row updated,';
   echo $error;
   }
 }

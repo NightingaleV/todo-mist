@@ -7,8 +7,6 @@ function updateTaskPositions(){
   $('.todo-item').each(function(){
     var task = {};
     task[$(this).find('.todo-label').text()] = $(this).attr('data-task-position');
-    console.log($(this));
-    $(this).data('task-position');
     
     dataArray.push(task);
   });

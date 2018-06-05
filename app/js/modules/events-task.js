@@ -1,39 +1,4 @@
-$(function () {
-  $('.todo-list').sortable({
-    cursor: "grab",
-    handle: '.draggable-action',
-  });
-});
-
-//Drag tasks to to droppable projects
-$(function tasksDraggable() {
-  $(".todo-item").draggable({
-    handle: '.draggable-action',
-    connectToSortable: '.todo-list',
-    revert: 'invalid',
-    scroll: true,
-    scope: 'tasks',
-  });
-});
-//Drop task into project
-$(function projectsDroppable() {
-  $(".project-item").droppable({
-    accept: '.todo-item',
-    scope: 'tasks',
-    tolerance: 'pointer',
-    drop: function (event, ui) {
-      console.log('Dropped');
-      $(ui.draggable).remove();
-      //Project Index
-      console.log($(this).index());
-      //Task Index
-      console.log(ui.draggable.index());
-    }
-  });
-});
-
 //Sort tasks
-
 $(function tasksSortable() {
   $('.todo-list').sortable({
     cursor: "grab",
@@ -47,8 +12,17 @@ $(function tasksSortable() {
       updateTaskPositions();
     }
   });
-})
-
-
-
-
+});
+//Drag tasks to to droppable projects
+function tasksDraggable() {
+  $(".todo-item").draggable({
+    handle: '.draggable-action',
+    connectToSortable: '.todo-list',
+    revert: 'invalid',
+    scroll: true,
+    zIndex: 2500,
+    scope: 'tasks',
+  });
+};
+//Init for first load of the page
+tasksDraggable();

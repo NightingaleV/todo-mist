@@ -14,6 +14,7 @@
         renderProjectTitle(project);
         addHiddenInput(project);
         renderTaskPositions();
+        tasksDraggable();
       }
     });
   }
