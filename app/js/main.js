@@ -317,6 +317,76 @@ $(document).on('click', '.btn-task-delete',function(e){
   
 });
 
+//Sort tasks
+$(function tasksSortable() {
+  $('.project-list').sortable({
+    cursor: "grab",
+    handle: '.draggable-action',
+    start: function(){},
+    update: function (event, ui) {      
+      // Zapis indexu do atributu
+      renderProjectPositions();   
+    },
+    stop: function(event, ui){
+      updateProjectPositions();
+    }
+  });
+});
+$(function () {
+  $('.todo-list').sortable({
+    cursor: "grab",
+    handle: '.draggable-action',
+  });
+});
+
+//Drag tasks to to droppable projects
+$(function tasksDraggable() {
+  $(".todo-item").draggable({
+    handle: '.draggable-action',
+    connectToSortable: '.todo-list',
+    revert: 'invalid',
+    scroll: true,
+    scope: 'tasks',
+  });
+});
+//Drop task into project
+$(function projectsDroppable() {
+  $(".project-item").droppable({
+    accept: '.todo-item',
+    scope: 'tasks',
+    tolerance: 'pointer',
+    drop: function (event, ui) {
+      console.log('Dropped');
+      $(ui.draggable).remove();
+      //Project Index
+      console.log($(this).index());
+      //Task Index
+      console.log(ui.draggable.index());
+    }
+  });
+});
+
+//Sort tasks
+
+$(function tasksSortable() {
+  $('.todo-list').sortable({
+    cursor: "grab",
+    handle: '.draggable-action',
+    start: function(){},
+    update: function (event, ui) {      
+      // Zapis indexu do atributu
+      renderTaskPositions();  
+    },
+    stop: function(event, ui){
+      updateTaskPositions();
+    }
+  });
+})
+
+
+
+
+
 $(document).ready(function(){
 //Changing class on navbar while scrolling down
 $(window).scroll(function() {     
@@ -339,9 +409,20 @@ function renderProjects() {
     success: function (response) {
       $('.project-list').empty();
       $('.project-list').append(response);
+      renderProjectPositions();
     }
   });
 }
+
+//Render index into data task position atributes
+function renderProjectPositions(){
+  $('.project-item').each(function(){
+    $(this).attr('data-project-position', $(this).index());
+  });
+}
+renderProjectPositions();
+
+
 function renderTags() {
   $.ajax({
     url: 'php/render-modules/render-tags.php',
@@ -368,6 +449,7 @@ function renderTags() {
         $('.todo-list').append(response);
         renderProjectTitle(project);
         addHiddenInput(project);
+        renderTaskPositions();
       }
     });
   }
@@ -388,4 +470,75 @@ function renderTags() {
     renderTasks(projectName);
     history.replaceState(null, null, 'app.php?'.concat($.param({project:projectName})));
   });
+
+//Render index into data task position atributes
+function renderTaskPositions(){
+  $('.todo-item').each(function(){
+    $(this).attr('data-task-position', $(this).index());
+  });
+}
+//Render position intributes after refresh
+renderTaskPositions();
+
+
+
+function updateTaskPositions(){
+    
+  var dataArray = [];
+  
+  var currentProject = $('.todo-title').text();
+  
+  $('.todo-item').each(function(){
+    var task = {};
+    task[$(this).find('.todo-label').text()] = $(this).attr('data-task-position');
+    console.log($(this));
+    $(this).data('task-position');
+    
+    dataArray.push(task);
+  });
+
+  var json_positions = JSON.stringify(dataArray);
+  console.log(json_positions);
+  
+  $.post({
+        url: 'php/update-modules/update-task-positions.php',
+        data: { positions:json_positions,
+                project:currentProject},
+        success: function (response) {
+          console.log('Success to contact the server');
+          console.log(response);
+        },
+        error: function () {
+          console.log('Fail to connect the server');
+        }
+      });
+  
+}
+
+function updateProjectPositions(){
+    
+  var dataArray = new Array();
+  
+  $('.project-item').each(function(){
+    var project = {};
+    project[$(this).find('.project-label').text()] = $(this).attr('data-project-position');
+    dataArray.push(project);
+  });
+
+  var json_positions = JSON.stringify(dataArray);
+  console.log(json_positions);
+  
+  $.post({
+        url: 'php/update-modules/update-project-positions.php',
+        data: { positions:json_positions},
+        success: function (response) {
+          console.log('Success to contact the server');
+          console.log(response);
+        },
+        error: function () {
+          console.log('Fail to connect the server');
+        }
+      });
+  
+}
 

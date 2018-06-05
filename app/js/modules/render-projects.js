@@ -6,6 +6,16 @@ function renderProjects() {
     success: function (response) {
       $('.project-list').empty();
       $('.project-list').append(response);
+      renderProjectPositions();
     }
   });
 }
+
+//Render index into data task position atributes
+function renderProjectPositions(){
+  $('.project-item').each(function(){
+    $(this).attr('data-project-position', $(this).index());
+  });
+}
+renderProjectPositions();
+

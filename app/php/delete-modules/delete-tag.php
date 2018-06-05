@@ -31,5 +31,4 @@ if ($_POST[ 'tag' ] ) {
   echo 'ROWs in tags Deleted';
 }
 
-
 ?>

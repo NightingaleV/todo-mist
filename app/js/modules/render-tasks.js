@@ -13,6 +13,7 @@
         $('.todo-list').append(response);
         renderProjectTitle(project);
         addHiddenInput(project);
+        renderTaskPositions();
       }
     });
   }
@@ -33,4 +34,14 @@
     renderTasks(projectName);
     history.replaceState(null, null, 'app.php?'.concat($.param({project:projectName})));
   });
+
+//Render index into data task position atributes
+function renderTaskPositions(){
+  $('.todo-item').each(function(){
+    $(this).attr('data-task-position', $(this).index());
+  });
+}
+//Render position intributes after refresh
+renderTaskPositions();
+
 
