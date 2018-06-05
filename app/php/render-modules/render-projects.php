@@ -19,8 +19,9 @@ if(isset($_SESSION['id'])){
   
   while($rows = $result->fetch_assoc()){ 
     $response .= '<li class="project-item list-group-item" data-project-position="'.$rows['project_position'].'">';
+    $response .= '<div class="project-left-wrapper">';
     $response .= $project_left_controls;
-    $response .=  '<span class="project-label">'.$rows['project'].'</span>';
+    $response .=  '<span class="project-label">'.$rows['project'].'</span></div>';
     $response .= $project_right_controls;
     $response .=    '</li>';
   }

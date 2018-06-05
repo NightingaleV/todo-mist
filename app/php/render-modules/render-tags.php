@@ -17,7 +17,8 @@ if(isset($_SESSION['id'])){
   
   while($rows = $result->fetch_assoc()){ 
     $response .= '<li class="tag-item list-group-item">';
-    $response .=  '#<span class="tag-label">'.$rows['tag'].'</span>';
+    $response .= '<div class="tags-left-wrapper">';
+    $response .=  '#<span class="tag-label">'.$rows['tag'].'</span></div>';
     $response .= $tag_controls;
     $response .= '</li>';
   }

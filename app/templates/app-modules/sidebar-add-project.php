@@ -1,4 +1,4 @@
-<button class="btn btn-success btn-add-project rounded-circle" type="button" data-toggle="collapse" data-target="#addProject" aria-expanded="false" aria-controls="addProject"><i class="add-project-icon material-icons">add</i></button>
+<button class="btn btn-success btn-project-add rounded-circle" type="button" data-toggle="collapse" data-target="#addProject" aria-expanded="false" aria-controls="addProject"><i class="add-project-icon material-icons">add</i></button>
 
 <div class="collapse multi-collapse" id="addProject">
   <div class="card card-body">

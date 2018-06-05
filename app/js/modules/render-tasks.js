@@ -30,7 +30,7 @@
 
   //Render tasks when CLICK on projects aside
   $(document).on('click','li.project-item, li.inbox-item', function () {
-    var projectName = $(this).children('span').text();
+    var projectName = $(this).find('span').text();
     console.log(projectName);
     renderTasks(projectName);
     history.replaceState(null, null, 'app.php?'.concat($.param({project:projectName})));
