@@ -25,18 +25,3 @@ $home-icons-color: rgba(0, 0, 0, 0.76);
 }  
 }
 
-
-$todo-left-controls-icon-size: 1.5rem;
-$todo-right-controls-icon-size: 1.5rem;
-
-.todo-list{
-  .drag-icon,.complete-icon{
-    font-size: $todo-left-controls-icon-size;
-  }
-  .priority-icon,.schedule-icon,.delete-icon{
-    font-size: $todo-right-controls-icon-size;
-  }
-  .drag-icon{
-    padding: 0.5rem 0rem;
-  }
-}

@@ -1,14 +1,56 @@
-//Todo Left controls
-$complete-color:black;
-$btn-complete-background:transparent;
-$complete-hover-color:white;
-$btn-complete-hover-background:#4CAF50;
-
-//Todo Right controls
-$todo-right-controls-color:white;
-$btn-priority-background:#e67e22;
-$btn-schedule-background:#f1c40f;
+//Shared controls
+$btn-delete-color:white;
 $btn-delete-background:#e74c3c;
+$btn-delete-icon-size: 1.5rem;
+$btn-delete-padding-x:0.25rem;
+$btn-delete-padding-y:0.25rem;
+$btn-delete-border-radius:.25rem;
+
+
+//PROJECT controls
+$btn-project-add-color:white;
+$btn-project-add-background:green;
+$btn-project-add-padding-x:0.25rem;
+$btn-project-add-padding-y:0.25rem;
+$btn-project-add-border-radius:.25rem;
+
+//TAG controls
+$btn-tag-add-color:white;
+$btn-tag-add-background:blue;
+$btn-tag-add-padding-x:$btn-project-add-padding-x;
+$btn-tag-add-padding-y:$btn-project-add-padding-y;
+$btn-tag-add-border-radius:$btn-project-add-border-radius;
+
+//TODO Top controls
+$btn-todo-top-padding-x:0.25rem;
+$btn-todo-top-padding-y:0.25rem;
+$btn-todo-top-border-radius:.25rem;
+$btn-todo-top-gap:1rem;
+//Edit button
+$btn-todo-top-edit-color:white;
+$btn-todo-top-edit-background:orange;
+$btn-todo-top-edit-icon-size: 1.5rem;
+//Sort button
+$btn-todo-top-sort-color:$btn-todo-top-edit-color;
+$btn-todo-top-sort-background:yellow;
+$btn-todo-top-sort-icon-size: $btn-todo-top-edit-icon-size;
+
+
+
+//TODO Left controls
+$todo-left-controls-icon-size: 1.5rem;
+$btn-task-complete-color:black;
+$btn-task-complete-background:transparent;
+$btn-task-complete-hover-color:white;
+$btn-task-complete-hover-background:#4CAF50;
+
+//TODO Right controls
+$todo-right-controls-icon-size: 1.5rem;
+$todo-right-controls-color:white;
+$btn-task-priority-background:#e67e22;
+$btn-task-schedule-background:#f1c40f;
+$btn-delete-background:#e74c3c;
+
 
 
 
@@ -74,44 +116,102 @@ $btn-delete-background:#e74c3c;
   }
 }
 
-//Todo Left controls
-.todo-left{
-  .btn{
-    @include d-flex(row,center,center);
+//APP STYLES
+.btn{
+  @include d-flex(row,center,center);
+}
+
+//TODO TOP Right controls
+.top-right-controls{
+  .btn-todo-edit{
+    @include btn-size($btn-todo-top-padding-y,$btn-todo-top-padding-x,1rem,1.5,$btn-todo-top-border-radius);
+    @include btn-color($btn-todo-top-edit-background, $btn-todo-top-edit-color);
+    margin-left: $btn-todo-top-gap;
+    .edit-icon{
+      font-size: $btn-todo-top-edit-icon-size;
+    }
   }
-  .btn-complete{
-    @include btn-size(0rem,0rem,1rem,1.5,1rem);
-    @include btn-color($btn-complete-background, $complete-color);    
-    &:hover{
-      @include btn-color($btn-complete-hover-background, $complete-hover-color);
+  .btn-todo-sort{
+    @include btn-size($btn-todo-top-padding-y,$btn-todo-top-padding-x,1rem,1.5,$btn-todo-top-border-radius);
+    @include btn-color($btn-todo-top-sort-background, $btn-todo-top-sort-color);
+    margin-left: $btn-todo-top-gap;
+    .sort-icon{
+      font-size: $btn-todo-top-sort-icon-size;
     }
   }
 }
 
-//Todo Right controls
-  .todo-controls {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    
-    .btn{
-      @include d-flex(row,center,center);
-      @include btn-size(0.2rem,0.2rem,1rem,1.5,.25rem);
-      margin: 0 0.3rem;
+//TODO Left controls
+.todo-left{
+  .btn-complete{
+    @include btn-size(0rem,0rem,1rem,1.5,1rem);
+    @include btn-color($btn-task-complete-background, $btn-task-complete-color);    
+    &:hover{
+      @include btn-color($btn-task-complete-hover-background, $btn-task-complete-hover-color);
     }
-    
-    .btn-task-priority{
-      @include btn-color($btn-priority-background, $todo-right-controls-color);
-      
-      &:after{
-        display: none;
-      }
-    }
-    .btn-task-schedule {
-      @include btn-color($btn-schedule-background, $todo-right-controls-color)
-    }
-    .btn-task-delete {
-      @include btn-color($btn-delete-background, $todo-right-controls-color)
-    }
-    
   }
+  .drag-icon,.complete-icon{
+    font-size: $todo-left-controls-icon-size;
+  }
+  .drag-icon{
+    padding: 0.5rem 0rem;
+  }
+}
+
+//TODO Right controls
+.todo-controls {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+
+  .btn{
+    @include btn-size(0.2rem,0.2rem,1rem,1.5,.25rem);
+    margin: 0 0.3rem;
+  }
+  .priority-icon,.schedule-icon,.delete-icon{
+    font-size: $todo-right-controls-icon-size;
+  }
+  .btn-task-priority{
+    @include btn-color($btn-task-priority-background, $todo-right-controls-color);
+
+    &:after{
+      display: none;
+    }
+  }
+  .btn-task-schedule {
+    @include btn-color($btn-task-schedule-background, $todo-right-controls-color);
+  }
+  .btn-task-delete {
+    @include btn-color($btn-delete-background, $btn-delete-color);
+  }
+}
+
+//PROJECT controls
+.projects{
+  .btn-project-add{
+    @include btn-color($btn-project-add-background, $btn-project-add-color);
+    @include btn-size($btn-project-add-padding-x,$btn-project-add-padding-y,1rem,1.5,$btn-project-add-border-radius);
+  }
+  .btn-project-delete{
+    @include btn-color($btn-delete-background, $btn-delete-color);
+    @include btn-size($btn-delete-padding-x,$btn-delete-padding-y,1rem,1.5,$btn-delete-border-radius);
+    .delete-icon{
+      font-size: $btn-delete-icon-size;
+    }
+  }
+}
+
+//TAG controls
+.tags{
+  .btn-tag-add{
+    @include btn-color($btn-tag-add-background, $btn-tag-add-color);
+    @include btn-size($btn-tag-add-padding-x,$btn-tag-add-padding-y,1rem,1.5,$btn-tag-add-border-radius);
+  }
+  .btn-tag-delete{
+    @include btn-color($btn-delete-background, $btn-delete-color);
+    @include btn-size($btn-delete-padding-x,$btn-delete-padding-y,1rem,1.5,$btn-delete-border-radius);
+    .delete-icon{
+      font-size: $btn-delete-icon-size;
+    }
+  }
+}
