@@ -351,6 +351,12 @@ function projectsDroppable() {
     accept: '.todo-item',
     tolerance: 'pointer',
     scope: 'tasks',
+    over: function(event, ui){
+      $(this).addClass('shadow');
+    },
+    out: function(event, ui){
+      $(this).removeClass('shadow');
+    },
     drop: function (event, ui) {
       
       console.log('Dropped');
