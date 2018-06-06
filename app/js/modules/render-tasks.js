@@ -11,6 +11,7 @@
       success: function (response) {
         $('.todo-list').empty();
         $('.todo-list').append(response);
+        hoverTaskControls();
         renderProjectTitle(project);
         addHiddenInput(project);
         renderTaskPositions();
@@ -34,6 +35,9 @@
     console.log(projectName);
     renderTasks(projectName);
     history.replaceState(null, null, 'app.php?'.concat($.param({project:projectName})));
+    
+    //Add inline if browsing projects
+    $('.app').removeClass('tag-filter');
   });
 
 //Render index into data task position atributes
@@ -58,6 +62,7 @@ function renderTasksByTag(tag) {
     success: function (response) {
       $('.todo-list').empty();
       $('.todo-list').append(response);
+      hoverTaskControls();
       renderFilterTitle(tag);
       addHiddenInput(tag);
       renderTaskPositions();
@@ -72,6 +77,8 @@ function renderTasksByTag(tag) {
     console.log(tagName);
     renderTasksByTag(tagName);
     history.replaceState(null, null, 'app.php?'.concat($.param({tag:tagName})));
+    //hide inline add task form
+    $('.app').addClass('tag-filter');
   });
 
 //Render Name of current filter

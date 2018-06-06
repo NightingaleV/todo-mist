@@ -20,5 +20,4 @@ $(document).on('click', '.btn-task-delete',function(e){
       console.log('Failure');
     }
   });
-  
 });

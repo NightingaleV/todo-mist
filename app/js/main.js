@@ -325,7 +325,6 @@ $(document).on('click', '.btn-task-delete',function(e){
       console.log('Failure');
     }
   });
-  
 });
 
 //Sort projects
@@ -357,18 +356,22 @@ function projectsDroppable() {
       $(this).removeClass('shadow');
     },
     drop: function (event, ui) {
-      var urlArray = window.location.href.split('/');
-      var droppedTask = $(ui.draggable).find('.todo-label').text();
-      var toProject = $(this).find('.project-label').text();
       
-      //if the filter is TAG
-      if (urlArray[3].indexOf('tag') >= 0){
-        var currentTag = $('.todo-title').text();
+      var urlArray = window.location.href.split('/');
+      var toProjectId = $(this).attr('data-project-id');
+      var droppedTask = $(ui.draggable).find('.todo-label').text();
+      var currentProjectId = ui.draggable.attr('data-project');
+      console.log('Current project:'+currentProjectId);
+      console.log('Dropped task:'+droppedTask);
+      console.log('To project:'+toProjectId);
+
+      if(toProjectId !== currentProjectId){
+        $(ui.draggable).remove();
         $.post({
           url: 'php/update-modules/update-task-project.php',
-          data: { currentTag:currentTag,
+          data: { currentProject:currentProjectId,
                   task:droppedTask,
-                  project:toProject},
+                  project:toProjectId},
           success: function (response) {
             console.log('Success to contact the server');
             console.log(response);
@@ -376,37 +379,16 @@ function projectsDroppable() {
           error: function () {
             console.log('Fail to connect the server');
           }
-        }); 
-          
-        ui.draggable.animate({top:0,left:0},0);
-      }
-      else{
-        //if the filter is PROJECT
-        console.log('Dropped');
-        var currentProject = $('.todo-title').text();        
-        console.log('Current project:'+currentProject);
-        console.log('Dropped task:'+droppedTask);
-        console.log('To project:'+toProject);
-
-        if(currentProject !== toProject){
-          $.post({
-            url: 'php/update-modules/update-task-project.php',
-            data: { currentProject:currentProject,
-                    task:droppedTask,
-                    project:toProject},
-            success: function (response) {
-              console.log('Success to contact the server');
-              console.log(response);
-            },
-            error: function () {
-              console.log('Fail to connect the server');
-            }
-          });  
+        });
+        if(urlArray[3].indexOf('tag') >= 0){
+          ui.draggable.animate({top:0,left:0},0);
+        }else{
           $(ui.draggable).remove();
         }
-        else{
-          ui.draggable.animate({top:0,left:0},0);
-        }
+      }
+      else{
+        console.log('same project');
+        ui.draggable.animate({top:0,left:0},0);
       }
       $(this).removeClass('shadow');
     }
@@ -414,6 +396,22 @@ function projectsDroppable() {
 }
 //Init for first load of the app page
 projectsDroppable();
+
+//HIDE/SHOW controls
+function hoverProjectControls(){
+  $('.project-item').find('.project-right-controls').hide();
+  $('.project-item').hover(
+  function () {
+    $(this).find('.project-right-controls').fadeIn(200).show(1);
+  }, 
+  function () {
+    $(this).find('.project-right-controls').fadeIn(200).hide(1);
+  }
+);
+}
+hoverProjectControls();
+
+
 //Drop task into project
 function tagsDroppable() {
   $(".tag-item").droppable({
@@ -485,6 +483,22 @@ function tasksDraggable() {
 };
 //Init for first load of the page
 tasksDraggable();
+
+//HIDE/SHOW controls
+function hoverTaskControls(){
+  $('.todo-item').find('.todo-right').hide();
+  $('.todo-item').hover(
+  function () {
+    $(this).find('.todo-right').show(1);
+  }, 
+  function () {
+    $(this).find('.todo-right').hide(1);
+  }
+);
+};
+hoverTaskControls();
+
+
 $(document).ready(function(){
 //Changing class on navbar while scrolling down
 $(window).scroll(function() {     
@@ -546,6 +560,7 @@ function renderTags() {
       success: function (response) {
         $('.todo-list').empty();
         $('.todo-list').append(response);
+        hoverTaskControls();
         renderProjectTitle(project);
         addHiddenInput(project);
         renderTaskPositions();
@@ -569,6 +584,9 @@ function renderTags() {
     console.log(projectName);
     renderTasks(projectName);
     history.replaceState(null, null, 'app.php?'.concat($.param({project:projectName})));
+    
+    //Add inline if browsing projects
+    $('.app').removeClass('tag-filter');
   });
 
 //Render index into data task position atributes
@@ -593,6 +611,7 @@ function renderTasksByTag(tag) {
     success: function (response) {
       $('.todo-list').empty();
       $('.todo-list').append(response);
+      hoverTaskControls();
       renderFilterTitle(tag);
       addHiddenInput(tag);
       renderTaskPositions();
@@ -607,6 +626,8 @@ function renderTasksByTag(tag) {
     console.log(tagName);
     renderTasksByTag(tagName);
     history.replaceState(null, null, 'app.php?'.concat($.param({tag:tagName})));
+    //hide inline add task form
+    $('.app').addClass('tag-filter');
   });
 
 //Render Name of current filter
@@ -642,7 +663,7 @@ function updateTaskPositions(){
           console.log('Fail to connect the server');
         }
       });
-  
+
 }
 
 function updateProjectPositions(){
@@ -672,3 +693,103 @@ function updateProjectPositions(){
   
 }
 
+
+//Change priority
+function changePriority(taskToUpdate,priority,tasksProjectId){
+  
+  var currentFilter = $('.todo-title').text().trim();
+  
+  //Cut the URL into array
+  var urlArray = window.location.href.split('/');
+  //If current filter is tag
+  if(urlArray[3].indexOf('tag') >= 0){
+    console.log('Current tag:'+currentFilter);
+    console.log('Task:'+taskToUpdate);
+    console.log('New priority:'+priority);  
+    $.post({
+        url: 'php/update-modules/update-task-priority.php',
+        data: { currentTag:currentFilter,
+                tasksProject:tasksProjectId,
+                task:taskToUpdate,
+                priority:priority,
+                },
+        success: function (response) {
+          console.log('Success to contact the server');
+          console.log(response);
+        },
+        error: function () {
+          console.log('Fail to connect the server');
+        }
+    });
+  }
+  //If current filter is project
+  else{
+
+    console.log('Current project:'+currentFilter);
+    console.log('Task:'+taskToUpdate);
+    console.log('New priority:'+priority);
+    
+    $.post({
+        url: 'php/update-modules/update-task-priority.php',
+        data: { currentProject:currentFilter,
+                task:taskToUpdate,
+                priority:priority,
+                },
+        success: function (response) {
+          console.log('Success to contact the server');
+          console.log(response);
+        },
+        error: function () {
+          console.log('Fail to connect the server');
+        }
+    });
+  }
+}
+
+//Change class of item 
+function changePriorityClass(changedItem,priority) {
+  if(changedItem.hasClass('priority-1')){   
+    changedItem.removeClass('priority-1'); 
+    changedItem.addClass('priority-'+priority);
+  }
+  else if (changedItem.hasClass('priority-2')){
+    changedItem.removeClass('priority-2'); 
+    changedItem.addClass('priority-'+priority);
+  }
+  else if (changedItem.hasClass('priority-3')){
+    changedItem.removeClass('priority-3'); 
+    changedItem.addClass('priority-'+priority);
+  }
+  else{
+    changedItem.removeClass('priority-4'); 
+    changedItem.addClass('priority-'+priority);
+  }
+}
+//CLick on button change priority
+$(document).on('click', '.priority-dropdown-item',function(e){
+  event.preventDefault();
+  var changedItem = $(this).parents('.todo-item');
+  var taskToUpdate = changedItem.find('.todo-label').text();
+  var tasksProjectId = changedItem.attr('data-project');
+  console.log(taskToUpdate);
+  var priority = 1;
+  if($(this).hasClass('btn-priority-2')){
+    priority = 2;
+  }
+  else if($(this).hasClass('btn-priority-3')){
+    priority = 3;
+  }
+  else if($(this).hasClass('btn-priority-4')){
+    priority = 4;
+    priority = 4;
+  }
+  else{
+  console.log(priority); console.log('No');
+  }
+  //CALL AJAX
+  changePriority(taskToUpdate,priority,tasksProjectId);
+  //Change class and coloring for task
+  changePriorityClass(changedItem,priority);
+  changedItem.attr('data-task-priority', priority);
+  
+});

@@ -26,3 +26,18 @@ function tasksDraggable() {
 };
 //Init for first load of the page
 tasksDraggable();
+
+//HIDE/SHOW controls
+function hoverTaskControls(){
+  $('.todo-item').find('.todo-right').hide();
+  $('.todo-item').hover(
+  function () {
+    $(this).find('.todo-right').show(1);
+  }, 
+  function () {
+    $(this).find('.todo-right').hide(1);
+  }
+);
+};
+hoverTaskControls();
+

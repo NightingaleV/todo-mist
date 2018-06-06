@@ -13,14 +13,14 @@ if(isset($_GET['project'])){
   $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-left-controls.php",TRUE);
   $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-right-controls.php",TRUE);
   
-  $stmt = $db->prepare("SELECT tasks.task, tasks.task_position, tasks.priority FROM projects INNER JOIN tasks ON tasks.project_id=projects.id WHERE projects.user_id = ? AND projects.project LIKE ? ORDER BY tasks.task_position ASC;");
+  $stmt = $db->prepare("SELECT tasks.task, tasks.project_id, tasks.task_position, tasks.priority FROM projects INNER JOIN tasks ON tasks.project_id=projects.id WHERE projects.user_id = ? AND projects.project LIKE ? ORDER BY tasks.task_position ASC;");
   $stmt->bind_param("is", $user_id, $project);
   $stmt->execute();
   $result = $stmt->get_result();
     
   while($rows = $result->fetch_assoc()){
     
-    $response .= '<li class="todo-item priority-'.$rows['priority'].'" data-task-position="'.$rows['task_position'].'" data-task-priority="'.$rows['priority'].'">';
+    $response .= '<li class="todo-item priority-'.$rows['priority'].'" data-task-position="'.$rows['task_position'].'" data-task-priority="'.$rows['priority'].'" data-project="'.$rows['project_id'].'">';
     $response .=  '<div class="todo-left-wrapper">';
     $response .=    $left_controls;
     $response .=    '<div class="todo-task">';
@@ -43,7 +43,7 @@ if(isset($_GET['tag'])){
   $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-left-controls.php",TRUE);
   $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-right-controls.php",TRUE);
   
-  $stmt = $db->prepare("SELECT tasks.task, tasks.task_position, tasks.priority FROM tasks 
+  $stmt = $db->prepare("SELECT tasks.task, tasks.project_id, tasks.task_position, tasks.priority FROM tasks 
   LEFT JOIN task_tags_bridge ON tasks.id=task_tags_bridge.task_id
   LEFT JOIN tags ON tags.id=task_tags_bridge.tag_id WHERE tags.user_id = ? AND tags.tag LIKE ? ORDER BY tasks.priority DESC;");
   $stmt->bind_param("is", $user_id, $tag);
@@ -52,7 +52,7 @@ if(isset($_GET['tag'])){
     
   while($rows = $result->fetch_assoc()){
     
-    $response .= '<li class="todo-item priority-'.$rows['priority'].'" data-task-position="'.$rows['task_position'].'" data-task-priority="'.$rows['priority'].'">';
+    $response .= '<li class="todo-item priority-'.$rows['priority'].'" data-task-position="'.$rows['task_position'].'" data-task-priority="'.$rows['priority'].'" data-project="'.$rows['project_id'].'">';
     $response .=  '<div class="todo-left-wrapper">';
     $response .=    $left_controls;
     $response .=    '<div class="todo-task">';

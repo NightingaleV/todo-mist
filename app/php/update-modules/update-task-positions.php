@@ -18,6 +18,7 @@ foreach ($positions as $key => $value) {
   $error = $db->error;
   $result = $stmt->get_result();
   $stmt->close();
+  echo $error;
   echo 'row updated,';
   }
 }

@@ -26,7 +26,7 @@ function updateTaskPositions(){
           console.log('Fail to connect the server');
         }
       });
-  
+
 }
 
 function updateProjectPositions(){

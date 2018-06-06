@@ -9,25 +9,21 @@ if ( !isset( $db ) ) {
 print_r($_POST);
 
 $user_id = $_SESSION['id'];
-
-$project = $_POST['project'];
 $task = $_POST['task'];
 
 if(isset($_POST['currentProject'])){
+  
   $current_project = $_POST['currentProject'];
+  $new_project = $_POST['project'];
   $stmt = $db->prepare( 'UPDATE tasks 
-SET project_id = (SELECT id FROM projects WHERE user_id = ? AND project LIKE ?) WHERE task LIKE ? AND project_id = (SELECT id FROM projects WHERE user_id = ? AND project LIKE ?)' );
-  $stmt->bind_param( "issis",
-                    $user_id, 
-                    $project, 
-                    $task,
-                    $user_id,
-                    $current_project);
+SET project_id = ? WHERE task LIKE ? AND project_id = ?' );
+  $stmt->bind_param( "isi",$new_project, $task, $current_project);
   $stmt->execute();
   $error = $db->error;
   $result = $stmt->get_result();
   $stmt->close();
-  echo 'row updated,';
+  echo $error;
+  echo 'Filter-project:row  updated,';
 }
 if(isset($_POST['currentTag'])){
   echo 'block of tag executed,';
@@ -44,7 +40,8 @@ if(isset($_POST['currentTag'])){
   $error = $db->error;
   $result = $stmt->get_result();
   $stmt->close();
-  echo 'row updated,';
+  echo $error;
+  echo 'Filter-tag:row tag updated,';
 }
 
 
