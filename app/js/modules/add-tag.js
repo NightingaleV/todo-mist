@@ -37,8 +37,8 @@ function createTags(){
           console.log('Success to contact the server');
           console.log(response);
           if (response === 'tag_added') {
-            //succesfull add
-            //rerender the projects
+            //successful add
+            //render the projects
             $('#addTag').removeClass('show');
             renderTags();
           }

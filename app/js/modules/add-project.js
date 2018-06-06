@@ -37,8 +37,8 @@ function createProject(){
           console.log('Success to contact the server');
           console.log(response);
           if (response === 'project_added') {
-            //succesfull add
-            //rerender the projects
+            //successful add
+            //render the projects
             $('#addProject').removeClass('show');
             renderProjects();
           }

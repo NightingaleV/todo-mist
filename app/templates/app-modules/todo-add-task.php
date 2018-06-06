@@ -1,8 +1,4 @@
-<!-- Add task INLINE Button -->
-<div class="action-add-bar">
-  <a class="action-add-item" data-toggle="collapse" href="#addTaskInline" role="button" aria-expanded="false" aria-controls="addTaskInline"><i class="action-add-icon material-icons">add</i>Add task</a>
-</div>
-
+<!--MODAL FOR adding the task-->
 <div class="collapse multi-collapse" id="addTaskInline">
   <div class="card card-body">
     <form method="post" class="addTaskInline-form" autocomplete="off">
@@ -23,4 +19,8 @@
       </div>
     </form>
   </div>
+</div>
+<!-- Add task INLINE Button -->
+<div class="action-add-bar">
+  <a class="action-add-item" data-toggle="collapse" href="#addTaskInline" role="button" aria-expanded="false" aria-controls="addTaskInline"><i class="action-add-icon material-icons">add</i>Add task</a>
 </div>

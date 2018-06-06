@@ -95,5 +95,4 @@ $(document).on('click', '.priority-dropdown-item',function(e){
   //Change class and coloring for task
   changePriorityClass(changedItem,priority);
   changedItem.attr('data-task-priority', priority);
-  
 });

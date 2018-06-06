@@ -607,11 +607,13 @@ ul.tag-list li.tag-item {
   padding: 0rem 0rem;
   font-size: 1rem;
   line-height: 1.5;
-  border-radius: 1rem; }
+  border-radius: 1rem;
+  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5) !important; }
   .todo-item .btn-complete:hover {
     background: transparent;
     color: #27ae60;
-    border-color: transparent; }
+    border-color: transparent;
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.5) !important; }
     .todo-item .btn-complete:hover:hover {
       color: #27ae60;
       background-color: rgba(0, 0, 0, 0);
@@ -626,6 +628,11 @@ ul.tag-list li.tag-item {
       border-color: rgba(0, 0, 0, 0); }
     .todo-item .btn-complete:hover:not(:disabled):not(.disabled).active:focus, .todo-item .btn-complete:hover:not(:disabled):not(.disabled):active:focus {
       box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5); }
+  .todo-item .btn-complete:not(:disabled):not(.disabled).active:focus, .todo-item .btn-complete:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.5) !important; }
+
+.todo-item .todo-item.priority-1 .btn-complete:not(:disabled):not(.disabled).active:focus, .todo-item .todo-item.priority-1 .btn-complete:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.5) !important; }
 
 .todo-item .drag-icon, .todo-item .complete-icon {
   font-size: 1.5rem; }

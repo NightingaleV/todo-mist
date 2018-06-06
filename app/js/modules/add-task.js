@@ -71,9 +71,7 @@ function createTask(sourceOfAction) {
   //Request is coming from modal or inline input
   if (sourceOfAction === 'modal') {
     //Grab the current project to rerender
-    
-    
-    
+
     if ($('#taskName').val()) {
       var formData = $('.addTask-form').serialize();
       console.log(formData);

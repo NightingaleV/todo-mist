@@ -13,7 +13,10 @@ if(isset($_GET['project'])){
   $left_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-left-controls.php",TRUE);
   $right_controls = file_get_contents(dirname(__FILE__)."/../../templates/app-controls/todo-right-controls.php",TRUE);
   
-  $stmt = $db->prepare("SELECT tasks.task, tasks.project_id, tasks.task_position, tasks.priority FROM projects INNER JOIN tasks ON tasks.project_id=projects.id WHERE projects.user_id = ? AND projects.project LIKE ? ORDER BY tasks.task_position ASC;");
+  $stmt = $db->prepare(
+      "SELECT tasks.task, tasks.project_id, tasks.task_position, tasks.priority 
+FROM projects INNER JOIN tasks ON tasks.project_id=projects.id 
+WHERE projects.user_id = ? AND tasks.completed = 0 AND projects.project LIKE ? ORDER BY tasks.task_position ASC;");
   $stmt->bind_param("is", $user_id, $project);
   $stmt->execute();
   $result = $stmt->get_result();

@@ -37,8 +37,8 @@ function createProject(){
           console.log('Success to contact the server');
           console.log(response);
           if (response === 'project_added') {
-            //succesfull add
-            //rerender the projects
+            //successful add
+            //render the projects
             $('#addProject').removeClass('show');
             renderProjects();
           }
@@ -91,8 +91,8 @@ function createTags(){
           console.log('Success to contact the server');
           console.log(response);
           if (response === 'tag_added') {
-            //succesfull add
-            //rerender the projects
+            //successful add
+            //render the projects
             $('#addTag').removeClass('show');
             renderTags();
           }
@@ -179,9 +179,7 @@ function createTask(sourceOfAction) {
   //Request is coming from modal or inline input
   if (sourceOfAction === 'modal') {
     //Grab the current project to rerender
-    
-    
-    
+
     if ($('#taskName').val()) {
       var formData = $('.addTask-form').serialize();
       console.log(formData);
@@ -251,6 +249,30 @@ function createTask(sourceOfAction) {
   }
 }
 
+//Click on button complete a task
+$(document).on('click', '.btn-complete',function(e){
+    event.preventDefault();
+    var changedItem = $(this).parents('.todo-item');
+    var taskToComplete = changedItem.find('.todo-label').text().trim();
+    var tasksProjectId = changedItem.attr('data-project');
+    console.log(taskToComplete);
+
+    $.post({
+        url: 'php/update-modules/complete-task.php',
+        data: {
+            tasksProject:tasksProjectId,
+            task:taskToComplete,
+        },
+        success: function (response) {
+            console.log('Success to contact the server');
+            console.log(response);
+            changedItem.remove();
+        },
+        error: function () {
+            console.log('Fail to connect the server');
+        }
+    });
+});
 //Modal - click on button will request the inserting the task
 $(document).on('click', '.btn-project-delete',function(e){
   event.preventDefault();
@@ -805,5 +827,4 @@ $(document).on('click', '.priority-dropdown-item',function(e){
   //Change class and coloring for task
   changePriorityClass(changedItem,priority);
   changedItem.attr('data-task-priority', priority);
-  
 });
