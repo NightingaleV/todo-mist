@@ -2,7 +2,7 @@ function updateTaskPositions(){
     
   var dataArray = [];
   
-  var currentProject = $('.todo-title').text();
+  var currentProject = $('.todo-title').text().trim();
   
   $('.todo-item').each(function(){
     var task = {};

@@ -9,6 +9,7 @@ if ( !isset( $db ) ) {
 $project = $_POST['project'];
 $positions = json_decode($_POST['positions'], true );
 $user_id = $_SESSION['id'];
+print_r($positions);
 
 foreach ($positions as $key => $value) { 
   foreach ($value as $task => $position) { 

@@ -1,4 +1,4 @@
-//Modal - click on button will request the inserting the task
+
 $(document).on('click', '.btn-task-delete',function(e){
   event.preventDefault();
   
