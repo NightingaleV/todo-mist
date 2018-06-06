@@ -477,6 +477,20 @@ function tagsDroppable() {
 }
 //Init for first load of the app page
 tagsDroppable();
+
+//HIDE/SHOW controls
+function hoverTagControls(){
+    $('.tag-item').find('.tag-controls').hide();
+    $('.tag-item').hover(
+        function () {
+            $(this).find('.tag-controls').fadeIn(200).show(1);
+        },
+        function () {
+            $(this).find('.tag-controls').fadeIn(200).hide(1);
+        }
+    );
+}
+hoverTagControls();
 //Sort tasks
 $(function tasksSortable() {
   $('.todo-list').sortable({
@@ -518,7 +532,7 @@ function hoverTaskControls(){
   }
 );
 };
-hoverTaskControls();
+// hoverTaskControls();
 
 
 $(document).ready(function(){

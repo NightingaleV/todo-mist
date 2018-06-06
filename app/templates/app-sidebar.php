@@ -1,4 +1,4 @@
-<aside class="sidebar d-none d-sm-block col-7 col-sm-4">
+<aside class="sidebar d-sm-block col-7 col-sm-4">
   <div class="top-filter">
     <ul class="top-filter-list list-group list-group-flush">
       <li class="list-group-item top-filter-item inbox-item" data-project-id="1">
@@ -31,7 +31,7 @@
       <?php include('templates/app-controls/add-tag-controls.php') ?>
     </div>
     <?php include('templates/app-modules/sidebar-add-tag.php') ?>
-    <ul class="tag-list list-grouph">
+    <ul class="tag-list list-group-flush">
       <?php include(dirname(__FILE__)."/../php/render-modules/render-tags.php") ?>
     </ul>
   </div>

@@ -6,6 +6,8 @@ $btn-delete-padding-x:0.25rem;
 $btn-delete-padding-y:0.25rem;
 $btn-delete-border-radius:.25rem;
 
+
+
 //NAVBAR
 $btn-nav-add-background: #34495e;
 $btn-nav-add-color: white;
@@ -27,6 +29,10 @@ $btn-tag-add-padding-x:$btn-project-add-padding-x;
 $btn-tag-add-padding-y:$btn-project-add-padding-y;
 $btn-tag-add-border-radius:$btn-project-add-border-radius;
 $btn-tag-add-icon-size:$btn-project-add-icon-size;
+//delete
+$btn-tag-delete-icon-size: 1rem;
+$btn-tag-delete-padding-x:0.10rem;
+$btn-tag-delete-padding-y:0.10rem;
 
 //MODAL Controls
 $btn-modal-add-background:#4CAF50;
@@ -38,7 +44,7 @@ $btn-modal-padding-y:.25rem;
 $btn-modal-border-radius:.25rem;
 
 
-//TODO Top controls
+//TASK list Top controls
 $btn-todo-top-padding-x:0.25rem;
 $btn-todo-top-padding-y:0.25rem;
 $btn-todo-top-border-radius:.25rem;
@@ -52,7 +58,7 @@ $btn-todo-top-sort-color:$btn-todo-top-edit-color;
 $btn-todo-top-sort-background:#7f8c8d;
 $btn-todo-top-sort-icon-size: $btn-todo-top-edit-icon-size;
 
-//TODO Left controls
+//task-list Left controls
 $todo-left-controls-icon-size: 1.5rem;
 $btn-task-complete-color:black;
 $btn-task-complete-background:transparent;
@@ -61,7 +67,7 @@ $btn-task-complete-hover-background:transparent;
 //Color of priorities
 $btn-pr-1-color:#F44336;
 $btn-pr-2-color:#FF9800;
-$btn-pr-3-color:#FFEB3B;
+$btn-pr-3-color:#FDD835;
 $btn-pr-4-color:#9E9E9E;
 //Bottom inline
 $btn-add-task-bottom-inline:#e74c3c;
@@ -225,7 +231,7 @@ $btn-task-schedule-background:#FFEB3B;
     }
   }
 }
-//TODO Right controls
+//TASK List Right controls
 .todo-controls {
   display: flex;
   flex-direction: row;
@@ -270,7 +276,7 @@ $btn-task-schedule-background:#FFEB3B;
     @include btn-color($btn-delete-background, $btn-delete-color);
   }
 }
-//TODO bottom inline
+//TASK LIST bottom inline
 .addTaskInline-btn{
   background: $btn-add-task-bottom-inline;
 }
@@ -307,9 +313,9 @@ $btn-task-schedule-background:#FFEB3B;
   }
   .btn-tag-delete{
     @include btn-color($btn-delete-background, $btn-delete-color);
-    @include btn-size($btn-delete-padding-x,$btn-delete-padding-y,1rem,1.5,$btn-delete-border-radius);
+    @include btn-size($btn-tag-delete-padding-x,$btn-tag-delete-padding-y,1rem,1.5,$btn-delete-border-radius);
     .delete-icon{
-      font-size: $btn-delete-icon-size;
+      font-size: $btn-tag-delete-icon-size;
     }
   }
   .addTag-btn{

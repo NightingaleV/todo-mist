@@ -79,9 +79,14 @@ $todo-label-fsize:1.15rem;
   }
   .top-filter .top-filter-label{
     font-size: $topfilter-label-fsize;
+    padding-left: 0.5rem;
+  }
+  .top-filter-item .project-label{
+    padding-left: 0.5rem;
   }
   .project-list .project-label{
     font-size: $project-label-fsize;
+    padding-left: 0.5rem;
   }
   .tag-list .tag-label{
     font-size: $tag-label-fsize;

@@ -1,6 +1,9 @@
 .content{
   margin-top: 1rem;
 }
+.todo-wrapper{
+  padding:0 2rem;
+}
 
 //TITLE box
 .todo-title-wrapper{
@@ -51,6 +54,14 @@
   .todo-label{
     line-height: 1.5;
   }
+}
+.dropdown-menu {
+  padding: 0;
+  margin: 0.35rem 0 0;
+  border: 0px solid rgba(0,0,0,.15);
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 //Bottom inline add task
