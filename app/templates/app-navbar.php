@@ -3,7 +3,7 @@
   <div class="col-4">
     <a class="navbar-brand" href="#">TodoMist</a>
   </div>
-  <div class="col-8 d-flex justify-content">
+  <div class="nav-buttons col-8 d-flex">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
       <span class="navbar-toggler-icon"></span> 
     </button>

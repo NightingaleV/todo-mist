@@ -9,7 +9,7 @@ $btn-delete-border-radius:.25rem;
 
 
 //NAVBAR
-$btn-nav-add-background: #34495e;
+$btn-nav-add-background: #616161;
 $btn-nav-add-color: white;
 $btn-nav-logout-background: #636e72;
 $btn-nav-logout-color: white;
@@ -35,7 +35,7 @@ $btn-tag-delete-padding-x:0.10rem;
 $btn-tag-delete-padding-y:0.10rem;
 
 //MODAL Controls
-$btn-modal-add-background:#4CAF50;
+$btn-modal-add-background:#f44336;
 $btn-modal-close-background:grey;
 $btn-modal-color:white;
 $btn-modal-fsize:1rem;
@@ -55,7 +55,7 @@ $btn-todo-top-edit-background:#7f8c8d;
 $btn-todo-top-edit-icon-size: 1.5rem;
 //Sort button
 $btn-todo-top-sort-color:$btn-todo-top-edit-color;
-$btn-todo-top-sort-background:#7f8c8d;
+$btn-todo-top-sort-background:#f1c40f;
 $btn-todo-top-sort-icon-size: $btn-todo-top-edit-icon-size;
 
 //task-list Left controls
@@ -158,6 +158,9 @@ $btn-task-schedule-background:#FFEB3B;
 .app-navbar{
   .btn-add-task{
     @include btn-color($btn-nav-add-background, $btn-nav-add-color);
+    @include btn-size(1rem, 4rem, 1.2rem, 1.5, 0rem);
+    margin: 0rem 0rem 0rem -1rem;
+    height: 100%;
   }
   .btn-logout{
     @include btn-color($btn-nav-logout-background, $btn-nav-logout-color);
@@ -212,7 +215,7 @@ $btn-task-schedule-background:#FFEB3B;
     padding: 0.5rem 0rem;
   }
 }
-//TODO TOP Right controls
+//TASK list TOP Right controls
 .top-right-controls{
   .btn-todo-edit{
     @include btn-size($btn-todo-top-padding-y,$btn-todo-top-padding-x,1rem,1.5,$btn-todo-top-border-radius);

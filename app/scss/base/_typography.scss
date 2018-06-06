@@ -68,7 +68,7 @@ span,p{
 }
 }
 
-$topfilter-label-fsize:1.2rem;
+$top-filter-label-fsize:1.2rem;
 $project-label-fsize:1.2rem;
 $tag-label-fsize:1.2rem;
 $todo-label-fsize:1.15rem;
@@ -78,11 +78,11 @@ $todo-label-fsize:1.15rem;
     margin:0;
   }
   .top-filter .top-filter-label{
-    font-size: $topfilter-label-fsize;
-    padding-left: 0.5rem;
+    font-size: $top-filter-label-fsize;
+    padding-left: 0.15rem;
   }
   .top-filter-item .project-label{
-    padding-left: 0.5rem;
+    padding-left: 0.15rem;
   }
   .project-list .project-label{
     font-size: $project-label-fsize;

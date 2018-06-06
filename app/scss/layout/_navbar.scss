@@ -14,7 +14,7 @@ $brand-home-sm-size:2.2rem;
 $brand-home-lg-size:2.5rem;
 
 //APP
-$nav-background: #e53935;
+$nav-background: #e74c3c;
 $nav-brand-size:1.8rem;
 $nav-brand-margin-left:5rem;
 
@@ -55,6 +55,7 @@ $nav-brand-margin-left:5rem;
 
 
 .app-navbar{
+  padding: 0 1rem;
   background: $nav-background;
   .nav-container{
     @include d-flex(row,space-between,center);
@@ -66,5 +67,8 @@ $nav-brand-margin-left:5rem;
     font-size:$nav-brand-size;
     font-weight:$bold;
   }
-  
+  .nav-buttons{
+    align-items: center;
+    justify-content: space-between;
+  }
 }
