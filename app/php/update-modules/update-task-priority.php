@@ -11,7 +11,7 @@ if(isset($_POST['currentProject'])){
  
   $stmt = $db->prepare( 'UPDATE tasks 
   SET priority = ? WHERE task LIKE ? AND project_id = (SELECT id FROM projects WHERE user_id = ? AND project LIKE ?)' );
-  $stmt->bind_param( "isiis",
+  $stmt->bind_param( "isis",
                     $priority,
                     $task,
                     $user_id, 

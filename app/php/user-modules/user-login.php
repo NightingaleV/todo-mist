@@ -9,7 +9,7 @@ if(array_key_exists('id', $_COOKIE) && $_COOKIE['id'] != ''){
 	header( 'Location: app.php?project=Inbox' );
 }
 
-//User fullfilled the login form
+//User fulfilled the login form
 if (isset( $_POST[ 'login' ] ) ) {
 
 	require(dirname(__FILE__)."/../db-connection.php");
@@ -61,7 +61,7 @@ if (isset( $_POST[ 'login' ] ) ) {
 	$errorMessage = '<div class="alert alert-warning alert-dismissible fade show" role="alert"><h4 class="alert-heading">Ups!</h4>' . $error . '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>';
 }
 
-//User loggout
+//User logout
 if ( array_key_exists( 'logout', $_GET ) ) {
 	unset( $_SESSION );
 	setcookie( 'id', '', time() - 60 * 60 );

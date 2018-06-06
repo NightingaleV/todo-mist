@@ -48,7 +48,7 @@ if(isset($_GET['tag'])){
   
   $stmt = $db->prepare("SELECT tasks.task, tasks.project_id, tasks.task_position, tasks.priority FROM tasks 
   LEFT JOIN task_tags_bridge ON tasks.id=task_tags_bridge.task_id
-  LEFT JOIN tags ON tags.id=task_tags_bridge.tag_id WHERE tags.user_id = ? AND tags.tag LIKE ? ORDER BY tasks.priority DESC;");
+  LEFT JOIN tags ON tags.id=task_tags_bridge.tag_id WHERE tags.user_id = ? AND tags.tag LIKE ? ORDER BY tasks.priority ASC;");
   $stmt->bind_param("is", $user_id, $tag);
   $stmt->execute();
   $result = $stmt->get_result();
