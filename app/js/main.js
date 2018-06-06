@@ -281,7 +281,7 @@ $(document).on('click', '.btn-project-delete',function(e){
   
 });
 
-//Modal - click on button will request the inserting the task
+
 $(document).on('click', '.btn-tag-delete',function(e){
   event.preventDefault();
   
@@ -301,7 +301,6 @@ $(document).on('click', '.btn-tag-delete',function(e){
       console.log('Failure');
     }
   });
-  
 });
 
 //Modal - click on button will request the inserting the task
@@ -358,21 +357,90 @@ function projectsDroppable() {
       $(this).removeClass('shadow');
     },
     drop: function (event, ui) {
+      var urlArray = window.location.href.split('/');
+      var droppedTask = $(ui.draggable).find('.todo-label').text();
+      var toProject = $(this).find('.project-label').text();
+      
+      //if the filter is TAG
+      if (urlArray[3].indexOf('tag') >= 0){
+        var currentTag = $('.todo-title').text();
+        $.post({
+          url: 'php/update-modules/update-task-project.php',
+          data: { currentTag:currentTag,
+                  task:droppedTask,
+                  project:toProject},
+          success: function (response) {
+            console.log('Success to contact the server');
+            console.log(response);
+          },
+          error: function () {
+            console.log('Fail to connect the server');
+          }
+        }); 
+          
+        ui.draggable.animate({top:0,left:0},0);
+      }
+      else{
+        //if the filter is PROJECT
+        console.log('Dropped');
+        var currentProject = $('.todo-title').text();        
+        console.log('Current project:'+currentProject);
+        console.log('Dropped task:'+droppedTask);
+        console.log('To project:'+toProject);
+
+        if(currentProject !== toProject){
+          $.post({
+            url: 'php/update-modules/update-task-project.php',
+            data: { currentProject:currentProject,
+                    task:droppedTask,
+                    project:toProject},
+            success: function (response) {
+              console.log('Success to contact the server');
+              console.log(response);
+            },
+            error: function () {
+              console.log('Fail to connect the server');
+            }
+          });  
+          $(ui.draggable).remove();
+        }
+        else{
+          ui.draggable.animate({top:0,left:0},0);
+        }
+      }
+      $(this).removeClass('shadow');
+    }
+  });
+}
+//Init for first load of the app page
+projectsDroppable();
+//Drop task into project
+function tagsDroppable() {
+  $(".tag-item").droppable({
+    accept: '.todo-item',
+    tolerance: 'pointer',
+    scope: 'tasks',
+    over: function(event, ui){
+      $(this).addClass('shadow');
+    },
+    out: function(event, ui){
+      $(this).removeClass('shadow');
+    },
+    drop: function (event, ui) {
       
       console.log('Dropped');
       var currentProject = $('.todo-title').text();
       var droppedTask = $(ui.draggable).find('.todo-label').text();
-      var toProject = $(this).find('.project-label').text();
+      var toTag = $(this).find('.tag-label').text();
       console.log('Current project:'+currentProject);
       console.log('Dropped task:'+droppedTask);
-      console.log('To project:'+toProject);
+      console.log('To tag:'+toTag);
       
-      if(currentProject !== toProject){
       $.post({
-        url: 'php/update-modules/update-task-project.php',
+        url: 'php/update-modules/update-task-tag.php',
         data: { currentProject:currentProject,
                 task:droppedTask,
-                project:toProject},
+                tag:toTag},
         success: function (response) {
           console.log('Success to contact the server');
           console.log(response);
@@ -380,19 +448,15 @@ function projectsDroppable() {
         error: function () {
           console.log('Fail to connect the server');
         }
-      });  
-        $(ui.draggable).remove();
-      }else{
-        console.log('They are same:');
-        ui.draggable.animate({top:0,left:0},0);
-      }
-      
+      }); 
+      $(this).removeClass('shadow');
+      ui.draggable.animate({top:0,left:0},0);
 
     }
   });
 }
 //Init for first load of the app page
-projectsDroppable();
+tagsDroppable();
 //Sort tasks
 $(function tasksSortable() {
   $('.todo-list').sortable({
@@ -517,6 +581,38 @@ function renderTaskPositions(){
 renderTaskPositions();
 
 
+//RENDER tasks by filters
+function renderTasksByTag(tag) {
+  $.ajax({
+    url: 'php/render-modules/render-tasks.php',
+    type: 'GET',
+    dataType:'html',
+    data: {
+      tag: tag
+    },
+    success: function (response) {
+      $('.todo-list').empty();
+      $('.todo-list').append(response);
+      renderFilterTitle(tag);
+      addHiddenInput(tag);
+      renderTaskPositions();
+      tasksDraggable();
+      projectsDroppable();
+    }
+  });
+}
+//Render tasks when CLICK on projects aside
+  $(document).on('click','li.tag-item', function () {
+    var tagName = $(this).find('span').text();
+    console.log(tagName);
+    renderTasksByTag(tagName);
+    history.replaceState(null, null, 'app.php?'.concat($.param({tag:tagName})));
+  });
+
+//Render Name of current filter
+function renderFilterTitle(filter){
+  $('.todo-title').text(filter);
+}
 
 function updateTaskPositions(){
     

@@ -1,4 +1,4 @@
-//Modal - click on button will request the inserting the task
+
 $(document).on('click', '.btn-tag-delete',function(e){
   event.preventDefault();
   
@@ -18,5 +18,4 @@ $(document).on('click', '.btn-tag-delete',function(e){
       console.log('Failure');
     }
   });
-  
 });

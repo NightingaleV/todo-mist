@@ -46,3 +46,35 @@ function renderTaskPositions(){
 renderTaskPositions();
 
 
+//RENDER tasks by filters
+function renderTasksByTag(tag) {
+  $.ajax({
+    url: 'php/render-modules/render-tasks.php',
+    type: 'GET',
+    dataType:'html',
+    data: {
+      tag: tag
+    },
+    success: function (response) {
+      $('.todo-list').empty();
+      $('.todo-list').append(response);
+      renderFilterTitle(tag);
+      addHiddenInput(tag);
+      renderTaskPositions();
+      tasksDraggable();
+      projectsDroppable();
+    }
+  });
+}
+//Render tasks when CLICK on projects aside
+  $(document).on('click','li.tag-item', function () {
+    var tagName = $(this).find('span').text();
+    console.log(tagName);
+    renderTasksByTag(tagName);
+    history.replaceState(null, null, 'app.php?'.concat($.param({tag:tagName})));
+  });
+
+//Render Name of current filter
+function renderFilterTitle(filter){
+  $('.todo-title').text(filter);
+}
