@@ -6,7 +6,7 @@ $error = '';
 if(array_key_exists('id', $_COOKIE) && $_COOKIE['id'] != ''){
 	$_SESSION['id'] = $_COOKIE['id'];
   $_SESSION['username'] = $_COOKIE['username'];
-	header( 'Location: app.php' );
+	header( 'Location: app.php?project=Inbox' );
 }
 
 //User fullfilled the login form
@@ -49,7 +49,7 @@ if (isset( $_POST[ 'login' ] ) ) {
 					setcookie( 'id', $row['id'], time() + 60 * 60 * 24 * 30 );
           setcookie( 'username', $row['username'], time() + 60 * 60 * 24 * 30 );
 				}
-				header( 'Location: app.php' );
+				header( 'Location: app.php?project=Inbox' );
 				
 			} else {
 				$error .= "Your password is not correct!";
