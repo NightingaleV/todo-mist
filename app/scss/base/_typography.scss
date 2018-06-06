@@ -68,6 +68,30 @@ span,p{
 }
 }
 
+$topfilter-label-fsize:1.2rem;
+$project-label-fsize:1.2rem;
+$tag-label-fsize:1.2rem;
+$todo-label-fsize:1.15rem;
+
+.app{
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin:0;
+  }
+  .top-filter .top-filter-label{
+    font-size: $topfilter-label-fsize;
+  }
+  .project-list .project-label{
+    font-size: $project-label-fsize;
+  }
+  .tag-list .tag-label{
+    font-size: $tag-label-fsize;
+  }
+  .todo-list .todo-label{
+    font-size: $todo-label-fsize;
+  }
+
+  
+}
 
 
 

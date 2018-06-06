@@ -13,6 +13,11 @@ $brand-home-xm-size:1.8rem;
 $brand-home-sm-size:2.2rem;
 $brand-home-lg-size:2.5rem;
 
+//APP
+$nav-background: #c0392b;
+$nav-brand-size:1.8rem;
+$nav-brand-margin-left:5rem;
+
 @mixin transition($animation) {
   -webkit-transition: $animation;
   -moz-transition: $animation;
@@ -50,14 +55,15 @@ $brand-home-lg-size:2.5rem;
 
 
 .app-navbar{
-  background: #e74c3c;
+  background: $nav-background;
   .nav-container{
     @include d-flex(row,space-between,center);
   }
   
   .navbar-brand{
     color:white;
-    font-size:1.8rem;
+    margin-left: $nav-brand-margin-left;
+    font-size:$nav-brand-size;
     font-weight:$bold;
   }
   

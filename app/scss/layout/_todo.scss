@@ -2,11 +2,21 @@
   margin-top: 1rem;
 }
 
+//TITLE box
 .todo-title-wrapper{
   @include d-flex(row,space-between,center);
+  margin-bottom: 1rem;
+  .todo-title{
+    font-size: 2.5rem;
+    margin-left: 2rem;
+  }
+  .top-right-controls{
+    margin-right: 1rem;
+  }
   .top-right-controls{
     @include d-flex(row,flex-end,center);
   }
+  
 }
 
 
@@ -41,4 +51,28 @@
   .todo-label{
     line-height: 1.5;
   }
+}
+
+//Bottom inline add task
+.action-add-bar{
+  .action-add-item{
+    margin-top: .5rem;
+    margin-left: 2rem;
+    font-size: 1.25rem;
+    color:black;
+    @include d-flex(row,flex-start,center);
+  }
+  .action-add-icon{
+    margin-right: 0.5rem;
+  }
+}
+.tag-filter{
+  .action-add-item{
+    display: none;
+  }
+}
+#addTaskInline{
+  .addTaskInline-btn-box{
+    margin-right: 15px;
+  } 
 }
