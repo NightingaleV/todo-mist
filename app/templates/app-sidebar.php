@@ -1,14 +1,18 @@
 <aside class="sidebar d-none d-sm-block col-7 col-sm-4">
   <div class="top-filter">
     <ul class="top-filter-list list-group list-group-flush">
-      <li class="list-group-item top-filter-item inbox-item">
+      <li class="list-group-item top-filter-item inbox-item" data-project-id="1">
         <i class="inbox-icon add-bar-icon material-icons">inbox</i><span class="project-label">Inbox</span>
       </li>
       <li class="list-group-item top-filter-item">
         <i class="inbox-icon add-bar-icon material-icons">bookmark</i>
         <span class="top-filter-label">Important</span></li>
-      <li class="list-group-item top-filter-item"><span class="top-filter-label">Today</span></li>
-      <li class="list-group-item top-filter-item"><span class="top-filter-label">Completed</span></li>
+      <li class="list-group-item top-filter-item">
+        <i class="inbox-icon material-icons">calendar_today</i>
+        <span class="top-filter-label">Today</span></li>
+      <li class="list-group-item top-filter-item">
+        <i class="inbox-icon material-icons">done_all</i>
+        <span class="top-filter-label">Completed</span></li>
     </ul>
   </div>
   <div class="projects">

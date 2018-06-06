@@ -1,6 +1,6 @@
 <!-- Add task INLINE Button -->
 <div class="action-add-bar">
-  <a class="action-add-item" data-toggle="collapse" href="#addTaskInline" role="button" aria-expanded="false" aria-controls="addTaskInline"><i class="material-icons">add</i>Add task</a>
+  <a class="action-add-item" data-toggle="collapse" href="#addTaskInline" role="button" aria-expanded="false" aria-controls="addTaskInline"><i class="action-add-icon material-icons">add</i>Add task</a>
 </div>
 
 <div class="collapse multi-collapse" id="addTaskInline">

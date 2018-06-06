@@ -4,7 +4,7 @@
   </div>
   <div class="complete-action">
     <button class="btn btn-complete">
-    <i class="material-icons complete-icon">panorama_fish_eye</i>
+    <i class="material-icons complete-icon">trip_origin</i>
   </button>
   </div>
 </div>
