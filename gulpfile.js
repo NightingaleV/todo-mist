@@ -25,7 +25,10 @@ var Paths = {
 	SCSS: 'app/scss/**/*.scss',
 	CSS: 'app/css/*.css',
 	JS: 'app/js/',
-  JS_MODULES: 'app/js/modules/*.js'
+  JS_MAIN: 'app/js/*.js',
+  JS_MODULES: 'app/js/modules/*.js',
+  IMG: 'app/img/*.jpg',
+  DIST_IMG: 'dist/img/'
 };
 
 gulp.task('messageStartBuilding', function () {
@@ -46,6 +49,12 @@ gulp.task('copyPhp', function () {
 
 	gulp.src(Paths.PHP_SOURCE)
 		.pipe(gulp.dest(Paths.DIST_PHP_SOURCE));
+});
+
+//Copy ALL PHP files
+gulp.task('copyImg', function () {
+  gulp.src(Paths.IMG)
+      .pipe(gulp.dest(Paths.DIST_IMG));
 });
 
 //Beautify scss
@@ -84,7 +93,7 @@ gulp.task('buildScripts', function () {
 		.pipe(concat('main.js'))
 		.pipe(gulp.dest(Paths.JS));
   
-  gulp.src(Paths.JS)
+  gulp.src(Paths.JS_MAIN)
 		.pipe(uglify())
 		.pipe(gulp.dest(Paths.DIST_JS));
 });
@@ -121,14 +130,15 @@ gulp.task('cleanDist', function () {
 
 //Building app
 gulp.task('build', function (callback) {
-	runSequence('cleanDist', ['messageStartBuilding', 'copyPhp', 'sass', 'copyCss', 'buildScripts', 'messageEndBuilding'], callback);
+	runSequence('cleanDist', ['messageStartBuilding','copyImg', 'copyPhp', 'sass', 'copyCss', 'buildScripts', 'messageEndBuilding'], callback);
 });
 
 
 //Building app
 gulp.task('default', function (callback) {
-	runSequence('cleanDist', ['messageStartBuilding', 'copyPhp', 'sass', 'copyCss', 'buildScripts', 'messageEndBuilding'], callback);
+  runSequence('cleanDist', ['messageStartBuilding','copyImg', 'copyPhp', 'sass', 'copyCss', 'buildScripts', 'messageEndBuilding'], callback);
 });
+
 
 gulp.task('pages', function () {
 	return gulp.src('app/*.php')
