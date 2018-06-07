@@ -1,4 +1,8 @@
-<?php include('php/user-modules/user-login.php') ?>
+<?php include('php/user-modules/user-login.php');
+//Google sing in
+
+$loginURL = $gClient->createAuthUrl();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -49,6 +53,7 @@
               ?>
               <div class="login-box text-center">
                 <button name="login" type="submit" class="btn btn-form btn-login btn-lg mt-3">Log in</button>
+                <button name="login" type="button" onclick="window.location = '<?php echo $loginURL ?>';" class="btn btn-form btn-danger btn-lg mt-3 ml-2">Log in with Google</button>
               </div>
             </form>
           </div>
