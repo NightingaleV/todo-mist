@@ -12,7 +12,7 @@
         <button type="button" class="btn btn-add-task btn-danger" data-toggle="modal" data-target="#addTask"><i class="add-bar-icon material-icons">add</i>Add new task</button>
       </div>
       <div class="logout-bar">
-        <button type="button" class="btn btn-logout btn-secondary">Logout</button>
+        <a href="../php/user-modules/user-logout.php?logout=1" class="btn btn-logout">Logout</a>
       </div>
   </div>
   </div>

@@ -493,23 +493,23 @@ ul.tag-list li.tag-item {
     box-shadow: 0 0 0 3px rgba(65, 65, 65, 0.5); }
 
 .app-navbar .btn-logout {
-  background: #636e72;
+  background: #757575;
   color: white;
-  border-color: #636e72; }
+  border-color: #757575; }
   .app-navbar .btn-logout:hover {
     color: white;
-    background-color: #515a5e;
-    border-color: #4b5457; }
+    background-color: #626262;
+    border-color: #5c5c5c; }
   .app-navbar .btn-logout:not(:disabled):not(.disabled):active {
     color: white;
-    background-color: #4b5457;
-    border-color: #454d50; }
+    background-color: #5c5c5c;
+    border-color: #555555; }
   .app-navbar .btn-logout:focus {
-    box-shadow: 0 0 0 3px rgba(75, 84, 87, 0.25);
-    background-color: #515a5e;
-    border-color: #4b5457; }
+    box-shadow: 0 0 0 3px rgba(92, 92, 92, 0.25);
+    background-color: #626262;
+    border-color: #5c5c5c; }
   .app-navbar .btn-logout:not(:disabled):not(.disabled).active:focus, .app-navbar .btn-logout:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 3px rgba(69, 77, 80, 0.5); }
+    box-shadow: 0 0 0 3px rgba(85, 85, 85, 0.5); }
 
 .addTask-btn-box .btn-addTask {
   padding: 0.25rem 0.5rem;

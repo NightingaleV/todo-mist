@@ -349,6 +349,18 @@ $(document).on('click', '.btn-task-delete',function(e){
   });
 });
 
+$(document).on('click', '.btn-logout', function (e) {
+    $.ajax({
+        url: 'php/user-modules/user-logout.php',
+        type: 'GET',
+        data: {
+            logout: 1
+        },
+        success: function (response) {
+            console.log(response);
+        }
+    });
+});
 //Sort projects
 $(function projectsSortable() {
   $('.project-list').sortable({

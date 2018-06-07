@@ -1,5 +1,6 @@
-<?php session_start();
+<?php
 require("php/db-connection.php");
+require("php/user-modules/user-logged-in.php");
 ?>
 <!doctype html>
 <html lang="en">

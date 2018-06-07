@@ -1,6 +1,6 @@
 <!-- Add task Modal -->
 <div class="modal fade bd-example-modal-lg" id="addTask" tabindex="-1" role="dialog" aria-labelledby="addTask" aria-hidden="true">
-  <div class="modal-add-task modal-dialog modal-dialog-centered modal-lg" role="document">
+  <div class="modal-add-task modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title addTask-title">Add Task</h5>

@@ -11,7 +11,7 @@ $btn-delete-border-radius:.25rem;
 //NAVBAR
 $btn-nav-add-background: #616161;
 $btn-nav-add-color: white;
-$btn-nav-logout-background: #636e72;
+$btn-nav-logout-background: #757575;
 $btn-nav-logout-color: white;
 
 //PROJECT controls
@@ -73,7 +73,7 @@ $btn-pr-4-color:#9E9E9E;
 $btn-add-task-bottom-inline:#e74c3c;
 
 
-//TODO Right controls
+//TASK Right controls
 $todo-right-controls-icon-size: 1.5rem;
 $todo-right-controls-color:white;
 $btn-task-priority-background:#FF9800;
@@ -177,7 +177,7 @@ $btn-task-schedule-background:#FFEB3B;
     @include btn-color($btn-modal-close-background, $btn-modal-color);
   }
 }
-//TODO Left controls
+//TASK Left controls
 .todo-left{
   
 }
