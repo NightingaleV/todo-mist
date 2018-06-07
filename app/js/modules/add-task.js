@@ -26,7 +26,8 @@ $('#addTask').on('show.bs.modal', function (e) {
   $('.project-item')
     .find(".project-label")
     .each(function () {
-      $('#projectSelect').append('<option value="' + $(this).text() + '">' + $(this).text() + '</option>');
+      console.log($(this).html())
+      $('#projectSelect').append('<option value="' + $(this).text() + '">' + $(this).html() + '</option>');
     });
 
   //add tags into select box
@@ -34,7 +35,7 @@ $('#addTask').on('show.bs.modal', function (e) {
   $(".tag-item")
     .find(".tag-label")
     .each(function () {
-      $('#tagSelect').append('<option value="' + $(this).text() + '">#' + $(this).text() + '</option>');
+      $('#tagSelect').append('<option value="' + $(this).text() + '">#' + $(this).html() + '</option>');
     });
 
 });
