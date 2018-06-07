@@ -47,7 +47,7 @@
 								echo $errorMessage;
 							 }
               ?>
-              <div class="text-center">
+              <div class="login-box text-center">
                 <button name="login" type="submit" class="btn btn-form btn-login btn-lg mt-3">Log in</button>
               </div>
             </form>

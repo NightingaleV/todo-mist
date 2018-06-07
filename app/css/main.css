@@ -192,6 +192,16 @@ hr.row-gap {
       height: 38vh;
       min-height: 300px; } }
 
+.button-box {
+  max-height: 50px; }
+
+.github-wrapper {
+  margin-top: 3rem; }
+
+.login-box {
+  display: flex;
+  justify-content: center; }
+
 .quote-overlay {
   background: url("/img/background_001.jpg") no-repeat center center fixed;
   background-size: cover; }
@@ -243,6 +253,9 @@ hr.row-gap {
 
 .project-title-box, .tag-title-box {
   margin: 1rem 1rem 0.5rem 0.5rem; }
+
+.top-filter-item:hover, .project-item:hover, .tag-item:hover {
+  cursor: pointer; }
 
 .projects .project-title-box {
   display: flex;

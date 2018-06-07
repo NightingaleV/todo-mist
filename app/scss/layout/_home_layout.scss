@@ -126,6 +126,16 @@ hr.row-gap{
     min-height: 300px; 
   }
 }
+.button-box{
+  max-height: 50px;
+}
+.github-wrapper{
+  margin-top: 3rem;
+}
+.login-box{
+  display: flex;
+  justify-content: center;
+}
 .quote-overlay{
   background: $thirds-bg-img;
   -webkit-background-size: cover;

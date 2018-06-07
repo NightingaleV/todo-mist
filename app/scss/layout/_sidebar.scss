@@ -13,6 +13,11 @@ $droppable-over-background:#ecf0f1 !important;
 .project-title-box,.tag-title-box{
   margin: 1rem 1rem 0.5rem 0.5rem
 }
+.top-filter-item, .project-item, .tag-item{
+  &:hover{
+    cursor: pointer;
+  }
+}
 
 .projects{
   .project-title-box{
