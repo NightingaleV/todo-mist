@@ -7,6 +7,7 @@ function renderProjects() {
       $('.project-list').empty();
       $('.project-list').append(response);
       renderProjectPositions();
+      hoverProjectControls();
       projectsDroppable();
     }
   });

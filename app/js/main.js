@@ -234,9 +234,10 @@ function createTask(sourceOfAction) {
           console.log(response);
           if (response === 'task_added') {
             //succesfull add
-            var currentProject = $('.todo-title').text();
-            renderTasks(currentProject);
+            var currentProject = $('.todo-title').text().trim();
+
             $('#addTaskInline').removeClass('show');
+            renderTasks(currentProject);
           }
           if (response === 'duplicated_tasks') {
             console.log('it isnot');
@@ -332,7 +333,7 @@ $(document).on('click', '.btn-task-delete',function(e){
   
   var taskToDelete = $(this).parents('.todo-item').find('.todo-label').text();
   console.log(taskToDelete);
-  var currentProject = $('.todo-title').text();
+  var currentProject = $('.todo-title').text().trim();
   console.log(currentProject);
   
   $.post({
@@ -574,6 +575,7 @@ function renderProjects() {
       $('.project-list').empty();
       $('.project-list').append(response);
       renderProjectPositions();
+      hoverProjectControls();
       projectsDroppable();
     }
   });

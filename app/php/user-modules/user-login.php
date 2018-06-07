@@ -40,7 +40,6 @@ if (isset($_POST['login'])) {
         $row = $result->fetch_assoc();
         $stmt->close();
 
-        print_r($row);
         if (isset($row)) {
             if (password_verify($password, $row['password'])) {
                 $_SESSION['id'] = $row['id'];

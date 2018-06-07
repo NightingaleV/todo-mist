@@ -32,8 +32,10 @@ WHERE projects.user_id = ? AND
 ' );
   $stmt->bind_param( "sis", $task_name, $user_id, $current_project);
   $stmt->execute();
+  $error = $db->error;
   $result = $stmt->get_result();
   $stmt->close();
+  echo $error;
   echo 'ROW in tasks Deleted';
 }
 

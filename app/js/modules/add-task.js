@@ -126,9 +126,10 @@ function createTask(sourceOfAction) {
           console.log(response);
           if (response === 'task_added') {
             //succesfull add
-            var currentProject = $('.todo-title').text();
-            renderTasks(currentProject);
+            var currentProject = $('.todo-title').text().trim();
+
             $('#addTaskInline').removeClass('show');
+            renderTasks(currentProject);
           }
           if (response === 'duplicated_tasks') {
             console.log('it isnot');
