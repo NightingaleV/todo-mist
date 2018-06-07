@@ -76,11 +76,13 @@ if ( isset( $_POST[ 'registration' ] ) ) {
         $stmt = $db->prepare("INSERT INTO users (username, email) VALUES (?, ?)");
         $stmt->bind_param("ss", $username, $email);
         $stmt->execute();
+        $user_id = $stmt->insert_id;
         $stmt->close();
         
         //hashing password
-				$db->query("UPDATE `users` SET password = '" .password_hash($password, PASSWORD_BCRYPT, array('cost' => 10)). "' WHERE id = " . $db->insert_id . " LIMIT 1");
-				$success .= "You have been successfully registered! <a href='login.php'>Log In</a>!";
+        $db->query("UPDATE `users` SET password = '" .password_hash($password, PASSWORD_BCRYPT, array('cost' => 10)). "' WHERE id = " . $db->insert_id . " LIMIT 1");
+        $db->query("INSERT INTO projects (project,user_id) VALUES ('Inbox',". $user_id.")");
+        $success .= "You have been successfully registered! <a href='login.php'>Log In</a>!";
         
       } catch ( Exception $e ) {
         $error .= 'Could not sign you up - please try again';
