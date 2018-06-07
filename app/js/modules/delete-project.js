@@ -13,6 +13,7 @@ $(document).on('click', '.btn-project-delete',function(e){
       console.log('Success to contact the server');
       console.log(response);
       renderProjects();
+      renderTasks('Inbox');
       
       //If we are deleting the rendered project
       var currentProject = $('.todo-title').text();
