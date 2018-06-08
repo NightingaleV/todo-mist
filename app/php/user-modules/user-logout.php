@@ -1,6 +1,6 @@
 <?php
 
-require_once 'google-config.php';
+//require_once 'google-config.php';
 
 if (!isset($_SESSION)) {
     session_start();
@@ -9,10 +9,10 @@ if (!isset($db)) {
     require(dirname(__FILE__) . "/../db-connection.php");
 }
 
-if(isset($_SESSION['access_token'])){
-    unset($_SESSION['access_token']);
-    $gClient->revokeToken();
-}
+//if(isset($_SESSION['access_token'])){
+//    unset($_SESSION['access_token']);
+//    $gClient->revokeToken();
+//}
 session_unset();
 session_destroy();
 

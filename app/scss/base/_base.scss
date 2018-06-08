@@ -15,3 +15,10 @@ a{
 .card {
   border: 0px solid rgba(0,0,0,.125);
 }
+
+.draggable-action{
+  cursor: grab !important;
+  &:hover{
+    cursor: grab !important;
+  }
+}

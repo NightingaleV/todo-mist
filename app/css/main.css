@@ -14,6 +14,13 @@ a {
 .card {
   border: 0px solid rgba(0, 0, 0, 0.125); }
 
+.draggable-action {
+  cursor: -webkit-grab !important;
+  cursor: grab !important; }
+  .draggable-action:hover {
+    cursor: -webkit-grab !important;
+    cursor: grab !important; }
+
 html {
   font-size: 100%; }
 
