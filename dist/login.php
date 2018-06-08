@@ -1,12 +1,11 @@
 <?php include('php/user-modules/user-login.php');
 //Google sing in
-
-$loginURL = $gClient->createAuthUrl();
+//$loginURL = $gClient->createAuthUrl();
 ?>
 <!DOCTYPE html>
-<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Your more responsible friend. Keep your self organized and get your job done with Todomist.">
   <meta name="keywords" content="todomist">
@@ -46,7 +45,7 @@ $loginURL = $gClient->createAuthUrl();
                 <input name="stayloggedin" type="checkbox" class="form-check-input" id="cookie-checkbox" value="1">
                 <label class="form-check-label" for="cookie-checkbox">Keep me logged in!</label>
               </div>
-              <?php
+              <?php 
                 if ( $error != '' ) {
 								echo $errorMessage;
 							 }

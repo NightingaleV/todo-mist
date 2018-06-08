@@ -2,10 +2,6 @@
 session_start();
 $error = '';
 
-
-
-
-
 //User already logged in
 if (array_key_exists('id', $_COOKIE) && $_COOKIE['id'] != '') {
     $_SESSION['id'] = $_COOKIE['id'];
@@ -14,11 +10,11 @@ if (array_key_exists('id', $_COOKIE) && $_COOKIE['id'] != '') {
 }
 
 //Google
-require_once 'google-config.php';
-if (isset($_SESSION['access_token'])) {
-    header('Location: app.php?project=Inbox');
-    exit();
-}
+//require_once 'google-config.php';
+//if (isset($_SESSION['access_token'])) {
+//    header('Location: app.php?project=Inbox');
+//    exit();
+//}
 
 //User fulfilled the login form
 if (isset($_POST['login'])) {

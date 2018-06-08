@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Your more responsible friend. Keep your self organized and get your job done with Todomist.">
   <meta name="keywords" content="todomist">
@@ -31,7 +31,7 @@
             <h1 class="text-center mt-5 mt-sm-0">Sign up now!</h1>
             <div class="col-12 d-none d-md-block col-lg-10 offset-lg-1">
               <p class="mt-3">It is free! What are you waiting for?</p>
-              <?php
+              <?php 
                 if ( $error != '' ) {
 								echo $errorMessage;
 							 }
