@@ -2,10 +2,10 @@
 require("php/db-connection.php");
 require("php/user-modules/user-logged-in.php");
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Your more responsible friend. Keep your self organized and get your job done with Todomist.">
   <meta name="keywords" content="todomist">

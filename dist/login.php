@@ -3,8 +3,8 @@
 
 $loginURL = $gClient->createAuthUrl();
 ?>
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,7 +46,7 @@ $loginURL = $gClient->createAuthUrl();
                 <input name="stayloggedin" type="checkbox" class="form-check-input" id="cookie-checkbox" value="1">
                 <label class="form-check-label" for="cookie-checkbox">Keep me logged in!</label>
               </div>
-              <?php 
+              <?php
                 if ( $error != '' ) {
 								echo $errorMessage;
 							 }
