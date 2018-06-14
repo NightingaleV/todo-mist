@@ -35,9 +35,6 @@
                 if ( $error != '' ) {
 								echo $errorMessage;
 							 }
-							 if ( $success != '' ) {
-								echo $successMessage;
-							 }
               ?>
             </div>
           </div>
