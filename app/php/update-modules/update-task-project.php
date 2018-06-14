@@ -43,7 +43,3 @@ if(isset($_POST['currentTag'])){
   echo $error;
   echo 'Filter-tag:row tag updated,';
 }
-
-
-
-?>

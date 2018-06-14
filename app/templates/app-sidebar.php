@@ -1,7 +1,14 @@
 <aside class="sidebar d-sm-block col-7 col-sm-4">
   <div class="top-filter">
     <ul class="top-filter-list list-group list-group-flush">
-      <li class="list-group-item top-filter-item inbox-item" data-project-id="1">
+      <li class="list-group-item top-filter-item inbox-item" data-project-id="<?php
+      $stmt = $db->prepare("SELECT id FROM projects WHERE user_id = ?");
+      $stmt->bind_param("i", $_SESSION['id']);
+      $stmt->execute();
+      $result = $stmt->get_result();
+      $result_id = $result->fetch_assoc();
+      echo $result_id['id'];
+      ?>">
         <i class="inbox-icon add-bar-icon material-icons">inbox</i><span class="project-label">Inbox</span>
       </li>
       <li class="list-group-item top-filter-item">

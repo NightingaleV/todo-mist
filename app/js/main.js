@@ -143,11 +143,13 @@ function createTags(){
     }
 }
 
-//CREATE TASK THROUGHT INLINE TAB
+//CREATE TASK THROUGH INLINE TAB
+var addTaskInlineInput = $('.addTaskInline-input');
+var addTaskInline = $('#addTaskInline');
 //auto focus input for task
-$('#addTaskInline').on('shown.bs.collapse', function (e) {
-  $('.addTaskInline-input').val('');
-  $('.addTaskInline-input').focus();
+addTaskInline.on('shown.bs.collapse', function (e) {
+  addTaskInlineInput.val('');
+  addTaskInlineInput.focus();
 });
 //Inline form - click add button
 $(document).on('click', '.addTaskInline-btn', function (e) {
@@ -276,7 +278,18 @@ function createTask(sourceOfAction) {
             renderTasks(currentProject);
           }
           if (response === 'duplicated_tasks') {
-            console.log('it isnot');
+            console.log('duplicated_tasks');
+            addTaskInlineInput.popover({
+              trigger: 'manual',
+              delay: {
+                "show": 250,
+                "hide": 0
+              }
+            });
+            addTaskInlineInput.popover('toggle');
+            setTimeout(function () {
+              addTaskInlineInput.popover('toggle');
+            }, 4500);
           }
         },
         error: function () {
