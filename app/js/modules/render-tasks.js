@@ -1,4 +1,9 @@
-
+  //Hide inline addtask if viewing filters and tags
+  var urlArray = window.location.href.split('/');
+  if(urlArray[3].indexOf('tag') >= 0 || urlArray[3].indexOf('filter') >= 0){
+    $('.app').addClass('filter-view');
+  }
+  
   //Get data from server
   function renderTasks(project) {
     $.ajax({
@@ -37,7 +42,7 @@
     history.replaceState(null, null, 'app.php?'.concat($.param({project:projectName})));
     
     //Add inline if browsing projects
-    $('.app').removeClass('tag-filter');
+    $('.app').removeClass('filter-view');
   });
 
 //Render index into data task position atributes
@@ -46,11 +51,11 @@ function renderTaskPositions(){
     $(this).attr('data-task-position', $(this).index());
   });
 }
-//Render position intributes after refresh
+//Render position attributes after refresh
 renderTaskPositions();
 
 
-//RENDER tasks by filters
+//RENDER tasks by tags
 function renderTasksByTag(tag) {
   $.ajax({
     url: 'php/render-modules/render-tasks.php',
@@ -64,7 +69,6 @@ function renderTasksByTag(tag) {
       $('.todo-list').append(response);
       hoverTaskControls();
       renderFilterTitle(tag);
-      addHiddenInput(tag);
       renderTaskPositions();
       tasksDraggable();
       projectsDroppable();
@@ -78,10 +82,41 @@ function renderTasksByTag(tag) {
     renderTasksByTag(tagName);
     history.replaceState(null, null, 'app.php?'.concat($.param({tag:tagName})));
     //hide inline add task form
-    $('.app').addClass('tag-filter');
+    $('.app').addClass('filter-view');
   });
 
-//Render Name of current filter
-function renderFilterTitle(filter){
-  $('.todo-title').text(filter);
-}
+  //RENDER tasks by filters
+  function renderTasksByFilter(filter) {
+    $.ajax({
+      url: 'php/render-modules/render-tasks.php',
+      type: 'GET',
+      dataType:'html',
+      data: {
+        filter: filter
+      },
+      success: function (response) {
+        $('.todo-list').empty();
+        $('.todo-list').append(response);
+        hoverTaskControls();
+        renderFilterTitle(filter);
+        renderTaskPositions();
+        tasksDraggable();
+        projectsDroppable();
+      }
+    });
+  }
+  //Render tasks when CLICK on projects aside
+  $(document).on('click','li.top-filter-item', function () {
+    var filterName = $(this).find('span').text();
+    console.log(filterName);
+    renderTasksByFilter(filterName);
+    history.replaceState(null, null, 'app.php?'.concat($.param({filter:filterName})));
+    //hide inline add task form
+    $('.app').addClass('filter-view');
+  });
+
+  //Render Name of current filter
+  function renderFilterTitle(filter){
+    $('.todo-title').text(filter);
+  }
+

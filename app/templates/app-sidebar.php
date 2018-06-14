@@ -1,7 +1,7 @@
 <aside class="sidebar d-sm-block col-7 col-sm-4">
   <div class="top-filter">
     <ul class="top-filter-list list-group list-group-flush">
-      <li class="list-group-item top-filter-item inbox-item" data-project-id="<?php
+      <li class="list-group-item inbox-item" data-project-id="<?php
       $stmt = $db->prepare("SELECT id FROM projects WHERE user_id = ?");
       $stmt->bind_param("i", $_SESSION['id']);
       $stmt->execute();

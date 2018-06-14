@@ -13,7 +13,7 @@ $droppable-over-background:#ecf0f1 !important;
 .project-title-box,.tag-title-box{
   margin: 1rem 1rem 0.5rem 0.5rem
 }
-.top-filter-item, .project-item, .tag-item{
+.top-filter-item, .project-item, .tag-item, .inbox-item{
   &:hover{
     cursor: pointer;
   }
@@ -30,7 +30,7 @@ $droppable-over-background:#ecf0f1 !important;
   }
 }
 ul.top-filter-list{
-  li.top-filter-item{
+  li.top-filter-item, li.inbox-item{
     @include d-flex(row,flex-start,center);
   }
 }

@@ -31,7 +31,9 @@ require("php/user-modules/user-logged-in.php");
           <ul class="todo-list list-group list-group-flush">
             <?php include('php/render-modules/render-tasks.php') ?>
           </ul>
-          <?php include('templates/app-modules/todo-add-task.php') ?>
+          <?php
+          include('templates/app-modules/todo-add-task.php')
+          ?>
         </div>
         <?php include('templates/app-modules/modal-create-task.php') ?>
       </main>

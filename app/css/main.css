@@ -261,7 +261,7 @@ hr.row-gap {
 .project-title-box, .tag-title-box {
   margin: 1rem 1rem 0.5rem 0.5rem; }
 
-.top-filter-item:hover, .project-item:hover, .tag-item:hover {
+.top-filter-item:hover, .project-item:hover, .tag-item:hover, .inbox-item:hover {
   cursor: pointer; }
 
 .projects .project-title-box {
@@ -276,7 +276,7 @@ hr.row-gap {
   justify-content: space-between;
   align-items: center; }
 
-ul.top-filter-list li.top-filter-item {
+ul.top-filter-list li.top-filter-item, ul.top-filter-list li.inbox-item {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -395,7 +395,7 @@ ul.tag-list li.tag-item {
 .action-add-bar .action-add-icon {
   margin-right: 0.5rem; }
 
-.tag-filter .action-add-item {
+.filter-view .action-add-item {
   display: none; }
 
 #addTaskInline .addTaskInline-btn-box {
