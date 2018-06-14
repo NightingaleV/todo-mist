@@ -1,14 +1,19 @@
 //CREATE PROJECT THROUGHT INLINE TAB
 //auto focus input for project
-$('#addProject').on('shown.bs.collapse', function () {
-  $('.addProject-input').val('');
-  $('.addProject-input').focus();
-  $('.add-project-icon.arrow').removeClass('d-none');
-  $('.add-project-icon.plus').addClass('d-none');
+var addProjectCollapse = $('#addProject');
+var projectInput = $('.addProject-input');
+var projectArrow = $('.add-project-icon.arrow');
+var projectPlus = $('.add-project-icon.plus');
+
+addProjectCollapse.on('shown.bs.collapse', function () {
+  projectInput.val('');
+  projectInput.focus();
+  projectArrow.removeClass('d-none');
+  projectPlus.addClass('d-none');
 });
-$('#addProject').on('hidden.bs.collapse', function () {
-  $('.add-project-icon.plus').removeClass('d-none');
-  $('.add-project-icon.arrow').addClass('d-none');
+addProjectCollapse.on('hidden.bs.collapse', function () {
+  projectPlus.removeClass('d-none');
+  projectArrow.addClass('d-none');
 });
 //Inline form - click add button
 $(document).on('click', '.addProject-btn', function (e) {
@@ -21,10 +26,11 @@ $('.addProject-form').on('submit', function (e) {
 
 function createProject(){
   event.preventDefault();
-  
-  if($('.addProject-input').val()){
+
+  if(projectInput.val()){
+
       //Grab the form data
-      var formProjectData = $('.addProject-form').serialize();
+      var formProjectData = projectInput.serialize();
       console.log(formProjectData);
       console.log('Inline executed');
       
@@ -36,14 +42,26 @@ function createProject(){
         success: function (response) {
           console.log('Success to contact the server');
           console.log(response);
+
           if (response === 'project_added') {
-            //successful add
-            //render the projects
-            $('#addProject').removeClass('show');
+            addProjectCollapse.removeClass('show');
+            projectPlus.removeClass('d-none');
+            projectArrow.addClass('d-none');
             renderProjects();
           }
           if (response === 'duplicated_project') {
-            console.log('it isnot');
+            console.log('duplicated_project');
+            projectInput.popover({
+              trigger: 'manual',
+              delay: {
+                "show": 250,
+                "hide": 0
+              }
+            });
+            projectInput.popover('toggle');
+            setTimeout(function () {
+              projectInput.popover('toggle');
+            }, 4500);
           }
         },
         error: function () {
@@ -51,18 +69,23 @@ function createProject(){
         }
       });
     }
-};
+}
 //CREATE PROJECT THROUGHT INLINE TAB
 //auto focus input for project
-$('#addTag').on('shown.bs.collapse', function (e) {
-  $('.addTag-input').val('');
-  $('.addTag-input').focus();
-  $('.add-tag-icon.plus').addClass('d-none');
-  $('.add-tag-icon.arrow').removeClass('d-none'); 
+var addTagCollapse = $('#addTag');
+var tagInput = $('.addTag-input');
+var tagArrow = $('.add-tag-icon.arrow');
+var tagPlus = $('.add-tag-icon.plus');
+
+addTagCollapse.on('shown.bs.collapse', function (e) {
+  tagInput.val('');
+  tagInput.focus();
+  tagPlus.addClass('d-none');
+  tagArrow.removeClass('d-none');
 });
-$('#addTag').on('hidden.bs.collapse', function () {
-  $('.add-tag-icon.plus').removeClass('d-none');
-  $('.add-tag-icon.arrow').addClass('d-none');
+addTagCollapse.on('hidden.bs.collapse', function () {
+  tagPlus.removeClass('d-none');
+  tagArrow.addClass('d-none');
 });
 //Inline form - click add button
 $(document).on('click', '.addTag-btn', function (e) {
@@ -76,7 +99,7 @@ $('.addTag-form').on('submit', function (e) {
 function createTags(){
   event.preventDefault();
   
-  if($('.addTag-input').val()){
+  if(tagInput.val()){
       //Grab the form data
       var formTagData = $('.addTag-form').serialize();
       console.log(formTagData);
@@ -93,11 +116,24 @@ function createTags(){
           if (response === 'tag_added') {
             //successful add
             //render the projects
-            $('#addTag').removeClass('show');
+            addTagCollapse.removeClass('show');
+            tagPlus.removeClass('d-none');
+            tagArrow.addClass('d-none');
             renderTags();
           }
           if (response === 'duplicated_tag') {
-            console.log('it isnot');
+            console.log('duplicated_tag');
+            tagInput.popover({
+              trigger: 'manual',
+              delay: {
+                "show": 250,
+                "hide": 0
+              }
+            });
+            tagInput.popover('toggle');
+            setTimeout(function () {
+              tagInput.popover('toggle');
+            }, 4500);
           }
         },
         error: function () {
