@@ -3,6 +3,7 @@
     <?php 
     if(isset($_GET['project'])){echo $_GET['project'];};
     if(isset($_GET['tag'])){echo $_GET['tag'];}
+    if(isset($_GET['filter'])){echo $_GET['filter'];}
     ?>
   </h2>
   <div class="top-right-controls">

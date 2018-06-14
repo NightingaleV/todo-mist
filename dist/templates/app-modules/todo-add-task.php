@@ -8,7 +8,9 @@
             <i class="addTaskInline-icon material-icons">add</i>
           </button>
         </div>
-        <input name="task" type="text" class="addTaskInline-input form-control col-8" placeholder="My new task is ..." aria-label="New task" aria-describedby="basic-addon2">
+        <input name="task" type="text" class="addTaskInline-input form-control col-8" placeholder="My new task is ..."
+               aria-label="New task" aria-describedby="basic-addon2"
+               data-toggle="popover" data-placement="top" data-content="This task already exist.">
         <select name="priority" class="addTaskInline-priority form-control input-group-append col-3" data-show-content="true" id="prioritySelect">
           <option value="1">Priority 1</option>
           <option value="2">Priority 2</option>
