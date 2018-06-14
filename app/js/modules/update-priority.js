@@ -1,41 +1,13 @@
 //Change priority
 function changePriority(taskToUpdate,priority,tasksProjectId){
-  
-  var currentFilter = $('.todo-title').text().trim();
-  
-  //Cut the URL into array
-  var urlArray = window.location.href.split('/');
-  //If current filter is tag
-  if(urlArray[3].indexOf('tag') >= 0){
-    console.log('Current tag:'+currentFilter);
-    console.log('Task:'+taskToUpdate);
-    console.log('New priority:'+priority);  
-    $.post({
-        url: 'php/update-modules/update-task-priority.php',
-        data: { currentTag:currentFilter,
-                tasksProject:tasksProjectId,
-                task:taskToUpdate,
-                priority:priority,
-                },
-        success: function (response) {
-          console.log('Success to contact the server');
-          console.log(response);
-        },
-        error: function () {
-          console.log('Fail to connect the server');
-        }
-    });
-  }
-  //If current filter is project
-  else{
 
-    console.log('Current project:'+currentFilter);
+    console.log('Current project:'+tasksProjectId);
     console.log('Task:'+taskToUpdate);
     console.log('New priority:'+priority);
     
     $.post({
         url: 'php/update-modules/update-task-priority.php',
-        data: { currentProject:currentFilter,
+        data: { currentProject:tasksProjectId,
                 task:taskToUpdate,
                 priority:priority,
                 },
@@ -47,7 +19,6 @@ function changePriority(taskToUpdate,priority,tasksProjectId){
           console.log('Fail to connect the server');
         }
     });
-  }
 }
 
 //Change class of item 

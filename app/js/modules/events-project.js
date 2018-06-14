@@ -37,7 +37,7 @@ function projectsDroppable() {
       console.log('To project:'+toProjectId);
 
       if(toProjectId !== currentProjectId){
-        $(ui.draggable).remove();
+
         $.post({
           url: 'php/update-modules/update-task-project.php',
           data: { currentProject:currentProjectId,
@@ -51,7 +51,7 @@ function projectsDroppable() {
             console.log('Fail to connect the server');
           }
         });
-        if(urlArray[3].indexOf('tag') >= 0){
+        if(urlArray[3].indexOf('tag') >= 0 || urlArray[3].indexOf('filter') >= 0){
           ui.draggable.animate({top:0,left:0},0);
         }else{
           $(ui.draggable).remove();

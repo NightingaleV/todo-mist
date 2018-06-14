@@ -3,7 +3,7 @@
   if(urlArray[3].indexOf('tag') >= 0 || urlArray[3].indexOf('filter') >= 0){
     $('.app').addClass('filter-view');
   }
-  
+
   //Get data from server
   function renderTasks(project) {
     $.ajax({
