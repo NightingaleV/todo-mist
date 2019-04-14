@@ -13,4 +13,3 @@ Posilam produkcni verzi, kompletni kod najdete na github dole v popisku. Nevalid
 
 ## Odkaz
 - [Odkaz na Github](https://github.com/NightingaleV/todo-mist)
-- [Odkaz na live preview](http://todo-mist.epizy.com)
